@@ -1,0 +1,12 @@
+%button{	
+	color: white;
+	cursor:pointer;
+	display: inline-block;
+	font-family: $font-bt;
+	font-weight: bold;
+	padding: $gutter--s/1.5 $gutter--s;
+	position:relative;	
+	background-color:$c-main;
+	@include font-smoothing();
+	
+}

@@ -1,0 +1,20 @@
+@import "lib/c-buttons.scss";
+/*------------------------------*\
+
+    #BUTTONS
+
+\*------------------------------*/
+
+.button {
+	@extend %button;	
+}	
+
+.form__submit{
+	@extend %button;
+	background-color:#86bd4c !important;
+}
+
+.form__cancel{
+	@extend %button;
+	background-color:$c-error !important;
+}

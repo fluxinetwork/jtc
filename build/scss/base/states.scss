@@ -1,0 +1,19 @@
+/*------------------------------*\
+
+    #STATES
+
+\*------------------------------*/
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+} 
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer; 
+}
+

@@ -1,0 +1,91 @@
+// BREAKPOINTS
+
+$breakpoints: (
+  small: 480px,
+  medium: 760px, 
+  large: 960px,
+  xlarge: 1200,
+);
+
+$break--s: map-get($breakpoints, small);
+$break--m: map-get($breakpoints, medium);
+$break--l: map-get($breakpoints, large);
+$break--xl: map-get($breakpoints, xlarge);
+
+
+// SPACE
+
+$space-base: 10rem;
+$gutter: $space-base*0.4;
+$gutter--xs: $space-base*0.1;
+$gutter--s: $space-base*0.2;
+$gutter--l: $space-base*0.6;
+
+
+// COLORS
+
+$c-main: #005d8c;
+$c-hover: green;
+$c-special: #ffa300;
+$c-dark: black;
+$c-txt: #636363;
+
+$c-bglight:#f8f8f8;
+
+$c-error: #b94a48;
+$c-valide: #86bd4c;
+
+// STYLES
+
+$radius: 3px;
+$bshadow: 0 0 15px rgba(0,0,0,0.2);
+$bshadow--heavy: 0 0 30px rgba(0,0,0,0.3);
+
+
+// TRANSITIONS
+
+$transition: all 0.2s ease-in-out;
+$transition--dynamic: all 0.4s $ease-out-quart;
+
+
+// TYPO
+
+$font-h: sans-serif;
+$font-txt: sans-serif;
+$font-bt: sans-serif;
+
+$font-base-size: 16px;
+$font-base-lh: 1.4;
+
+$h1-font-sizes: (
+	null : (3rem)
+);
+
+$h2-font-sizes: (
+	null : (2.4rem)
+);
+
+$h3-font-sizes: (
+	null : (2rem)
+);
+
+$h4-font-sizes: (
+	null : (1.6rem)
+);
+
+$h5-font-sizes: (
+	null : (1.4rem)
+);
+
+$h6-font-sizes: (
+	null : (1.2rem)
+);
+
+$p-font-sizes: (
+	null : (1.6rem)
+);
+
+
+
+
+
