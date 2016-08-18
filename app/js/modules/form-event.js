@@ -49,7 +49,7 @@ function initManageEventForm(){
     fluxiAjaxTry( formID, $formObj, 'fluxi_manage_event', false, true );
 
     
-	$('#date_event').pickadate({
+	$('#date_event, #date_event_end').pickadate({
 		monthsFull: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'],
 		weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
 		today: 'Aujourd\'hui',
@@ -59,10 +59,43 @@ function initManageEventForm(){
 		formatSubmit: 'yyyymmdd'
 	});
 
-	$('#date_event').on('change', function(){
+	$('#date_event, #date_event_end, #hour_event, #hour_event_end').on('change', function(){
 	    $(this).focus();
-	})
+	});
    
+    $('#hour_event, #hour_event_end').pickatime({        
+        format: 'HH:i',
+        formatLabel: '<b>H</b>:i <!i>',
+        formatSubmit: 'HH:i',
+        clear: 'Effacer',
+    });
+    
+
+    $('input[name=add_date]').click(function() {
+        if(this.checked){
+            $('.js-add-date').removeClass('is-hide');
+        }else{
+            $('.js-add-date').addClass('is-hide');
+            $('input[name=date_event_end]').val('').removeClass('has-content');
+        }
+    });
+
+    if($('input[name=add_date]').is(':checked')){
+        $('input[name=add_date]').triggerHandler('click');
+    }
+
+    $('input[name=add_hour]').click(function() {
+        if(this.checked){
+            $('.js-add-hour').removeClass('is-hide');
+        }else{
+            $('.js-add-hour').addClass('is-hide');
+            $('input[name=hour_event_end]').val('').removeClass('has-content');
+        }
+    });
+
+    if($('input[name=add_hour]').is(':checked')){
+        $('input[name=add_hour]').triggerHandler('click');
+    }
 }
 
 /*

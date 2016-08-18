@@ -8,6 +8,10 @@
   opacity: 0;
 }
 
+.is-hide {
+  display: none;
+}
+
 .is-muted {
   opacity: 0.3;
 }
@@ -1000,11 +1004,6 @@ article.l-large {
     # FORMS
 
 \*------------------------------*/
-/*------------------------------*\
-
-    # Form
-
-\*------------------------------*/
 .form {
   /* Error validator js */
 }
@@ -1090,9 +1089,10 @@ article.l-large {
   background: #b94a48;
   border-radius: 0 0 3px 3px;
   color: #fff;
-  display: inline-block;
+  display: block;
   font-size: 1.2rem;
-  margin-top: -4px;
+  position: relative;
+  top: -2px;
   padding: 0.5rem 1.5rem;
 }
 .form .form__control--checkbox .help-block.form-error {

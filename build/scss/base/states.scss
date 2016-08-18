@@ -7,7 +7,11 @@
 .is-hidden {
   visibility: hidden;
   opacity: 0;
-} 
+}
+
+.is-hide{
+	display:none;
+}
 
 .is-muted {
   opacity: 0.3;

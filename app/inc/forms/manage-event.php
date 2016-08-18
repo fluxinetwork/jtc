@@ -14,7 +14,7 @@ function fluxi_manage_event(){
     global $reg_errors;
 	$reg_errors = new WP_Error;
 	// vars
-	$redirect_slug = get_site_url();
+	$redirect_slug = get_home_url();
 	$toky_toky = $_POST['toky_toky'];
 
 	$message_response = 'Erreur dans l\'envoie du formulaire. Essayez de l\'envoyer à nouveau. Contacter-nous si le problème persiste.';
@@ -24,7 +24,7 @@ function fluxi_manage_event(){
 		// Verify email & token
 		if ( is_numeric($toky_toky) && $toky_toky == 3621759654 ):
 
-			if ( !empty($_POST['title']) && !empty($_POST['date_event_submit']) && !empty($_POST['descriptif_event']) && !empty($_POST['departement']) && !empty($_POST['nom_contact']) && !empty($_POST['prenom_contact']) && !empty($_POST['email_contact']) && !empty($_POST['adresse']) && !empty($_POST['ville']) && !empty($_POST['code_postal'])  ):
+			if ( !empty($_POST['title']) && !empty($_POST['date_event_submit']) && !empty($_POST['hour_event_submit']) && !empty($_POST['descriptif_event']) && !empty($_POST['nom_structure']) && !empty($_POST['nom_contact']) && !empty($_POST['prenom_contact']) && !empty($_POST['email_contact']) && !empty($_POST['adresse']) && !empty($_POST['ville']) && !empty($_POST['code_postal']) && !empty($_POST['accept_terms']) ):
 
 					$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 					$content = '';
@@ -37,15 +37,22 @@ function fluxi_manage_event(){
 
 					$metas_tab = array(
 						'date_event'	=> $date_event,
+						'date_event_end' => filter_var( $_POST['date_event_submit'], FILTER_SANITIZE_NUMBER_INT),
+						'hour_event'	=> filter_var( $_POST['hour_event_submit'], FILTER_SANITIZE_STRING),
+						'hour_event_end' => filter_var( $_POST['hour_event_end_submit'], FILTER_SANITIZE_STRING),
+						'nom_structure' => filter_var( $_POST['nom_structure'], FILTER_SANITIZE_STRING),
+						'structure_organisatrice' => filter_var( $_POST['structure_organisatrice'], FILTER_SANITIZE_STRING),
 						'nom_contact'	=> $nom_contact,
 						'prenom_contact'=> $prenom_contact,
 						'email_contact' => $email_contact,
-						'departement'	=> filter_var( $_POST['departement'], FILTER_SANITIZE_STRING),
+						'tel_contact' => filter_var( $_POST['tel_contact'], FILTER_SANITIZE_NUMBER_INT),
 						'adresse'		=> filter_var( $_POST['adresse'], FILTER_SANITIZE_STRING),
 						'ville'			=> filter_var( $_POST['ville'], FILTER_SANITIZE_STRING),
 						'code_postal'	=> filter_var( $_POST['code_postal'], FILTER_SANITIZE_STRING),
 						'descriptif_event'	=> filter_var( $_POST['descriptif_event'], FILTER_SANITIZE_STRING),
-						'link_event'		=> filter_var( $_POST['link_event'], FILTER_SANITIZE_URL)
+						'link_event'		=> filter_var( $_POST['link_event'], FILTER_SANITIZE_URL),
+						'page_facebook' => filter_var( $_POST['page_facebook'], FILTER_SANITIZE_URL),
+						'accept_terms' => filter_var( $_POST['accept_terms'], FILTER_SANITIZE_NUMBER_INT)
 
 					);
 
@@ -65,7 +72,7 @@ function fluxi_manage_event(){
 					foreach( $metas_tab as $key => $value ){
 						add_post_meta($the_post_id, $key, $value, true);
 						// insert tags
-						if($key == 'departement'){
+						if($key == 'ville'){
 							wp_set_post_tags($the_post_id, $value, true );
 						}
 					}
@@ -73,9 +80,9 @@ function fluxi_manage_event(){
 					// Notification mail admin
 					//notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_GENERAL . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
 
-					// Notification mail current user
+					// Notification mail user
 					$mail_new_event = array(get_footer_mail(), $redirect_slug);
-					notify_by_mail (array($email_contact),'Les JTC 2016 <' . CONTACT_GENERAL . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
+					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
 
 					$message_response = 'Votre événement a été ajouté. Il sera publié sur le site après avoir été validé par nos soins.';
 
@@ -145,6 +152,7 @@ function events_export_dashboard( $post, $callback_args ) {
 	echo '</div>';
 }
 
+
 /**
 * Generate CSV
 *
@@ -155,110 +163,98 @@ function events_export_dashboard( $post, $callback_args ) {
 function fluxi_csv_export() {
 
 	check_ajax_referer( 'admin_events_nonce','security');
-	// Global array
-	$results = array();
-	global $reg_errors;
-	$reg_errors = new WP_Error;		
-	$csv_data_array = array();
 
-	$message_response = 'Aucun événement à exporter.';
-	
+	$results = array();
+
 	// WP_Query arguments
 	$args = array (
-		'post_type' => 'evenements', 
-		'post_status' => array( 'publish' ),
-		'order' => 'DESC', 
+		'post_type' => 'evenements',
+		//'post_status' => array( 'publish' ),
+		'order' => 'DESC',
 		'posts_per_page' => '-1'
 	);
-	
+
 	// The Post Query
 	$post_query = new WP_Query( $args );
-		
+
 	// User Loop
 	if ( $post_query->have_posts() ) :
+
 		
-		// Timestamp pour nommer le fichier
-        $date = date('m.j.Y-His');
-        $ts = $date;        
-        $filename = 'jtc-events-'.$ts.'.csv';	
-		
-		// Export vers le client
-        header( 'Content-Type: text/csv' );
-        header( 'Content-Disposition: attachment;filename='.$filename);
-		
-		// Création des entétes 
-		$hrow = array('NOM-PRENOM', 'MAIL', 'DATE EVENT', 'TITRE EVENT');
-		
-        // creation d'un fichier temporaire
-        $fp = fopen('php://output', 'w');		
-		fputcsv($fp, $hrow);
-		
-		while ( $post_query->have_posts() ) : 
-			
-			$post_query->the_post();	
-		
+        //$date = date('m.j.Y-His');        
+        $filename = 'jtc-events.csv';       
+
+		header("Content-Type: text/csv; charset=utf-8");
+		header("Content-Disposition: attachment; filename={$filename}");
+
+		$fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/wp-content/uploads/csv/{$filename}","wb");
+
+		fputcsv($fp, array('CONTACT', 'MAIL', 'TEL', 'STRUCTURE', 'DATE EVENT', 'TITRE', 'STATUT'));
+
+		while ( $post_query->have_posts() ) : $post_query->the_post();
+
 			$post_id = get_the_ID();			
-			$titre_event = get_the_title();			
-			$date_event = get_field('date_event');						
-			
-			$mail_contact = get_field('mail_contact');
+			$post_status = get_post_status();
+			if( $post_status != 'publish'):
+				$post_status = 'Refusé';
+			else:
+				$post_status = 'Publié';
+			endif;
+
+			$titre_event = get_the_title();
+			$date_event = get_field('date_event', false, false);
+			$date_obj = new DateTime($date_event);
+			$date_event = $date_obj->format('j-m-y');
+
+			$mail_contact = get_field('email_contact');
 			$nom_contact = get_field('nom_contact');
 			$prenom_contact = get_field('prenom_contact');
+			$tel_contact = get_field('tel_contact');
+			$nom_strucure = get_field('nom_strucure');
 
 			$nom_prenom = $nom_contact . ' ' . $prenom_contact;
-			
-			// clean strings			
-			//$title = htmlentities(strip_tags($title));
-			
-			$csv_data_array = array($nom_prenom, $mail_contact, $date_event, $titre_event);
-			
-			fputcsv($fp,$csv_data_array);
 
-			$message_response = 'Exportation terminée';
-			
-			
+			fputcsv($fp, array($nom_prenom, $mail_contact, $tel_contact, $nom_strucure, $date_event, $titre_event, $post_status));
+
 		endwhile;
-				
-		// Fermeture du fichier temporaire
-		fclose($fp);
-		// On efface le contenu du fichier temporaire
-		//ob_end_clean();
-		
-		
-	else :
-	
-		$reg_errors->add( 'nodata', $message_response );
-		
-		
-	endif;	
 
-   /* // Error process
-	if ( is_wp_error( $reg_errors ) && count( $reg_errors->get_error_messages() ) > 0):
-		$output_errors = '';
-		foreach ( $reg_errors->get_error_messages() as $error ) {
-			$output_errors .= $error . '<br>';
-		}
-		$data = array(
-			'validation' => 'error',
-			'message' => $output_errors
-		);
-		$results[] = $data;
-	else:
-		$data = array(
-			'validation' => 'success',
-			'message' => $message_response
-		);
-		$results[] = $data;
+		fclose($fp);
+		exit;
+
+	else :
+		// No data
 	endif;
 
-	// Output JSON
-	wp_send_json($results);*/
-
-
     // Handle the ajax request
-    wp_die(); // All ajax handlers die when finished
+    wp_die();
 }
 
 
 add_action( 'wp_ajax_fluxi_csv_export', 'fluxi_csv_export' );
+
+
+/**
+* Send an email when an event is published
+*
+* @param $new_status, $old_status, $post
+* @return n/a
+*/
+
+function send_mails_on_publish( $new_status, $old_status, $post )
+{
+    if ( 'publish' !== $new_status or 'publish' === $old_status
+        or 'evenements' !== get_post_type( $post ) )
+        return;
+
+    $the_idp = $post->ID;
+    $email_contact = get_field('email_contact', $the_idp);
+
+    // Notification mail current user
+	$mail_published_event = array(get_footer_mail(), get_home_url(), get_permalink($the_idp));
+	notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est visible sur notre site', true, get_template_directory() . '/app/inc/mails/new-event-publish.php', $mail_published_event);
+}
+
+add_action( 'transition_post_status', 'send_mails_on_publish', 10, 3 );
+
+
 
