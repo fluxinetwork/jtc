@@ -272,8 +272,43 @@ article.l-large {
     #MAPS
 
 \*------------------------------*/
+.touch .map-holder {
+  opacity: 0;
+  z-index: -1;
+  left: 0;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 #map-events {
   height: 400px;
+}
+
+.touch #map-events {
+  height: 100%;
+  width: 100%;
+}
+
+.touch .map-holder.is-open {
+  opacity: 1;
+  z-index: 5;
+}
+
+.touch .close {
+  display: inline-block;
+  position: absolute;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 3px;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.no-touch .close, .no-touch .button.js-open-map {
+  display: none;
 }
 
 /* required styles */

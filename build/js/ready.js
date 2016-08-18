@@ -14,7 +14,8 @@ var FOO = {
         init: function() {
             isHome = true;
             // Init events map
-            initMap(); 
+            initMap();
+            initMapMobil();
         }
     }
     

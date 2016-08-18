@@ -56,7 +56,8 @@ var FOO = {
         init: function() {
             isHome = true;
             // Init events map
-            initMap(); 
+            initMap();
+            initMapMobil();
         }
     }
     
@@ -351,7 +352,7 @@ function initMap (){
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/jtc2016/cirvv3gli001egynmqdliyk6t/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoianRjMjAxNiIsImEiOiJjaXJ2dW43cmEwMGhwaHVuaGlhaXJtZmJyIn0.waqWvkaPAVkIed9Xi5zxsw', {
 		maxZoom: 14,
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+		attribution: 'Carte &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributeurs, ' +
 			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 		id: 'jtc2016'
 	}).addTo(mapJTC);
@@ -393,11 +394,6 @@ function initMap (){
 }*/
 
 function onEachFeature(f,l){
-
-    console.log(f);
-
-    console.log(l);
-
     var out = [];
     if (f.properties){
         for(key in f.properties){
@@ -405,5 +401,14 @@ function onEachFeature(f,l){
         }
         l.bindPopup(out.join("<br />"));
     }
+}
+
+
+function initMapMobil(){
+
+    $('.js-open-map, .js-close-map').click(function(e){
+        e.preventDefault();
+        $('.map-holder').toggleClass('is-open');
+    });
 }
 

@@ -103,7 +103,7 @@ function enqueue_scripts() {
    
 
     // Main
-    if( is_home() ):
+    if( is_home() || is_page_template( 'page-templates/page-home.php' ) ):
         wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'imagesLoaded', 'waypoint', 'mousewheel', 'fitvids', 'leaflet'), null, true );
     else:
         wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'imagesLoaded', 'waypoint', 'mousewheel', 'fitvids'), null, true );
