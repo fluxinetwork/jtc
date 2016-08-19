@@ -72,7 +72,7 @@ function onEachFeature(f,l){
 
 function initMapMobil(){
 
-    $('.js-open-map, .js-close-map').click(function(e){
+    $('.touch .js-open-map, .touch .js-close-map').click(function(e){
         e.preventDefault();
         $('.map-holder').toggleClass('is-open');
     });

@@ -46,7 +46,8 @@ function get_json_map(){
 		            'cp' => get_field('code_postal'),
 		            'ville' => get_field('ville'),
 		            'depart' => get_field('departement'),
-		            'lien' => get_field('link_event')
+		            'lien' => get_field('link_event'),
+		            'permalink' => '<a class="button" href="'.get_the_permalink().'">En savoir plus</a>'
 		        )
 		    );
 		    // Add feature arrays to feature collection array

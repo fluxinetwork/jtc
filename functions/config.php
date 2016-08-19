@@ -13,7 +13,7 @@ define('GOOGLE_ANALYTICS_ID', '');
 define('GOOGLE_MAP_API_KEY', 'AIzaSyDWdjumGHjHMCCjx962HCWjj8lmWZ-qb3w');
 /* ACF Google Maps */
 function wpc_acf_init() {
-	acf_update_setting('google_api_key', 'AIzaSyDWdjumGHjHMCCjx962HCWjj8lmWZ-qb3w');
+	acf_update_setting('google_api_key', GOOGLE_MAP_API_KEY);
 }
 add_action('acf/init', 'wpc_acf_init');
 
