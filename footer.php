@@ -1,4 +1,8 @@
-		    </section><!-- .wrap-content --> 
+		    	</article>
+
+		    </section><!-- .wrap-content -->
+
+		    <?php get_template_part( 'page-templates-parts/partenaires'); ?>
 
 		    <?php get_template_part( 'page-templates-parts/base/footer'); ?>
 		    

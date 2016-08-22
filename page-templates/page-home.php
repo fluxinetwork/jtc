@@ -10,15 +10,15 @@ Template Name: Page d'accueil
  	$testimonies = get_field('temoignages');
  ?>	
 
-	<article>
+	<div>
 		<h2>Les solution existent déjà : <strong>à moi de faire le premier pas !</strong></h2>
 
 		<div class="video"><?php echo get_field('video'); ?></div>
 
 		<p><?php echo get_field('texte_intro'); ?></p>
-	</article>
+	</div>
 
-	<article>
+	<div>
 		<h2>Les solutions sont là</h2>
 		<h3>Plus de <?php echo $count_events->publish; ?> événements</h3>
 
@@ -41,14 +41,14 @@ Template Name: Page d'accueil
 			<?php echo get_field('mode_emploi'); ?>				
 		</p>
 
-	</article>
+	</div>
 
-	<article>
+	<div>
 		<h2>Parlez en autour de vous</h2>
 		<p>#journeetransition</p>
-	</article>
+	</div>
 
-	<article>
+	<div>
 		<h2>Les photos de la JTC</h2>
 		<p>éditions 2014 et 2015</p>
 
@@ -64,9 +64,9 @@ Template Name: Page d'accueil
 		    </div>			    
 		<?php endif; ?>
 
-	</article>
+	</div>
 
-	<article>
+	<div>
 		<h2>Ils ont fait le premier pas</h2>
 		<p>voici leur histoire</p>
 		
@@ -74,20 +74,25 @@ Template Name: Page d'accueil
 			<div class="tabs-controls">
 				<?php foreach($testimonies as $row){ ?>
 					<a href="#" class="button js-tab-btn"><?php echo $row['prenom']; ?></a>
-				<?php $id_title++; } ?> 
+				<?php } ?> 
 			</div>
 		<?php endif; ?>
 
 		<?php if($testimonies): ?>
 			<ul class="tabs">
 				<?php foreach($testimonies as $row){ ?>
-					<li class="tab"><?php echo $row['temoignage']; ?></li>
+					<li class="tab">
+						
+						<p><?php echo $row['localisation']; ?></p>
+						<p><?php echo $row['temoignage']; ?></p>
+						
+					</li>
 				<?php } ?> 
 			</ul>
 		<?php endif; ?>		
 
 
-	</article>
+	</div>
 	
 
 <?php get_footer(); ?>

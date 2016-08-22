@@ -19,4 +19,6 @@
 
 		<section class="wrap-content">
 		
-		<?php get_template_part( 'page-templates-parts/base/header'); ?>
+			<?php get_template_part( 'page-templates-parts/base/header'); ?>
+
+			<article>
