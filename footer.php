@@ -1,8 +1,8 @@
-		    </div><!-- .wrap-content --> 
+		    </section><!-- .wrap-content --> 
 
 		    <?php get_template_part( 'page-templates-parts/base/footer'); ?>
 		    
-    </div><!-- .wrap-main -->
+    </main><!-- .wrap-main -->
 
 
 	<?php 

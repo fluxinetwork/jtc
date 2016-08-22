@@ -16,6 +16,20 @@ var FOO = {
             // Init events map
             initMap();
             initMapMobil();
+            // Slider
+            $('.flexslider').flexslider({
+                animation: 'slide',
+                slideshow: false, 
+            });
+            // fitVids
+            $('.video').fitVids();
+            // Tabs
+            initTabs();
+            // Accordion
+            $('.js-accordion').click(function(e){
+                e.preventDefault();
+                $(this).next('.accordion-content').slideToggle();
+            });
         }
     }
     

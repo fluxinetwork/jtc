@@ -15,8 +15,8 @@
 <?php include( TEMPLATEPATH.'/app/inc/bodyclass.php' ); ?>
 <body <?php body_class($bodyclass); ?> >
 
-	<div class="wrap-main">
+	<main class="wrap-main">		
 
-		<?php get_template_part( 'page-templates-parts/base/nav'); ?>
-
-		<div class="wrap-content">
+		<section class="wrap-content">
+		
+		<?php get_template_part( 'page-templates-parts/base/header'); ?>

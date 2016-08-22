@@ -58,6 +58,20 @@ var FOO = {
             // Init events map
             initMap();
             initMapMobil();
+            // Slider
+            $('.flexslider').flexslider({
+                animation: 'slide',
+                slideshow: false, 
+            });
+            // fitVids
+            $('.video').fitVids();
+            // Tabs
+            initTabs();
+            // Accordion
+            $('.js-accordion').click(function(e){
+                e.preventDefault();
+                $(this).next('.accordion-content').slideToggle();
+            });
         }
     }
     
@@ -334,6 +348,28 @@ function formatNumber(number){
 
 /*------------------------------*\
 
+    #TABS
+
+\*------------------------------*/
+
+function initTabs() {
+
+	$('.tabs .tab:eq(0)').addClass('is-open');
+
+	$('.js-tab-btn').click(function(e){
+		e.preventDefault();
+		var index = $(this).index();
+
+		$('.tabs .tab').removeClass('is-open');
+		$('.tabs .tab:eq('+index+')').addClass('is-open');
+
+	});
+}
+
+
+
+/*------------------------------*\
+
     #MAP
 
 \*------------------------------*/
@@ -348,7 +384,11 @@ var mapStyle = {
 
 function initMap (){
 
-    mapJTC = L.map('map-events').setView([47.07, 2.21], 5.3);   
+    mapJTC = L.map('map-events', {
+        center: [47.07, 2.21],
+        zoom: 5.3,
+        scrollWheelZoom: false
+    });
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/jtc2016/cirvv3gli001egynmqdliyk6t/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoianRjMjAxNiIsImEiOiJjaXJ2dW43cmEwMGhwaHVuaGlhaXJtZmJyIn0.waqWvkaPAVkIed9Xi5zxsw', {
 		maxZoom: 14,
@@ -371,7 +411,7 @@ function initMap (){
 	        ).addTo(mapJTC);            
         },
         error : function(jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
+            //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
         }
 
     });

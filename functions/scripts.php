@@ -86,6 +86,7 @@ function enqueue_scripts() {
     wp_register_script( 'waypoint', THEME_DIR_PATH . '/app/js/vendors/base/waypoints.min.js', array(), null, true );
     wp_register_script( 'mousewheel', THEME_DIR_PATH . '/app/js/vendors/jquery.mousewheel.min.js', array(), null, true );
     wp_register_script( 'fitvids', THEME_DIR_PATH . '/app/js/vendors/base/jquery.fitvids.min.js', array(), null, true );
+    wp_register_script( 'flexslider', THEME_DIR_PATH . '/app/js/vendors/jquery.flexslider.min.js', array(), null, true );
 
     // FORMS
     wp_register_script( 'form-validator', THEME_DIR_PATH . '/app/js/vendors/form-validator/jquery.form-validator.min.js', array(), null, true );
@@ -104,9 +105,9 @@ function enqueue_scripts() {
 
     // Main
     if( is_home() || is_page_template( 'page-templates/page-home.php' ) ):
-        wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'imagesLoaded', 'waypoint', 'mousewheel', 'fitvids', 'leaflet'), null, true );
+        wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'imagesLoaded', 'waypoint', 'mousewheel', 'fitvids', 'leaflet', 'flexslider'), null, true );
     else:
-        wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'imagesLoaded', 'waypoint', 'mousewheel', 'fitvids'), null, true );
+        wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'mousewheel'), null, true );
     endif;
 
     wp_register_script( 'full', THEME_DIR_PATH . '/app/js/full.min.js', array('jQuery'), null, true );

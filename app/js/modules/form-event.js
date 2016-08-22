@@ -140,7 +140,7 @@ function fluxiAjaxTry (formID, $formObj, ajaxAction, redirect, button ) {
                         }
 
                         if (button == true) {
-                            $formObj.find('.form__buttons').html('<a href="'+data[0].redirect+'" class="button">Retour</a>');
+                            $formObj.find('.form__buttons').html('<a href="'+data[0].redirect+'" class="button">Accueil</a>');
                         }
 
                         //$formObj.find('button[type=submit]').hide();

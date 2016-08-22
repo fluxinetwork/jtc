@@ -1,0 +1,12 @@
+/*------------------------------*\
+
+    #TABS
+
+\*------------------------------*/
+
+.tab,.accordion-content{
+	display: none;
+}
+.tab.is-open{
+	display: block;
+}

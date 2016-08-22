@@ -158,7 +158,7 @@
 
 	    <div class="notify"></div>
 
-	    <div class="form__buttons">			
+	    <div class="form__buttons">	    		
 	    	<button type="submit" id="submit-manage-event" class="form__submit">Ajouter</button>
 	    </div>
 
