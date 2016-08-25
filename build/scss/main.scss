@@ -21,16 +21,20 @@
 
 @import "components/buttons";
 @import "components/spinners";
+@import "components/macaron";
+@import "components/zigouigoui";
+@import "components/maps";
 
 
 // LAYOUT
 
 @import "layout/wrappers";
+@import "layout/header";
 @import "layout/nav";
 @import "layout/footer";
-@import "layout/maps";
 @import "layout/flexslider";
 @import "layout/tabs";
+@import "layout/partenaires";
 
 // PAGES 
 

@@ -110,6 +110,24 @@
 	}
 }
 
+// MAKE WEBFONT
+
+@mixin add-webfont($name, $path, $slug, $font-weight: 400) {
+
+	@font-face {
+	    font-family: $name;
+	    src: url('../fonts/'+$path+'/'+$slug+'.eot');
+	    src: url('../fonts/'+$path+'/'+$slug+'.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/'+$path+'/'+$slug+'.woff2') format('woff2'),
+	         url('../fonts/'+$path+'/'+$slug+'.woff') format('woff'),
+	         url('../fonts/'+$path+'/'+$slug+'.ttf') format('truetype'),
+	         url('../fonts/'+$path+'/'+$slug+'.svg#texgyreadventorregular') format('svg');
+	    font-weight: $font-weight;
+	    font-style: normal;
+	}
+
+}
+
 
 ///////////////////////////////
 ////////// ELEMENT ////////////

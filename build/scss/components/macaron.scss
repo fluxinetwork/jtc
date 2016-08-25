@@ -1,0 +1,28 @@
+/*------------------------------*\
+
+    #MACARON
+
+\*------------------------------*/
+
+.macaron {
+	@include flex(center);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 82px;
+	height: 82px;
+	transform: translateY(-50%);
+}
+
+.macaron__shape {
+	position: absolute;
+	z-index: -1;
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.macaron__label {
+	color: $c-main;
+	text-align: center;	
+	line-height: 1;
+}

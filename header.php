@@ -14,11 +14,7 @@
 
 <?php include( TEMPLATEPATH.'/app/inc/bodyclass.php' ); ?>
 <body <?php body_class($bodyclass); ?> >
-
-	<main class="wrap-main">		
-
-		<section class="wrap-content">
 		
-			<?php get_template_part( 'page-templates-parts/base/header'); ?>
+	<?php get_template_part( 'page-templates-parts/base/header'); ?>
 
-			<article>
+	<main role="main">

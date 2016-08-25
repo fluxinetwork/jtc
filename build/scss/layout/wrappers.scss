@@ -3,6 +3,29 @@
     #WRAPPERS
 
 \*------------------------------*/
+
+body {
+	background-color: $c-main;
+	margin-top: $space--m;
+	overflow-x: hidden;
+}
+
+.wrap-base {
+	position: relative;
+	@include flex(null center, true);
+	text-align: center;
+}
+
+.section {
+	margin-top: $space--m;
+	@extend .wrap-base;
+}
+
+.wrap-content {
+	position: relative;
+	width: 80%;
+}
+
 article{
 	margin:0 auto;
 	max-width:$break--l;

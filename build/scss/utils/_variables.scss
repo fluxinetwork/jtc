@@ -1,10 +1,11 @@
 // BREAKPOINTS
 
 $breakpoints: (
-  small: 480px,
-  medium: 760px, 
-  large: 960px,
-  xlarge: 1200,
+	xsmall: 320px,
+	small: 480px,
+	medium: 760px, 
+	large: 960px,
+	xlarge: 1200,
 );
 
 $break--s: map-get($breakpoints, small);
@@ -21,14 +22,20 @@ $gutter--xs: $space-base*0.1;
 $gutter--s: $space-base*0.2;
 $gutter--l: $space-base*0.6;
 
+$space--xs: 0.5rem;
+$space--s: 1.5rem;
+$space--m: 3.5rem;
+$space--l: 8rem;
+
 
 // COLORS
 
-$c-main: #005d8c;
-$c-hover: green;
-$c-special: #ffa300;
-$c-dark: black;
-$c-txt: #636363;
+$c-main: #E5442F;
+$c-highlight: #FFD52E;
+$c-hover: $c-highlight;
+$c-special: #4E7F4F;
+$c-dark: #4C322E;
+$c-txt: #fff;
 
 $c-bglight:#f8f8f8;
 
@@ -50,23 +57,23 @@ $transition--dynamic: all 0.4s $ease-out-quart;
 
 // TYPO
 
-$font-h: sans-serif;
-$font-txt: sans-serif;
-$font-bt: sans-serif;
+$font-h: qanelas;
+$font-txt: qanelas;
+$font-bt: qanelas;
 
 $font-base-size: 16px;
 $font-base-lh: 1.4;
 
 $h1-font-sizes: (
-	null : (3rem)
+	null : (rem(30px), 1.2)
 );
 
 $h2-font-sizes: (
-	null : (2.4rem)
+	null : (rem(22px), 1.2)
 );
 
 $h3-font-sizes: (
-	null : (2rem)
+	null : (rem(15px))
 );
 
 $h4-font-sizes: (
@@ -82,7 +89,7 @@ $h6-font-sizes: (
 );
 
 $p-font-sizes: (
-	null : (1.6rem)
+	null : (rem(13px))
 );
 
 

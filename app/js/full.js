@@ -13,6 +13,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 \*------------------------------*/
 
 var siteURL = '';
+var themeURL = '/wp-content/themes/jtc/';
 var isHome = false;
 
 // Activate resize events
@@ -41,12 +42,10 @@ var bpXlarge;
 
 
 $(window).load(function() {
-
+	// Manage label animation
+	 //$('.form__row .js-input-effect').val('');
+	
 });
-
-
-
-
 
 
 /*------------------------------*\
@@ -57,14 +56,33 @@ $(window).load(function() {
 
 var FOO = {
     common: {
-        init: function() {
+        init: function() {          
+           
         }
     },
     home: {
         init: function() {
-            isHome = true; 
+            isHome = true;
+            // Init events map
+            initMap();
+            initMapMobil();
+            // Slider
+            $('.flexslider').flexslider({
+                animation: 'slide',
+                slideshow: false, 
+            });
+            // fitVids
+            $('.video').fitVids();
+            // Tabs
+            initTabs();
+            // Accordion
+            $('.js-accordion').click(function(e){
+                e.preventDefault();
+                $(this).next('.accordion-content').slideToggle();
+            });
         }
     }
+    
 };
 
 var UTIL = {
@@ -96,6 +114,26 @@ $(document).ready(UTIL.loadEvents);
     Is activated by vars in config.js
 
 \*------------------------------*/
+
+/**
+ * Get window sizes
+ * Store results in windowW and windowH vars
+ */
+
+// Get width and height
+function calc_window() {
+    calc_windowW();
+    calc_windowH();
+}
+// Get width
+function calc_windowW() {
+    windowW = $(window).width();
+}
+// Get height
+function calc_windowH() {
+    windowH = $(window).height();
+}
+
 
 /**
  * MAIN RESIZE EVENT
@@ -318,10 +356,107 @@ function formatNumber(number){
 
 /*------------------------------*\
 
-    #FLUXI
+    #TABS
 
 \*------------------------------*/
 
+function initTabs() {
+
+	$('.tabs .tab:eq(0)').addClass('is-open');
+
+	$('.js-tab-btn').click(function(e){
+		e.preventDefault();
+		var index = $(this).index();
+
+		$('.tabs .tab').removeClass('is-open');
+		$('.tabs .tab:eq('+index+')').addClass('is-open');
+
+	});
+}
 
 
+
+/*------------------------------*\
+
+    #MAP
+
+\*------------------------------*/
+
+var mapJTC,basicIcon;
+
+var mapStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.65
+};
+
+function initMap (){
+
+    mapJTC = L.map('map-events', {
+        center: [47.07, 2.21],
+        zoom: 5.3,
+        scrollWheelZoom: false
+    });
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/jtc2016/cirvv3gli001egynmqdliyk6t/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoianRjMjAxNiIsImEiOiJjaXJ2dW43cmEwMGhwaHVuaGlhaXJtZmJyIn0.waqWvkaPAVkIed9Xi5zxsw', {
+		maxZoom: 14,
+		attribution: 'Carte &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributeurs, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+		id: 'jtc2016'
+	}).addTo(mapJTC);
+
+	$.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        url: ajax_object.ajax_url,
+        data: 'action=get_json_map',
+        success: function(data){
+            geojsonLayer = L.geoJson( 
+                data, {
+	            	style: mapStyle,
+	            	onEachFeature: onEachFeature,
+	        	}
+	        ).addTo(mapJTC);            
+        },
+        error : function(jqXHR, textStatus, errorThrown) {
+            //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
+        }
+
+    });
+    return false;
+
+}
+
+/*function onEachFeature(feature, layer) {
+
+	console.log(feature);
+
+	var popupContent = "<p>I started out as a GeoJSON " +
+			feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
+
+	if (feature.properties && feature.properties.popupContent) {
+		popupContent += feature.properties.popupContent;
+	}
+
+	layer.bindPopup(popupContent);
+}*/
+
+function onEachFeature(f,l){
+    var out = [];
+    if (f.properties){
+        for(key in f.properties){
+            out.push(key+": "+f.properties[key]);
+        }
+        l.bindPopup(out.join("<br />"));
+    }
+}
+
+
+function initMapMobil(){
+
+    $('.touch .js-open-map, .touch .js-close-map').click(function(e){
+        e.preventDefault();
+        $('.map-holder').toggleClass('is-open');
+    });
+}
 

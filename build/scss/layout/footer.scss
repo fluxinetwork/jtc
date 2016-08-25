@@ -5,9 +5,30 @@
 \*------------------------------*/
 
 .footer {
-	background: rgba(#000, 0.2);
-	
-	height:250px;
-	margin:$gutter--l 0 0;
-
+	position: relative;
+	background: $c-dark;
+	@extend .section;
+	padding: $space--s 0 $space--m 0;
+	margin-top: $space--l*1.5;
 }
+
+.footer__scene {
+	width: 860px;
+	left: 50%;
+	top: -262px;
+	transform: translateX(-47%);
+	position: absolute;
+}
+
+.wrap-logo {
+	width: 200px;
+	background-color: #FFF;
+	border-radius: $radius;
+	padding: $space--s;
+	margin-top: $space--xs;
+
+	img {
+		width: 100%;
+	}
+}
+

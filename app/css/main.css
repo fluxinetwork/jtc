@@ -1,3 +1,13 @@
+.logos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel, .link, .touch .map-holder {
+  transition: all 0.2s ease-in-out;
+}
+
 /*------------------------------*\
 
     #STATES
@@ -26,10 +36,6 @@
 
 \*------------------------------*/
 /* Ultra light reset */
-html {
-  font-size: 62.5%;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -44,7 +50,6 @@ button, input, select, textarea {
 img {
   display: block;
   height: auto;
-  max-width: 100%;
 }
 
 svg {
@@ -75,28 +80,44 @@ html {
 
 \*------------------------------*/
 body {
-  font: 16px sans-serif;
-  color: #636363;
+  font: 16px qanelas;
+  line-height: 1.4;
+  color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
 .h1 {
-  font-size: 3rem;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 h2,
 .h2 {
-  font-size: 2.4rem;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #FFD52E;
+  text-align: center;
+}
+h2 span,
+.h2 span {
+  font-weight: 400;
 }
 
 h3,
 .h3 {
-  font-size: 2rem;
+  font-size: 0.9375rem;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 0.5rem;
 }
 
 h4,
@@ -116,17 +137,34 @@ h6,
 
 p {
   margin-bottom: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p:first-child {
+  margin-top: 0;
 }
 
-.button, .form__submit, .form__cancel {
-  color: white;
+@font-face {
+  font-family: "qanelas";
+  src: url("../fonts/qanelas/regular/qanelassoft-regular-webfont.eot");
+  src: url("../fonts/qanelas/regular/qanelassoft-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/qanelas/regular/qanelassoft-regular-webfont.woff2") format("woff2"), url("../fonts/qanelas/regular/qanelassoft-regular-webfont.woff") format("woff"), url("../fonts/qanelas/regular/qanelassoft-regular-webfont.ttf") format("truetype"), url("../fonts/qanelas/regular/qanelassoft-regular-webfont.svg#texgyreadventorregular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "qanelas";
+  src: url("../fonts/qanelas/black/qanelassoft-black-webfont.eot");
+  src: url("../fonts/qanelas/black/qanelassoft-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/qanelas/black/qanelassoft-black-webfont.woff2") format("woff2"), url("../fonts/qanelas/black/qanelassoft-black-webfont.woff") format("woff"), url("../fonts/qanelas/black/qanelassoft-black-webfont.ttf") format("truetype"), url("../fonts/qanelas/black/qanelassoft-black-webfont.svg#texgyreadventorregular") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel {
   cursor: pointer;
   display: inline-block;
-  font-family: sans-serif;
-  font-weight: bold;
-  padding: 1.33333rem 2rem;
+  font-family: qanelas;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
   position: relative;
-  background-color: #005d8c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -136,12 +174,55 @@ p {
     #BUTTONS
 
 \*------------------------------*/
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel {
+  border-radius: 40px;
+}
+
+.button--cta {
+  background-color: #fff;
+  color: #4C322E;
+  margin-top: 0.5rem;
+  padding: 1rem 1.65rem !important;
+  text-transform: uppercase;
+}
+.button--cta:hover {
+  background-color: #4C322E;
+  color: #fff;
+}
+
+.button--outline, .tabs-control__btn, .more-tabs {
+  border: 3px solid #fff;
+  color: #fff;
+  background-color: transparent;
+}
+.button--outline.is-active, .is-active.tabs-control__btn, .is-active.more-tabs {
+  border-color: #4C322E;
+  background-color: #4C322E;
+}
+.button--outline:not(.is-active):hover, .tabs-control__btn:not(.is-active):hover, .more-tabs:not(.is-active):hover {
+  background-color: #fff;
+  color: #4C322E;
+}
+
+.link {
+  margin-top: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 3px solid #fff;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.link:hover {
+  border-color: #4C322E;
+}
+
 .form__submit {
-  background-color: #86bd4c !important;
+  background-color: #86bd4c;
 }
 
 .form__cancel {
-  background-color: #b94a48 !important;
+  background-color: #b94a48;
 }
 
 /*------------------------------*\
@@ -185,17 +266,17 @@ p {
 
 .spinner.bg-spin {
   position: absolute;
-  background-color: #f8f8f8;
+  background-color: #4E7F4F;
   height: 100%;
   width: 100%;
   z-index: 2;
 }
 .spinner.bg-spin:before {
   margin: 25% auto;
-  border-top: 0.5rem solid rgba(0, 93, 140, 0.2);
-  border-right: 0.5rem solid rgba(0, 93, 140, 0.2);
-  border-bottom: 0.5rem solid rgba(0, 93, 140, 0.2);
-  border-left: 0.5rem solid #005d8c;
+  border-top: 0.5rem solid rgba(229, 68, 47, 0.2);
+  border-right: 0.5rem solid rgba(229, 68, 47, 0.2);
+  border-bottom: 0.5rem solid rgba(229, 68, 47, 0.2);
+  border-left: 0.5rem solid #E5442F;
 }
 .spinner.bg-spin:before, .spinner.bg-spin:after {
   border-radius: 50%;
@@ -204,10 +285,10 @@ p {
 }
 
 .spinner.green:before {
-  border-top: 0.5rem solid rgba(0, 93, 140, 0.2);
-  border-right: 0.5rem solid rgba(0, 93, 140, 0.2);
-  border-bottom: 0.5rem solid rgba(0, 93, 140, 0.2);
-  border-left: 0.5rem solid #005d8c;
+  border-top: 0.5rem solid rgba(229, 68, 47, 0.2);
+  border-right: 0.5rem solid rgba(229, 68, 47, 0.2);
+  border-bottom: 0.5rem solid rgba(229, 68, 47, 0.2);
+  border-left: 0.5rem solid #E5442F;
 }
 
 @-webkit-keyframes spinit {
@@ -232,39 +313,62 @@ p {
 }
 /*------------------------------*\
 
-    #WRAPPERS
+    #MACARON
 
 \*------------------------------*/
-article {
-  margin: 0 auto;
-  max-width: 960px;
+.macaron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 82px;
+  height: 82px;
+  transform: translateY(-50%);
 }
 
-article.l-large {
-  margin: 0 auto;
-  max-width: 100%;
+.macaron__shape {
+  position: absolute;
+  z-index: -1;
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.macaron__label {
+  color: #E5442F;
+  text-align: center;
+  line-height: 1;
 }
 
 /*------------------------------*\
 
-    #NAV
+    #ZIGOUIGOUI
 
 \*------------------------------*/
-.nav {
-  background: rgba(0, 0, 0, 0.2);
-  margin: 0 0 2rem;
-  padding: 2rem;
+.zigouigoui--1, .zigouigoui--2, .zigouigoui--3, .zigouigoui--4 {
+  position: absolute;
+  z-index: -1;
+  width: 150%;
+  transform-origin: center;
 }
 
-/*------------------------------*\
+.zigouigoui--1 {
+  top: -20%;
+}
 
-    #FOOTER
+.zigouigoui--2 {
+  bottom: 7%;
+}
 
-\*------------------------------*/
-.footer {
-  background: rgba(0, 0, 0, 0.2);
-  height: 250px;
-  margin: 6rem 0 0;
+.zigouigoui--3 {
+  bottom: -114%;
+  transform: rotate(234deg) translate(23%, 48%);
+}
+
+.zigouigoui--4 {
+  top: -40px;
+  transform: rotate(17deg) translate(-4%, -33%);
 }
 
 /*------------------------------*\
@@ -273,13 +377,13 @@ article.l-large {
 
 \*------------------------------*/
 .touch .map-holder {
-  opacity: 0;
-  z-index: -1;
+  z-index: 5;
   left: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 100%;
   width: 100%;
+  transform: translateX(100%);
 }
 
 #map-events {
@@ -292,8 +396,7 @@ article.l-large {
 }
 
 .touch .map-holder.is-open {
-  opacity: 1;
-  z-index: 5;
+  transform: translateX(0);
 }
 
 .touch .close {
@@ -307,7 +410,7 @@ article.l-large {
   z-index: 1000;
 }
 
-.no-touch .close, .no-touch .button.js-open-map {
+.no-touch .close, .no-touch .button.js-open-map, .no-touch .js-open-map.button--cta, .no-touch .js-open-map.button--outline, .no-touch .js-open-map.tabs-control__btn, .no-touch .js-open-map.more-tabs, .no-touch .js-open-map.form__submit, .no-touch .js-open-map.form__cancel {
   display: none;
 }
 
@@ -1016,6 +1119,95 @@ article.l-large {
   border-right-color: #fff;
 }
 
+/*------------------------------*\
+
+    #WRAPPERS
+
+\*------------------------------*/
+body {
+  background-color: #E5442F;
+  margin-top: 3.5rem;
+  overflow-x: hidden;
+}
+
+.wrap-base, .section, .footer, .intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.section, .footer {
+  margin-top: 3.5rem;
+}
+
+.wrap-content {
+  position: relative;
+  width: 80%;
+}
+
+article {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+article.l-large {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/*------------------------------*\
+
+    #HEADER
+
+\*------------------------------*/
+.page-header {
+  text-align: left;
+}
+
+/*------------------------------*\
+
+    #NAV
+
+\*------------------------------*/
+.nav {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 0 0 2rem;
+  padding: 2rem;
+}
+
+/*------------------------------*\
+
+    #FOOTER
+
+\*------------------------------*/
+.footer {
+  position: relative;
+  background: #4C322E;
+  padding: 1.5rem 0 3.5rem 0;
+  margin-top: 12rem;
+}
+
+.footer__scene {
+  width: 860px;
+  left: 50%;
+  top: -262px;
+  transform: translateX(-47%);
+  position: absolute;
+}
+
+.wrap-logo {
+  width: 200px;
+  background-color: #FFF;
+  border-radius: 3px;
+  padding: 1.5rem;
+  margin-top: 0.5rem;
+}
+.wrap-logo img {
+  width: 100%;
+}
+
 /*
  * jQuery FlexSlider v2.6.2
  * http://www.woothemes.com/flexslider/
@@ -1338,6 +1530,29 @@ html[xmlns] .flexslider .slides {
     #TABS
 
 \*------------------------------*/
+.tabs-controls {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.tabs-controls.limit .tabs-control__btn:nth-child(n+4) {
+  display: none;
+}
+
+.tabs-control__btn {
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+.more-tabs {
+  margin-top: 0.5rem;
+}
+
+.tabs {
+  padding: 0;
+  margin-bottom: 0;
+}
+
 .tab, .accordion-content {
   display: none;
 }
@@ -1346,20 +1561,203 @@ html[xmlns] .flexslider .slides {
   display: block;
 }
 
+.tab__title {
+  font-weight: 700;
+}
+
+.tab__content {
+  margin-top: 0.5rem;
+}
+
+/*------------------------------*\
+
+    #PARTENAIRES
+
+\*------------------------------*/
+.logos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.logos__logo {
+  width: 31%;
+}
+.logos__logo img {
+  width: 100%;
+  border-radius: 3px;
+}
+
 /*------------------------------*\
 
     #HOMEPAGE
 
 \*------------------------------*/
-.button, .form__submit, .form__cancel {
-  color: white;
+.intro {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.intro h2 {
+  text-align: left;
+}
+
+.pieton-cycliste {
+  margin-top: 1.5rem;
+  margin-left: auto;
+  width: 220px;
+}
+
+.video {
+  margin: 1.5rem 0 3.5rem 0;
+  position: relative;
+}
+.video::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 80%;
+  bottom: -20%;
+  background-color: #FFD52E;
+  transform: scaleX(1.5) rotate(-4deg);
+}
+
+.chemin-pin {
+  position: absolute;
+  z-index: -1;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 960px;
+}
+
+.france {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  top: -20px;
+  width: 70%;
+}
+
+.map-launcher {
+  display: flex;
+  width: 100%;
+  margin: 1.5rem 0 3.5rem 0;
+}
+
+.map-launcher__label,
+.map-launcher__map {
+  flex: 1 0 50%;
+}
+
+.map-launcher__label {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: right;
+  padding-right: 0.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: uppercase;
+}
+
+.map-launcher__map img {
+  width: 100%;
+}
+
+.mode-emploi {
+  margin-top: 3.5rem;
+}
+
+.share {
+  color: #4C322E;
+}
+
+.share__title {
+  color: #4C322E;
+}
+
+.share__subtitle {
+  color: #4E7F4F;
+}
+
+.share {
+  position: relative;
+  width: 100%;
+  padding: 3.5rem 0;
+}
+.share::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFD52E;
+  transform: scaleX(1.1) rotate(1deg);
+  border-radius: 3px;
+}
+
+.bus {
+  transform: translateX(-60px);
+  margin: 1.5rem 0 3.5rem 0;
+  width: 680px;
+}
+
+.wrap-slider {
+  position: relative;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.flexslider {
+  border: none;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  background-color: transparent;
+}
+
+.flex-control-paging li a {
+  border: 3px solid #fff;
+  background-color: transparent;
+}
+.flex-control-paging li a.flex-active {
+  border-color: #4C322E;
+  background-color: #4C322E;
+}
+
+.montagne-eolienne,
+.eolienne {
+  position: absolute;
+  top: 0;
+  transform: translateY(-70%);
+}
+
+.montagne-eolienne {
+  left: 0.5rem;
+  width: 100px;
+}
+
+.eolienne {
+  right: 0.5rem;
+  width: 70px;
+}
+
+.tabs {
+  text-align: left;
+}
+
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel {
   cursor: pointer;
   display: inline-block;
-  font-family: sans-serif;
-  font-weight: bold;
-  padding: 1.33333rem 2rem;
+  font-family: qanelas;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
   position: relative;
-  background-color: #005d8c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1382,7 +1780,7 @@ html[xmlns] .flexslider .slides {
   margin-top: 4rem;
 }
 .form fieldset legend {
-  color: #005d8c;
+  color: #E5442F;
   font-weight: bold;
   font-size: 2rem;
 }
@@ -1422,7 +1820,7 @@ html[xmlns] .flexslider .slides {
 .form select {
   position: relative;
   width: 100%;
-  color: #636363;
+  color: #fff;
   padding: 0 1rem;
   border: 2px solid #ccc;
   height: 4rem;
@@ -1442,7 +1840,7 @@ html[xmlns] .flexslider .slides {
   border-color: #b94a48 transparent transparent transparent;
 }
 .form .has-success .has-content.input-effect--2 ~ label {
-  color: #636363;
+  color: #fff;
 }
 .form .i-required {
   color: #b94a48;
@@ -1513,7 +1911,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .form__control input:checked ~ .form__control__indicator {
-  background: #005d8c;
+  background: #E5442F;
 }
 
 .form__control:hover input:not([disabled]):checked ~ .form__control__indicator, .form__control input:checked:focus ~ .form__control__indicator {
@@ -1578,7 +1976,7 @@ html[xmlns] .flexslider .slides {
   border-radius: 3px;
   border: 2px solid #ccc;
   background: #fff;
-  color: #636363;
+  color: #fff;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1587,7 +1985,7 @@ html[xmlns] .flexslider .slides {
   display: none;
 }
 .form__select:hover, .form__select:focus {
-  color: #005d8c;
+  color: #E5442F;
   background: #f8f8f8;
 }
 .form__select:disabled {
@@ -1614,7 +2012,7 @@ html[xmlns] .flexslider .slides {
   pointer-events: none;
   border-style: solid;
   border-width: 0.8rem 0.5rem 0 0.5rem;
-  border-color: #005d8c transparent transparent transparent;
+  border-color: #E5442F transparent transparent transparent;
 }
 
 /*------------------------------*\
@@ -1682,7 +2080,7 @@ textarea.input-effect--2 ~ .focus-bg {
 }
 
 .input-effect--2:focus ~ label {
-  color: #005d8c;
+  color: #E5442F;
 }
 
 /*------------------------------*\

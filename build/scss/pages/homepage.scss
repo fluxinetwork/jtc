@@ -3,3 +3,167 @@
     #HOMEPAGE
 
 \*------------------------------*/
+
+// INTRO
+
+.intro {
+	@extend .wrap-base;
+	margin-top: $space--s;
+	text-align: left;
+
+	h2 {
+		text-align: left;
+	}
+}
+.pieton-cycliste {
+	margin-top: $space--s;
+	margin-left: auto;
+	width: 220px;
+}
+
+.video {
+	margin: $space--s 0 $space--m 0;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 80%;
+		bottom: -20%;
+		background-color: $c-highlight;
+		transform: scaleX(1.5) rotate(-4deg);
+	}
+}
+
+
+// SOLUTIONS
+
+.chemin-pin {
+	position: absolute;
+	z-index: -1;
+	top: -7px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 960px;
+}
+
+.france {
+	position: absolute;
+	right: 0;
+    z-index: -1;
+    top: -20px;
+    width: 70%;
+}
+
+.map-launcher {
+	display: flex;
+	width: 100%;
+	margin: $space--s 0 $space--m 0;
+}
+.map-launcher__label,
+.map-launcher__map {
+	flex: 1 0 50%;
+}
+.map-launcher__label {
+	@include flex(flex-end center);
+	color: #fff;
+	font-weight: 700;
+	line-height: 1.2;
+	text-align: right;
+	padding-right: $space--xs;
+	@include font-smoothing();
+	text-transform: uppercase;
+}
+.map-launcher__map img {
+	width: 100%;
+}
+
+.mode-emploi {
+	margin-top: $space--m;
+}
+
+
+// SHARE
+
+.share {
+	color: $c-dark;
+}
+.share__title {
+	color: $c-dark;
+}
+.share__subtitle {
+	color: $c-special;
+}
+.share {
+	position: relative;
+	width: 100%;
+	padding: $space--m 0;
+
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $c-highlight;
+		transform: scaleX(1.1) rotate(1deg);
+		border-radius: $radius;
+	}
+}
+
+.bus {
+	transform: translateX(-60px);
+	margin: 1.5rem 0 3.5rem 0;
+	width: 680px;
+}
+
+
+// PHOTOS
+
+.wrap-slider {
+	position: relative;
+	width: 100%;
+	margin-top: $space--s;
+}
+.flexslider {
+	border: none;
+	width: 100%;
+	margin-bottom: $space--s;
+	background-color: transparent;
+}
+.flex-control-paging li a {
+	border: 3px solid #fff;
+	background-color: transparent;
+
+	&.flex-active {
+		border-color: $c-dark;
+		background-color: $c-dark;
+	}
+}
+
+.montagne-eolienne,
+.eolienne {
+	position: absolute;
+	top: 0;
+	transform: translateY(-70%);
+}
+.montagne-eolienne {
+	left: $space--xs;
+	width: 100px;
+}
+.eolienne {
+	right: $space--xs;
+	width: 70px;
+}
+
+
+
+// TEMOIGNAGES
+
+.tabs {
+	text-align: left;
+}

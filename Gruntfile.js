@@ -63,14 +63,14 @@ module.exports = function (grunt) {
 		postcss: {
 		    options: {
 		        map: false,
-		        /*processors: [
+		        processors: [
 		          	require('autoprefixer')({browsers: ['last 2 versions']}),
-		          	require('cssnano')()
-		        ]*/
+		          	//require('cssnano')()
+		        ]
 			},
 			main: {
 				src: 'app/css/main.css',
-				dest: 'app/css/main.min.css'
+				dest: 'app/css/main.css'
 			}
          },
 

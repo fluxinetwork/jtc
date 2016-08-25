@@ -4,14 +4,15 @@
 
 \*------------------------------*/
 
-.touch .map-holder{
-	opacity: 0;
-	z-index: -1;
+.touch .map-holder{ 
+	z-index: 5;
 	left: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 100%;   
     width: 100%; 
+	transform: translateX(100%);
+	@extend %transition;
 }
 
 #map-events{
@@ -22,8 +23,7 @@
     width: 100%; 
 }
 .touch .map-holder.is-open{	
-    opacity: 1;
-    z-index: 5;
+    transform: translateX(0);
 }
 .touch .close{
 	display:inline-block;

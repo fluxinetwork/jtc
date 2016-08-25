@@ -1,0 +1,19 @@
+/*------------------------------*\
+
+    #PARTENAIRES
+
+\*------------------------------*/
+
+.logos {
+	@extend %list-reset;
+	@include flex(space-between null);
+	margin-top: $space--s;
+}
+.logos__logo {
+	width: 31%;
+
+	img {
+		width: 100%;
+		border-radius: $radius;
+	}
+}

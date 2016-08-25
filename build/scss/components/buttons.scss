@@ -6,15 +6,62 @@
 \*------------------------------*/
 
 .button {
-	@extend %button;	
+	@extend %button;
+	border-radius: 40px;
+	@extend %transition;	
 }	
 
+.button--cta {
+	@extend .button;
+	background-color: #fff;
+	color: $c-dark;
+	margin-top: $space--xs;
+	padding: $space--xs*2 $space--s*1.1 !important;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $c-dark;
+		color: #fff;
+	}
+}
+
+.button--outline {
+	@extend .button;
+	border: 3px solid #fff;
+	color: #fff;
+	background-color: transparent;
+
+	&.is-active {
+		border-color: $c-dark;
+		background-color: $c-dark;
+	}
+
+	&:not(.is-active):hover {
+		background-color: #fff;
+		color: $c-dark;
+	}
+}
+
+.link {
+	margin-top: $space--xs;
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 3px solid #fff; 
+	font-weight: 700;
+	@include font-smoothing();
+	@extend %transition;	
+
+	&:hover {
+		border-color: $c-dark;
+	}
+}
+
 .form__submit{
-	@extend %button;
-	background-color:#86bd4c !important;
+	@extend .button;
+	background-color:#86bd4c;
 }
 
 .form__cancel{
-	@extend %button;
-	background-color:$c-error !important;
+	@extend .button;
+	background-color:$c-error;
 }

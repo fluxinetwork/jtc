@@ -4,9 +4,41 @@
 
 \*------------------------------*/
 
+
+.tabs-controls {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: $space--s;
+
+	&.limit .tabs-control__btn:nth-child(n+4) {
+		display: none;
+	}
+}
+.tabs-control__btn {
+	@extend .button--outline;
+	margin: $space--xs $space--xs 0 0;
+}
+.more-tabs {
+	@extend .button--outline;
+	margin-top: $space--xs
+}
+
+.tabs {
+	padding: 0;
+	margin-bottom: 0;
+}
+
 .tab,.accordion-content{
 	display: none;
 }
 .tab.is-open{
 	display: block;
 }
+.tab__title {
+	font-weight: 700;
+}
+.tab__content {
+	margin-top: $space--xs;
+}
+

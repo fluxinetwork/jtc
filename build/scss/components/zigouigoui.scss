@@ -1,0 +1,34 @@
+/*------------------------------*\
+
+    #ZIGOUIGOUI
+
+\*------------------------------*/
+
+%zigouigoui {
+	position: absolute;
+	z-index: -1;
+	width: 150%;
+	transform-origin: center;
+}
+
+.zigouigoui--1 {
+	@extend %zigouigoui;
+	top: -20%;
+}
+
+.zigouigoui--2 {
+	@extend %zigouigoui;
+	bottom: 7%;
+}
+
+.zigouigoui--3 {
+	@extend %zigouigoui;
+	bottom: -114%;
+	transform: rotate(234deg) translate(23%, 48%);
+}
+
+.zigouigoui--4 {
+	@extend %zigouigoui;
+	top: -40px;
+    transform: rotate(17deg) translate(-4%, -33%);
+}

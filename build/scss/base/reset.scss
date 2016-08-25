@@ -6,10 +6,6 @@
 
 /* Ultra light reset */
 
-html {
-	font-size: 62.5%;
-}
-
 body {
 	margin: 0;
 	padding: 0;
@@ -23,8 +19,7 @@ button, input, select, textarea {
 
 img { 
 	display: block;
-	height: auto;
-	max-width: 100%;
+	height: auto; 
 }
 
 svg { max-height: 100% }
