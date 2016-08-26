@@ -4,7 +4,7 @@
 
 \*------------------------------*/
 
-.touch .map-holder{ 
+.map-holder {
 	z-index: 5;
 	left: 0;
     position: fixed;
@@ -13,19 +13,19 @@
     width: 100%; 
 	transform: translateX(100%);
 	@extend %transition;
+
+	&.is-open {	
+		transform: translateX(0);
+	}
 }
 
 #map-events{
-	height:400px;
-}
-.touch #map-events{
 	height: 100%;   
     width: 100%; 
 }
-.touch .map-holder.is-open{	
-    transform: translateX(0);
-}
-.touch .close{
+
+.close {
+	font: 700 qanelas;
 	display:inline-block;
 	position:absolute;
 	background:#fff;
@@ -36,9 +36,25 @@
 	z-index: 1000;
 }
 
-.no-touch .close, .no-touch .button.js-open-map{
-	display:none;
+@media screen and (min-width: $break--m) {
+	.map-holder {
+		position: relative;
+		transform: translateX(0);
+	}
+
+	#map-events{
+		height: 500px;
+		max-width: 800px;
+		margin: 0 auto;
+		box-shadow: $bshadow;
+	}
+
+	.close,
+	.button.js-open-map{
+		display:none;
+	}
 }
+
 
 /* required styles */
 

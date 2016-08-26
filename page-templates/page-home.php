@@ -14,11 +14,11 @@ Template Name: Page d'accueil
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--1">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--2">
 
+		<h2 class="wrap-content"><span>Les solution existent déjà :</span><br>à moi de faire le premier pas !</h2>
+
+		<div class="video"><?php echo get_field('video'); ?></div>
+		
 		<div class="wrap-content">
-			<h2><span>Les solution existent déjà :</span><br>à moi de faire le premier pas !</h2>
-
-			<div class="video"><?php echo get_field('video'); ?></div>
-
 			<p><?php echo get_field('texte_intro'); ?></p>
 
 			<img src="<?php bloginfo('template_url'); ?>/app/img/pieton-cycliste.png" class="pieton-cycliste" />
@@ -29,8 +29,9 @@ Template Name: Page d'accueil
 			<img src="<?php bloginfo('template_url'); ?>/app/img/france.svg" class="france">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--3">
 
-			<header class="wrap-content">
+			<header class="solutions__header wrap-content">
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin.png" class="chemin-pin">
+				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin-plus.png" class="chemin-pin-plus">
 				<h2>Les solutions sont là !</h2>
 				<h3>plus de <?php echo $count_events->publish + 247; ?> événements</h3>
 			</header>
@@ -47,12 +48,16 @@ Template Name: Page d'accueil
 				</div>
 			</a>
 
-			<div class="wrap-content">
-				<p>Vous organisez un évènement ?</p>
-				<a href="<?php echo home_url(); ?>/ajouter-evenement/" class="button--cta">J’inscris mon évènement</a>
+			<div class="organisateur">
+				<div class="organisateur__add">
+					<p>Vous organisez un évènement ?</p>
+					<a href="<?php echo home_url(); ?>/ajouter-evenement/" class="button--cta h3">J’inscris mon évènement</a>
+				</div>
 		
-				<p class="mode-emploi">Vous souhaitez des conseils<br> pour organiser votre évènement ?</p>
-				<a href="#" class="link">Voir le mode d’emploi</a>
+				<div class="organisateur__help">
+					<p class="mode-emploi">Vous souhaitez des conseils<br> pour organiser votre évènement ?</p>
+					<a href="#" class="link p">Voir le mode d’emploi</a>
+				</div>
 			</div>	
 	</section>
 
@@ -72,9 +77,10 @@ Template Name: Page d'accueil
 
 		<?php if( $galerie ): ?>
 			<div class="wrap-slider">
-				<img src="<?php bloginfo('template_url'); ?>/app/img/montagne-eolienne.png" class="montagne-eolienne">
-				<img src="<?php bloginfo('template_url'); ?>/app/img/eolienne.png" class="eolienne">
-
+				<div class="wrap-content">
+					<img src="<?php bloginfo('template_url'); ?>/app/img/montagne-eolienne.png" class="montagne-eolienne">
+					<img src="<?php bloginfo('template_url'); ?>/app/img/eolienne.png" class="eolienne">
+				</div>
 			    <div id="slider" class="flexslider">
 			        <ul class="slides">
 			            <?php foreach( $galerie as $image ): ?>
@@ -98,7 +104,7 @@ Template Name: Page d'accueil
 				<?php if($testimonies): ?>
 					<div class="tabs-controls limit">
 						<?php foreach($testimonies as $row){ ?>
-							<a href="#" class="tabs-control__btn js-tab-btn"><?php echo $row['prenom']; ?></a>
+							<a href="#" class="tabs-control__btn js-tab-btn p"><?php echo $row['prenom']; ?></a>
 						<?php } ?> 
 						<button class="more-tabs js-more-tabs">+</button>
 					</div>

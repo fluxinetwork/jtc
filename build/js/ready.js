@@ -30,6 +30,10 @@ var FOO = {
                 e.preventDefault();
                 $(this).next('.accordion-content').slideToggle();
             });
+            // Animation 
+            $('.solutions__header, .wrap-slider').waypoint(function(){
+                $(this.element).toggleClass('anim');
+            }, {offset: '90%'});
         }
     }
     

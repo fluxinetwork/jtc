@@ -7,3 +7,11 @@
 .page-header {
 	text-align: left;
 }
+
+// MEDIA QUERIES
+
+@media screen and (min-width: $break--m) {
+	.page-header {
+		text-align: center;
+	}
+}

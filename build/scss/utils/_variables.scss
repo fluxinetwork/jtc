@@ -1,11 +1,10 @@
 // BREAKPOINTS
 
 $breakpoints: (
-	xsmall: 320px,
 	small: 480px,
-	medium: 760px, 
-	large: 960px,
-	xlarge: 1200,
+	medium: 620px, 
+	large: 768px,
+	xlarge: 900px,
 );
 
 $break--s: map-get($breakpoints, small);
@@ -54,7 +53,6 @@ $bshadow--heavy: 0 0 30px rgba(0,0,0,0.3);
 $transition: all 0.2s ease-in-out;
 $transition--dynamic: all 0.4s $ease-out-quart;
 
-
 // TYPO
 
 $font-h: qanelas;
@@ -65,15 +63,24 @@ $font-base-size: 16px;
 $font-base-lh: 1.4;
 
 $h1-font-sizes: (
-	null : (rem(30px), 1.2)
+	null : (rem(30px), 1.2),
+	small : (rem(34px)),
+	medium : (rem(36px)),
+	large : (rem(40px))
 );
 
 $h2-font-sizes: (
-	null : (rem(22px), 1.2)
+	null : (rem(20px), 1.2),
+	small : (rem(24px), 1.25),
+	medium : (rem(27px), 1.3),
+	large : (rem(30px), 1.3)
 );
 
 $h3-font-sizes: (
-	null : (rem(15px))
+	null : (rem(16px)),
+	small : (rem(18px)),
+	medium : (rem(19px)),
+	large : (rem(20px))
 );
 
 $h4-font-sizes: (
@@ -89,7 +96,10 @@ $h6-font-sizes: (
 );
 
 $p-font-sizes: (
-	null : (rem(13px))
+	null : (rem(15px)),
+	small : (rem(17px)),
+	medium : (rem(18px)),
+	large : (rem(20px), 1.5)
 );
 
 

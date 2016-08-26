@@ -32,3 +32,14 @@
 	}
 }
 
+@media screen and (min-width: $break--l) {
+		.footer {
+			margin-top: $space--l*2.3;
+			padding: $space--m 0 $space--m*2 0;
+		}
+
+		.wrap-logo {
+			width: 300px;
+		}
+}
+

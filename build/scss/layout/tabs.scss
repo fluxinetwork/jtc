@@ -10,10 +10,6 @@
 	flex-wrap: wrap;
 	width: 100%;
 	margin-top: $space--s;
-
-	&.limit .tabs-control__btn:nth-child(n+4) {
-		display: none;
-	}
 }
 .tabs-control__btn {
 	@extend .button--outline;
@@ -41,4 +37,24 @@
 .tab__content {
 	margin-top: $space--xs;
 }
+
+
+@media screen and (max-width: $break--m) {
+	.tabs-controls.limit .tabs-control__btn:nth-child(n+4) {
+		display: none;
+	}
+}
+
+@media screen and (max-width: $break--l) {
+	.tabs-controls.limit .tabs-control__btn:nth-child(n+5) {
+		display: none;
+	}
+}
+
+@media screen and (max-width: $break--xl) {
+	.tabs-controls.limit .tabs-control__btn:nth-child(n+6) {
+		display: none;
+	}
+}
+
 

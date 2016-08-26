@@ -4,8 +4,13 @@
   list-style: none;
 }
 
-.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel, .link, .touch .map-holder {
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel, .link, .map-holder {
   transition: all 0.2s ease-in-out;
+}
+
+.solutions__header::after, .montagne-eolienne,
+.eolienne {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /*------------------------------*\
@@ -98,14 +103,53 @@ h1,
   line-height: 1.2;
   font-weight: 700;
 }
+@media screen and (min-width: 480px) {
+  h1,
+  .h1 {
+    font-size: 2.125rem;
+  }
+}
+@media screen and (min-width: 620px) {
+  h1,
+  .h1 {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  h1,
+  .h1 {
+    font-size: 2.5rem;
+  }
+}
 
 h2,
 .h2 {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   line-height: 1.2;
   font-weight: 700;
   color: #FFD52E;
   text-align: center;
+}
+@media screen and (min-width: 480px) {
+  h2,
+  .h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+}
+@media screen and (min-width: 620px) {
+  h2,
+  .h2 {
+    font-size: 1.6875rem;
+    line-height: 1.3;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2,
+  .h2 {
+    font-size: 1.875rem;
+    line-height: 1.3;
+  }
 }
 h2 span,
 .h2 span {
@@ -114,10 +158,27 @@ h2 span,
 
 h3,
 .h3 {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   text-align: center;
-  font-weight: 700;
   margin-top: 0.5rem;
+}
+@media screen and (min-width: 480px) {
+  h3,
+  .h3 {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width: 620px) {
+  h3,
+  .h3 {
+    font-size: 1.1875rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  h3,
+  .h3 {
+    font-size: 1.25rem;
+  }
 }
 
 h4,
@@ -135,10 +196,30 @@ h6,
   font-size: 1.2rem;
 }
 
-p {
-  margin-bottom: 0;
+p, .p {
+  font-size: 0.9375rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@media screen and (min-width: 480px) {
+  p, .p {
+    font-size: 1.0625rem;
+  }
+}
+@media screen and (min-width: 620px) {
+  p, .p {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  p, .p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+}
+
+p {
+  margin-bottom: 0;
 }
 p:first-child {
   margin-top: 0;
@@ -205,6 +286,7 @@ p:first-child {
 }
 
 .link {
+  display: inline-block;
   margin-top: 0.5rem;
   color: #fff;
   text-decoration: none;
@@ -350,6 +432,7 @@ p:first-child {
   position: absolute;
   z-index: -1;
   width: 150%;
+  max-width: 870px;
   transform-origin: center;
 }
 
@@ -376,7 +459,7 @@ p:first-child {
     #MAPS
 
 \*------------------------------*/
-.touch .map-holder {
+.map-holder {
   z-index: 5;
   left: 0;
   position: fixed;
@@ -385,21 +468,17 @@ p:first-child {
   width: 100%;
   transform: translateX(100%);
 }
-
-#map-events {
-  height: 400px;
+.map-holder.is-open {
+  transform: translateX(0);
 }
 
-.touch #map-events {
+#map-events {
   height: 100%;
   width: 100%;
 }
 
-.touch .map-holder.is-open {
-  transform: translateX(0);
-}
-
-.touch .close {
+.close {
+  font: 700 qanelas;
   display: inline-block;
   position: absolute;
   background: #fff;
@@ -410,10 +489,30 @@ p:first-child {
   z-index: 1000;
 }
 
-.no-touch .close, .no-touch .button.js-open-map, .no-touch .js-open-map.button--cta, .no-touch .js-open-map.button--outline, .no-touch .js-open-map.tabs-control__btn, .no-touch .js-open-map.more-tabs, .no-touch .js-open-map.form__submit, .no-touch .js-open-map.form__cancel {
-  display: none;
-}
+@media screen and (min-width: 620px) {
+  .map-holder {
+    position: relative;
+    transform: translateX(0);
+  }
 
+  #map-events {
+    height: 500px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .close,
+  .button.js-open-map,
+  .js-open-map.button--cta,
+  .js-open-map.button--outline,
+  .js-open-map.tabs-control__btn,
+  .js-open-map.more-tabs,
+  .js-open-map.form__submit,
+  .js-open-map.form__cancel {
+    display: none;
+  }
+}
 /* required styles */
 .leaflet-pane,
 .leaflet-tile,
@@ -1147,16 +1246,29 @@ body {
   width: 80%;
 }
 
-article {
-  margin: 0 auto;
-  max-width: 960px;
-}
+@media screen and (min-width: 480px) {
+  .section, .footer {
+    margin-top: 8rem;
+  }
 
-article.l-large {
-  margin: 0 auto;
-  max-width: 100%;
+  .wrap-content {
+    max-width: 440px;
+  }
 }
+@media screen and (min-width: 768px) {
+  .section, .footer {
+    margin-top: 9.6rem;
+  }
 
+  .wrap-content {
+    max-width: 500px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .wrap-content {
+    max-width: 550px;
+  }
+}
 /*------------------------------*\
 
     #HEADER
@@ -1166,6 +1278,11 @@ article.l-large {
   text-align: left;
 }
 
+@media screen and (min-width: 620px) {
+  .page-header {
+    text-align: center;
+  }
+}
 /*------------------------------*\
 
     #NAV
@@ -1208,6 +1325,16 @@ article.l-large {
   width: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  .footer {
+    margin-top: 18.4rem;
+    padding: 3.5rem 0 7rem 0;
+  }
+
+  .wrap-logo {
+    width: 300px;
+  }
+}
 /*
  * jQuery FlexSlider v2.6.2
  * http://www.woothemes.com/flexslider/
@@ -1536,9 +1663,6 @@ html[xmlns] .flexslider .slides {
   width: 100%;
   margin-top: 1.5rem;
 }
-.tabs-controls.limit .tabs-control__btn:nth-child(n+4) {
-  display: none;
-}
 
 .tabs-control__btn {
   margin: 0.5rem 0.5rem 0 0;
@@ -1569,6 +1693,21 @@ html[xmlns] .flexslider .slides {
   margin-top: 0.5rem;
 }
 
+@media screen and (max-width: 620px) {
+  .tabs-controls.limit .tabs-control__btn:nth-child(n+4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tabs-controls.limit .tabs-control__btn:nth-child(n+5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .tabs-controls.limit .tabs-control__btn:nth-child(n+6) {
+    display: none;
+  }
+}
 /*------------------------------*\
 
     #PARTENAIRES
@@ -1608,6 +1747,8 @@ html[xmlns] .flexslider .slides {
 }
 
 .video {
+  width: 100%;
+  max-width: 80%;
   margin: 1.5rem 0 3.5rem 0;
   position: relative;
 }
@@ -1615,20 +1756,26 @@ html[xmlns] .flexslider .slides {
   content: '';
   position: absolute;
   z-index: -1;
-  width: 100%;
+  width: 200%;
   height: 80%;
-  bottom: -20%;
+  bottom: -10%;
+  left: 50%;
   background-color: #FFD52E;
-  transform: scaleX(1.5) rotate(-4deg);
+  transform: rotate(-4deg) translateX(-50%);
+  border-radius: 3px;
 }
 
 .chemin-pin {
   position: absolute;
   z-index: -1;
   top: -7px;
+  width: 960px;
   left: 50%;
   transform: translateX(-50%);
-  width: 960px;
+}
+
+.chemin-pin-plus {
+  display: none;
 }
 
 .france {
@@ -1666,6 +1813,13 @@ html[xmlns] .flexslider .slides {
 
 .map-launcher__map img {
   width: 100%;
+}
+
+.organisateur__help {
+  margin-top: 1.5rem;
+}
+.organisateur__help .link {
+  margin-top: 0.5rem;
 }
 
 .mode-emploi {
@@ -1709,6 +1863,9 @@ html[xmlns] .flexslider .slides {
 }
 
 .wrap-slider {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   position: relative;
   width: 100%;
   margin-top: 1.5rem;
@@ -1734,23 +1891,168 @@ html[xmlns] .flexslider .slides {
 .eolienne {
   position: absolute;
   top: 0;
-  transform: translateY(-70%);
+  transform: translateY(100%);
 }
 
 .montagne-eolienne {
-  left: 0.5rem;
+  left: -20px;
   width: 100px;
 }
 
 .eolienne {
-  right: 0.5rem;
+  right: 20px;
   width: 70px;
+  transition-delay: 0.2s;
+}
+
+.wrap-slider.anim .montagne-eolienne,
+.wrap-slider.anim .eolienne {
+  transform: translateY(-70%);
 }
 
 .tabs {
   text-align: left;
 }
 
+@media screen and (min-width: 480px) {
+  .chemin-pin {
+    top: -11px;
+    width: 1150px;
+  }
+}
+@media screen and (min-width: 620px) {
+  .intro h2 {
+    text-align: center;
+  }
+  .intro .video {
+    margin-bottom: 8rem;
+    max-width: 640px;
+  }
+  .intro .video::after {
+    width: 150%;
+  }
+
+  .chemin-pin,
+  .france {
+    display: none;
+  }
+
+  .chemin-pin-plus {
+    display: block;
+    width: 870px;
+    margin-bottom: 1.5rem;
+  }
+
+  .solutions__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  .solutions__header::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+    width: 410px;
+    height: 410px;
+    background-color: rgba(255, 213, 46, 0.3);
+    border-radius: 100%;
+    transform: scale(0);
+  }
+  .solutions__header.anim::after {
+    transform: scale(1);
+  }
+
+  .map-launcher {
+    display: none;
+  }
+
+  .share {
+    width: 480px;
+  }
+
+  .bus {
+    transform: translateX(0);
+    width: 780px;
+    margin-top: 3.5rem;
+  }
+}
+@media screen and (min-width: 620px) {
+  .pieton-cycliste {
+    width: 300px;
+  }
+
+  .organisateur {
+    display: flex;
+    justify-content: center;
+    width: 740px;
+    margin-top: 3.5rem;
+  }
+
+  .organisateur__add {
+    margin-right: 0.75rem;
+  }
+
+  .organisateur__help {
+    margin-top: 0;
+    text-align: left;
+    margin-left: 0.75rem;
+  }
+  .organisateur__help .link {
+    margin-top: 0.2rem;
+  }
+
+  .montagne-eolienne {
+    width: 130px;
+  }
+
+  .eolienne {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .intro {
+    margin-top: 3.5rem;
+  }
+
+  .organisateur__add {
+    margin-right: 1.75rem;
+  }
+
+  .organisateur__help {
+    margin-left: 1.75rem;
+  }
+
+  .bus {
+    width: 870px;
+  }
+
+  .montagne-eolienne {
+    left: -5%;
+    width: 160px;
+  }
+
+  .eolienne {
+    right: 5%;
+    width: 115px;
+  }
+
+  .flexslider {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+  }
+  .flexslider img {
+    border-radius: 3px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .video {
+    margin-top: 2.25rem;
+  }
+}
 .button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel {
   cursor: pointer;
   display: inline-block;

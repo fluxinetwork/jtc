@@ -22,6 +22,8 @@
 }
 
 .video {
+	width: 100%;
+	max-width: 80%;
 	margin: $space--s 0 $space--m 0;
 	position: relative;
 
@@ -29,24 +31,33 @@
 		content: '';
 		position: absolute;
 		z-index: -1;
-		width: 100%;
+		width: 200%;
 		height: 80%;
-		bottom: -20%;
+		bottom: -10%;
+		left: 50%;
 		background-color: $c-highlight;
-		transform: scaleX(1.5) rotate(-4deg);
+		transform: rotate(-4deg) translateX(-50%);
+		border-radius: 3px;
 	}
 }
 
 
 // SOLUTIONS
 
+.solutions__header::after {
+	@extend %transition--dynamic;
+}
+
 .chemin-pin {
 	position: absolute;
 	z-index: -1;
 	top: -7px;
+	width: 960px;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 960px;
+}
+.chemin-pin-plus {
+	display: none;
 }
 
 .france {
@@ -80,6 +91,13 @@
 	width: 100%;
 }
 
+.organisateur__help {
+	margin-top: $space--s;
+
+	.link {
+		margin-top: $space--xs;
+	}
+}
 .mode-emploi {
 	margin-top: $space--m;
 }
@@ -125,6 +143,7 @@
 // PHOTOS
 
 .wrap-slider {
+	@include flex(null center, true);
 	position: relative;
 	width: 100%;
 	margin-top: $space--s;
@@ -149,21 +168,175 @@
 .eolienne {
 	position: absolute;
 	top: 0;
-	transform: translateY(-70%);
+	transform: translateY(100%);
+	@extend %transition--dynamic;
 }
 .montagne-eolienne {
-	left: $space--xs;
+	left: -20px;
 	width: 100px;
 }
 .eolienne {
-	right: $space--xs;
+	right: 20px;
 	width: 70px;
+	transition-delay: 0.2s;
 }
 
+.wrap-slider.anim {
+	.montagne-eolienne,
+	.eolienne {
+		transform: translateY(-70%);
+	}
+}
 
 
 // TEMOIGNAGES
 
 .tabs {
 	text-align: left;
+}
+
+
+// MEDIA QUERIES
+
+@media screen and (min-width: $break--s) {
+	.chemin-pin {
+		top: -11px;
+		width: 1150px;
+	}
+}
+
+@media screen and (min-width: $break--m) {
+	.intro {
+		h2 {
+			text-align: center;
+		}
+
+		.video {
+			margin-bottom: $space--l;
+			max-width: 640px;
+
+			&::after {
+				width: 150%;
+			}
+		}
+	}
+
+	.chemin-pin,
+	.france {
+		display: none;
+	}
+	.chemin-pin-plus {
+		display: block;
+		width: 870px;
+		margin-bottom: $space--s;
+	}
+
+	.solutions__header {
+		@include flex(null center, true);
+		margin-bottom: $space--s;
+
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: -40px;
+			width: 410px;
+			height: 410px;
+			background-color: rgba($c-highlight, 0.3);
+			border-radius: 100%;
+			transform: scale(0);
+		}
+
+		&.anim::after {
+			transform: scale(1);
+		}
+	}
+
+	.map-launcher {
+		display: none;
+	}
+
+
+	.share {
+		width: 480px;
+	}
+	.bus {
+		transform: translateX(0);
+		width: 780px;
+		margin-top: $space--m;
+	}
+}
+
+@media screen and (min-width: $break--m) {
+	.pieton-cycliste {
+		width: 300px;
+	}
+
+	.organisateur {
+		@include flex(center null);
+		width: 740px;
+		margin-top: $space--m;
+	}
+	.organisateur__add {
+		margin-right: $space--s/2;
+	}
+	.organisateur__help {
+		margin-top: 0;
+		text-align: left;	
+		margin-left: $space--s/2;
+
+		.link {
+			margin-top: $space--xs*0.4;
+		}
+	}
+
+	.montagne-eolienne {
+		width: 130px;
+	}
+	.eolienne {
+		width: 100px;
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.intro {
+		margin-top: $space--m;
+	}
+
+	.organisateur__add {
+		margin-right: $space--m/2;
+	}
+	.organisateur__help {
+		margin-left: $space--m/2;
+	}
+
+	.bus {
+		width: 870px;
+	}
+
+	.montagne-eolienne {
+		left: -5%;
+		width: 160px;
+	}
+	.eolienne {
+		right: 5%;
+		width: 115px;
+	}
+
+	.flexslider {
+		max-width: 768px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: $radius;
+
+		img {
+			border-radius: $radius;
+		}
+	}
+}
+
+@media screen and (min-width: $break--xl) {
+	.video {
+		margin-top: $space--s*1.5;
+	}
 }
