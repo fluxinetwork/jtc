@@ -14,7 +14,7 @@ function custom_remove_no_admin_access(){
     die();
   }
 }
-add_action( 'admin_init', 'custom_remove_no_admin_access', 1 );
+//add_action( 'admin_init', 'custom_remove_no_admin_access', 1 );
 
 /**
  * Remove unnecessary admin menu
