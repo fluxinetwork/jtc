@@ -90,7 +90,8 @@ body {
   color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .form fieldset legend, .h3, .h4, .h5, .h6 {
   margin: 0;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -123,7 +124,8 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+.form fieldset legend {
   font-size: 1.25rem;
   line-height: 1.2;
   font-weight: 700;
@@ -132,27 +134,31 @@ h2,
 }
 @media screen and (min-width: 480px) {
   h2,
-  .h2 {
+  .h2,
+  .form fieldset legend {
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media screen and (min-width: 620px) {
   h2,
-  .h2 {
+  .h2,
+  .form fieldset legend {
     font-size: 1.6875rem;
     line-height: 1.3;
   }
 }
 @media screen and (min-width: 768px) {
   h2,
-  .h2 {
+  .h2,
+  .form fieldset legend {
     font-size: 1.875rem;
     line-height: 1.3;
   }
 }
 h2 span,
-.h2 span {
+.h2 span,
+.form fieldset legend span {
   font-weight: 400;
 }
 
@@ -296,6 +302,7 @@ p:first-child {
   -moz-osx-font-smoothing: grayscale;
 }
 .link:hover {
+  color: #4C322E;
   border-color: #4C322E;
 }
 
@@ -1891,7 +1898,7 @@ html[xmlns] .flexslider .slides {
 .eolienne {
   position: absolute;
   top: 0;
-  transform: translateY(100%);
+  transform: translateY(0);
 }
 
 .montagne-eolienne {
@@ -2069,7 +2076,12 @@ html[xmlns] .flexslider .slides {
     # FORMS
 
 \*------------------------------*/
+.form-header {
+  margin-top: 3.5rem;
+}
+
 .form {
+  margin: 1.5rem auto 0 auto;
   /* Error validator js */
 }
 .form :focus {
@@ -2077,14 +2089,17 @@ html[xmlns] .flexslider .slides {
 }
 .form fieldset {
   padding: 0 2rem 2rem;
-  border: 2px solid #eee;
+  border: 3px solid #4C322E;
   border-radius: 3px;
   margin-top: 4rem;
 }
 .form fieldset legend {
-  color: #E5442F;
-  font-weight: bold;
-  font-size: 2rem;
+  font-weight: 400;
+  padding: 0 0.5rem;
+}
+.form label {
+  text-align: left;
+  color: #fff !important;
 }
 .form .form__row {
   position: relative;
@@ -2124,19 +2139,36 @@ html[xmlns] .flexslider .slides {
   width: 100%;
   color: #fff;
   padding: 0 1rem;
-  border: 2px solid #ccc;
+  border: 3px solid #fff;
   height: 4rem;
+  text-align: left;
+  background-color: transparent !important;
+}
+.form input[type=text].error,
+.form input[type=date].error,
+.form input[type=datetime].error,
+.form input[type=number].error,
+.form input[type=search].error,
+.form input[type=time].error,
+.form input[type=tel].error,
+.form input[type=url].error,
+.form input[type=email].error,
+.form input[type=password].error,
+.form textarea.error,
+.form select.error {
+  border-color: #4C322E !important;
 }
 .form textarea {
   height: 12rem;
   padding: 1rem;
   resize: none;
+  display: block;
 }
 .form select {
   padding: 0 0.8rem;
 }
 .form .has-error label {
-  color: #d59392;
+  color: #FFD52E !important;
 }
 .form .has-error .form__select__arrow {
   border-color: #b94a48 transparent transparent transparent;
@@ -2145,17 +2177,17 @@ html[xmlns] .flexslider .slides {
   color: #fff;
 }
 .form .i-required {
-  color: #b94a48;
+  color: #4C322E;
   font-style: normal;
   font-weight: bold;
   margin-left: 2px;
 }
 .form .help-block.form-error {
-  background: #b94a48;
+  background: #4C322E;
   border-radius: 0 0 3px 3px;
   color: #fff;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   position: relative;
   top: -2px;
   padding: 0.5rem 1.5rem;
@@ -2163,6 +2195,29 @@ html[xmlns] .flexslider .slides {
 .form .form__control--checkbox .help-block.form-error {
   border-radius: 3px;
   margin-left: 1rem;
+}
+.form .zigouigouis {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.form .zigouigoui {
+  bottom: auto;
+  position: relative;
+}
+.form .zigouigoui--1 {
+  top: 0%;
+}
+.form .zigouigoui--2 {
+  top: 15%;
+}
+.form .zigouigoui--3 {
+  top: 35%;
+}
+.form .zigouigoui--4 {
+  top: 40%;
 }
 
 .form__group, .form__row, .form__select {
@@ -2185,7 +2240,7 @@ html[xmlns] .flexslider .slides {
   display: block;
   position: relative;
   margin-top: 1.5rem;
-  padding-left: 3rem;
+  padding-left: 1.8rem;
   cursor: pointer;
 }
 
@@ -2197,11 +2252,19 @@ html[xmlns] .flexslider .slides {
 
 .form__control__indicator {
   position: absolute;
-  top: -2px;
+  top: 0;
   left: 0;
   height: 20px;
   width: 20px;
-  background: #ccc;
+  border: 3px solid #fff;
+  border-radius: 100%;
+}
+.form__control__indicator:not(:checked):hover {
+  background-color: #FFF !important;
+}
+.form__control__indicator:checked {
+  border-color: #4C322E !important;
+  background-color: #4C322E !important;
 }
 
 .form__control--radio .form__control__indicator {
@@ -2209,7 +2272,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .form__control:hover input ~ .form__control__indicator, .form__control input:focus ~ .form__control__indicator {
-  background: #ccc;
+  background: #fff;
 }
 
 .form__control input:checked ~ .form__control__indicator {
@@ -2217,19 +2280,13 @@ html[xmlns] .flexslider .slides {
 }
 
 .form__control:hover input:not([disabled]):checked ~ .form__control__indicator, .form__control input:checked:focus ~ .form__control__indicator {
-  background: #0e647d;
+  background: #4C322E;
 }
 
 .form__control input:disabled ~ .form__control__indicator {
   background: #ccc;
   opacity: 0.6;
   pointer-events: none;
-}
-
-.form__control__indicator:after {
-  content: '';
-  position: absolute;
-  display: none;
 }
 
 .form__control input:checked ~ .form__control__indicator:after {
@@ -2323,7 +2380,7 @@ html[xmlns] .flexslider .slides {
 
 \*------------------------------*/
 .label-effect--1 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   position: absolute;
   top: -1.8rem;
   opacity: 0;
@@ -2361,7 +2418,7 @@ textarea.input-effect--2 ~ .focus-bg {
 .input-effect--2:focus ~ .focus-bg, .has-content.input-effect--2 ~ .focus-bg {
   transition: 0.3s;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .input-effect--2 ~ label {
@@ -2377,7 +2434,7 @@ textarea.input-effect--2 ~ .focus-bg {
 .input-effect--2:focus ~ label, .has-content.input-effect--2 ~ label {
   top: -1.8rem;
   left: 0;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   transition: 0.2s;
 }
 

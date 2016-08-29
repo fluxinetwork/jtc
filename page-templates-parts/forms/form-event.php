@@ -4,7 +4,13 @@
  */
 ?>
 
-<div class="form">
+<div class="form wrap-content">
+	<div class="zigouigouis">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui zigouigoui--1">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui zigouigoui--2">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui zigouigoui--3">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui zigouigoui--4">
+	</div>
 	<form id="form-manage-event" role="form">
 
 		<fieldset>
@@ -159,7 +165,7 @@
 	    <div class="notify"></div>
 
 	    <div class="form__buttons">	    		
-	    	<button type="submit" id="submit-manage-event" class="form__submit">Ajouter</button>
+	    	<button type="submit" id="submit-manage-event" class="button--cta">Ajouter</button>
 	    </div>
 
 	</form>

@@ -7,7 +7,11 @@
 var FOO = {
     common: {
         init: function() {          
-           
+           // Zigouigoui
+           $('img[class*="zigouigoui"]').waypoint(function(){
+               $(this.element).toggleClass('parallax');
+           }, {offset: '100%'});
+           parazigouigoui();
         }
     },
     home: {

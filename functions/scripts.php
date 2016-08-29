@@ -93,7 +93,7 @@ function enqueue_scripts() {
     wp_register_script( 'datetimepicker', THEME_DIR_PATH . '/app/js/vendors/datetimepicker/datetimepicker.js', array(), null, true );
 
     // EVENT
-    wp_register_script( 'form-event', THEME_DIR_PATH . '/app/js/modules/form-event.js', array('jQuery', 'form-validator', 'datetimepicker'), null, true );
+    wp_register_script( 'form-event', THEME_DIR_PATH . '/app/js/modules/form-event.js', array('jQuery', 'form-validator', 'datetimepicker', 'waypoint'), null, true );
     if( is_page_template( 'page-templates/page-manage-event.php' ) ){
         wp_localize_script( 'form-event', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) ); 
         wp_enqueue_script('form-event');      

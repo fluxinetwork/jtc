@@ -53,6 +53,7 @@
 	@extend %transition;	
 
 	&:hover {
+		color: $c-dark;
 		border-color: $c-dark;
 	}
 }
