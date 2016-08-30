@@ -4,11 +4,11 @@
   list-style: none;
 }
 
-.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel, .link, .map-holder {
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .link, .map-holder, [class^="icon-"], [class*=" icon-"] {
   transition: all 0.2s ease-in-out;
 }
 
-.solutions__header::after, .montagne-eolienne,
+.video::after, .solutions__header::after, .montagne-eolienne,
 .eolienne {
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -23,7 +23,7 @@
   opacity: 0;
 }
 
-.is-hide {
+.is-none {
   display: none;
 }
 
@@ -91,7 +91,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .form fieldset legend, .h3, .h4, .h5, .h6 {
+.h1, .h2, .single-title, .infos__ville, .h3, .form fieldset legend, .h4, .h5, .h6 {
   margin: 0;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6,
 h1,
 .h1 {
   font-size: 1.875rem;
-  line-height: 1.2;
+  line-height: 1;
   font-weight: 700;
 }
 @media screen and (min-width: 480px) {
@@ -119,14 +119,15 @@ h1,
 @media screen and (min-width: 768px) {
   h1,
   .h1 {
-    font-size: 2.5rem;
+    font-size: 2.8125rem;
   }
 }
 
 h2,
 .h2,
-.form fieldset legend {
-  font-size: 1.25rem;
+.single-title,
+.infos__ville {
+  font-size: 1.3125rem;
   line-height: 1.2;
   font-weight: 700;
   color: #FFD52E;
@@ -135,7 +136,8 @@ h2,
 @media screen and (min-width: 480px) {
   h2,
   .h2,
-  .form fieldset legend {
+  .single-title,
+  .infos__ville {
     font-size: 1.5rem;
     line-height: 1.25;
   }
@@ -143,7 +145,8 @@ h2,
 @media screen and (min-width: 620px) {
   h2,
   .h2,
-  .form fieldset legend {
+  .single-title,
+  .infos__ville {
     font-size: 1.6875rem;
     line-height: 1.3;
   }
@@ -151,39 +154,44 @@ h2,
 @media screen and (min-width: 768px) {
   h2,
   .h2,
-  .form fieldset legend {
-    font-size: 1.875rem;
+  .single-title,
+  .infos__ville {
+    font-size: 1.9375rem;
     line-height: 1.3;
   }
 }
 h2 span,
 .h2 span,
-.form fieldset legend span {
+.single-title span,
+.infos__ville span {
   font-weight: 400;
 }
 
 h3,
-.h3 {
-  font-size: 1rem;
+.h3,
+.form fieldset legend {
+  font-size: 1.125rem;
   text-align: center;
-  margin-top: 0.5rem;
 }
 @media screen and (min-width: 480px) {
   h3,
-  .h3 {
-    font-size: 1.125rem;
+  .h3,
+  .form fieldset legend {
+    font-size: 1.25rem;
   }
 }
 @media screen and (min-width: 620px) {
   h3,
-  .h3 {
-    font-size: 1.1875rem;
+  .h3,
+  .form fieldset legend {
+    font-size: 1.375rem;
   }
 }
 @media screen and (min-width: 768px) {
   h3,
-  .h3 {
-    font-size: 1.25rem;
+  .h3,
+  .form fieldset legend {
+    font-size: 1.4375rem;
   }
 }
 
@@ -202,23 +210,27 @@ h6,
   font-size: 1.2rem;
 }
 
-p, .p {
+p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+.infos--adresse {
   font-size: 0.9375rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 @media screen and (min-width: 480px) {
-  p, .p {
+  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+  .infos--adresse {
     font-size: 1.0625rem;
   }
 }
 @media screen and (min-width: 620px) {
-  p, .p {
+  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+  .infos--adresse {
     font-size: 1.125rem;
   }
 }
 @media screen and (min-width: 768px) {
-  p, .p {
+  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+  .infos--adresse {
     font-size: 1.25rem;
     line-height: 1.5;
   }
@@ -229,6 +241,18 @@ p {
 }
 p:first-child {
   margin-top: 0;
+}
+
+.ta--l {
+  text-align: left;
+}
+
+.ta--c {
+  text-align: center;
+}
+
+.ta--r {
+  text-align: right;
 }
 
 @font-face {
@@ -245,7 +269,14 @@ p:first-child {
   font-weight: 700;
   font-style: normal;
 }
-.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel {
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icofont/icomoon.eot?3ypnj");
+  src: url("../fonts/icofont/icomoon.eot?3ypnj#iefix") format("embedded-opentype"), url("../fonts/icofont/icomoon.woff2?3ypnj") format("woff2"), url("../fonts/icofont/icomoon.ttf?3ypnj") format("truetype"), url("../fonts/icofont/icomoon.woff?3ypnj") format("woff"), url("../fonts/icofont/icomoon.svg?3ypnj#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs {
   cursor: pointer;
   display: inline-block;
   font-family: qanelas;
@@ -261,7 +292,7 @@ p:first-child {
     #BUTTONS
 
 \*------------------------------*/
-.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel {
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs {
   border-radius: 40px;
 }
 
@@ -278,6 +309,8 @@ p:first-child {
 }
 
 .button--outline, .tabs-control__btn, .more-tabs {
+  display: flex !important;
+  align-items: center;
   border: 3px solid #fff;
   color: #fff;
   background-color: transparent;
@@ -288,6 +321,9 @@ p:first-child {
 }
 .button--outline:not(.is-active):hover, .tabs-control__btn:not(.is-active):hover, .more-tabs:not(.is-active):hover {
   background-color: #fff;
+  color: #4C322E;
+}
+.button--outline:not(.is-active):hover span, .tabs-control__btn:not(.is-active):hover span, .more-tabs:not(.is-active):hover span {
   color: #4C322E;
 }
 
@@ -302,16 +338,7 @@ p:first-child {
   -moz-osx-font-smoothing: grayscale;
 }
 .link:hover {
-  color: #4C322E;
   border-color: #4C322E;
-}
-
-.form__submit {
-  background-color: #86bd4c;
-}
-
-.form__cancel {
-  background-color: #b94a48;
 }
 
 /*------------------------------*\
@@ -430,6 +457,16 @@ p:first-child {
   line-height: 1;
 }
 
+@media screen and (min-width: 620px) {
+  .macaron__shape {
+    transform: scale(1.35);
+  }
+}
+@media screen and (min-width: 768px) {
+  .macaron__shape {
+    transform: scale(1.5);
+  }
+}
 /*------------------------------*\
 
     #ZIGOUIGOUI
@@ -444,23 +481,28 @@ p:first-child {
 }
 
 .zigouigoui--1 {
-  top: -20%;
+  top: -15%;
 }
 
 .zigouigoui--2 {
-  bottom: 7%;
+  bottom: 0%;
 }
 
 .zigouigoui--3 {
-  bottom: -114%;
+  bottom: -120%;
   transform: rotate(234deg) translate(23%, 48%);
 }
 
 .zigouigoui--4 {
-  top: -40px;
+  top: -5%;
   transform: rotate(17deg) translate(-4%, -33%);
 }
 
+@media screen and (min-width: 768px) {
+  .zigouigoui--3 {
+    transform: rotate(234deg) translate(36%, 46%);
+  }
+}
 /*------------------------------*\
 
     #MAPS
@@ -514,9 +556,7 @@ p:first-child {
   .js-open-map.button--cta,
   .js-open-map.button--outline,
   .js-open-map.tabs-control__btn,
-  .js-open-map.more-tabs,
-  .js-open-map.form__submit,
-  .js-open-map.form__cancel {
+  .js-open-map.more-tabs {
     display: none;
   }
 }
@@ -1227,6 +1267,97 @@ p:first-child {
 
 /*------------------------------*\
 
+    #ICONS
+
+\*------------------------------*/
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 0.5rem;
+  color: #fff;
+}
+
+.icon--round {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -105%);
+  border-radius: 100%;
+  padding: 0.5rem;
+  background: #FFD52E;
+  color: #E5442F;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+
+.icon-twitter:before {
+  content: "\ea96";
+}
+
+.icon-clock:before {
+  content: "\e900";
+}
+
+.icon-reply:before {
+  content: "\e90b";
+}
+
+.icon-bubble:before {
+  content: "\e901";
+}
+
+.icon-users:before {
+  content: "\e902";
+}
+
+.icon-image:before {
+  content: "\e903";
+}
+
+.icon-cog:before {
+  content: "\e904";
+}
+
+.icon-calendar:before {
+  content: "\e905";
+}
+
+.icon-map-marker:before {
+  content: "\e906";
+}
+
+.icon-store:before {
+  content: "\e907";
+}
+
+.icon-heart:before {
+  content: "\e908";
+}
+
+.icon-bookmark:before {
+  content: "\e90c";
+}
+
+.icon-plus:before {
+  content: "\e909";
+}
+
+.icon-browser:before {
+  content: "\e90a";
+}
+
+/*------------------------------*\
+
     #WRAPPERS
 
 \*------------------------------*/
@@ -1285,7 +1416,7 @@ body {
   text-align: left;
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 480px) {
   .page-header {
     text-align: center;
   }
@@ -1317,7 +1448,7 @@ body {
   width: 860px;
   left: 50%;
   top: -262px;
-  transform: translateX(-47%);
+  transform: translate(-47%, 10%);
   position: absolute;
 }
 
@@ -1330,6 +1461,21 @@ body {
 }
 .wrap-logo img {
   width: 100%;
+}
+
+.wrap-back {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  background-color: #4C322E;
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wrap-back a:nth-child(2) {
+  margin-left: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -1768,8 +1914,12 @@ html[xmlns] .flexslider .slides {
   bottom: -10%;
   left: 50%;
   background-color: #FFD52E;
-  transform: rotate(-4deg) translateX(-50%);
+  transform: rotate(-4deg) translateX(-50%) scaleX(0);
   border-radius: 3px;
+  transition-delay: 0.2s;
+}
+.video.anim::after {
+  transform: rotate(-4deg) translateX(-50%) scaleX(1);
 }
 
 .chemin-pin {
@@ -1779,10 +1929,11 @@ html[xmlns] .flexslider .slides {
   width: 960px;
   left: 50%;
   transform: translateX(-50%);
+  display: none;
 }
 
 .chemin-pin-plus {
-  display: none;
+  display: none !important;
 }
 
 .france {
@@ -1960,9 +2111,9 @@ html[xmlns] .flexslider .slides {
     content: '';
     position: absolute;
     z-index: -1;
-    top: -40px;
-    width: 410px;
-    height: 410px;
+    top: -80px;
+    width: 480px;
+    height: 480px;
     background-color: rgba(255, 213, 46, 0.3);
     border-radius: 100%;
     transform: scale(0);
@@ -2007,7 +2158,7 @@ html[xmlns] .flexslider .slides {
     margin-left: 0.75rem;
   }
   .organisateur__help .link {
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
   }
 
   .montagne-eolienne {
@@ -2060,7 +2211,7 @@ html[xmlns] .flexslider .slides {
     margin-top: 2.25rem;
   }
 }
-.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs, .form__submit, .form__cancel {
+.button, .button--cta, .button--outline, .tabs-control__btn, .more-tabs {
   cursor: pointer;
   display: inline-block;
   font-family: qanelas;
@@ -2078,6 +2229,7 @@ html[xmlns] .flexslider .slides {
 \*------------------------------*/
 .form-header {
   margin-top: 3.5rem;
+  text-transform: uppercase;
 }
 
 .form {
@@ -2089,12 +2241,11 @@ html[xmlns] .flexslider .slides {
 }
 .form fieldset {
   padding: 0 2rem 2rem;
-  border: 3px solid #4C322E;
+  border: 3px solid rgba(76, 50, 46, 0.2);
   border-radius: 3px;
   margin-top: 4rem;
 }
 .form fieldset legend {
-  font-weight: 400;
   padding: 0 0.5rem;
 }
 .form label {
@@ -2168,7 +2319,9 @@ html[xmlns] .flexslider .slides {
   padding: 0 0.8rem;
 }
 .form .has-error label {
-  color: #FFD52E !important;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .form .has-error .form__select__arrow {
   border-color: #b94a48 transparent transparent transparent;
@@ -2194,7 +2347,7 @@ html[xmlns] .flexslider .slides {
 }
 .form .form__control--checkbox .help-block.form-error {
   border-radius: 3px;
-  margin-left: 1rem;
+  margin-top: 0.5rem;
 }
 .form .zigouigouis {
   position: absolute;
@@ -2203,7 +2356,7 @@ html[xmlns] .flexslider .slides {
   flex-direction: column;
   height: 100%;
 }
-.form .zigouigoui {
+.form img[class*="zigouigoui"] {
   bottom: auto;
   position: relative;
 }
@@ -2214,14 +2367,20 @@ html[xmlns] .flexslider .slides {
   top: 15%;
 }
 .form .zigouigoui--3 {
-  top: 35%;
+  top: 37%;
 }
 .form .zigouigoui--4 {
   top: 40%;
 }
 
 .form__group, .form__row, .form__select {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
+}
+.form__group.ajout, .form__row.ajout, .form__select.ajout {
+  margin-top: 1.5rem;
+}
+.form__group.ajout label, .form__row.ajout label, .form__select.ajout label {
+  margin-top: 0;
 }
 
 .form__buttons {
@@ -2259,9 +2418,6 @@ html[xmlns] .flexslider .slides {
   border: 3px solid #fff;
   border-radius: 100%;
 }
-.form__control__indicator:not(:checked):hover {
-  background-color: #FFF !important;
-}
 .form__control__indicator:checked {
   border-color: #4C322E !important;
   background-color: #4C322E !important;
@@ -2272,11 +2428,11 @@ html[xmlns] .flexslider .slides {
 }
 
 .form__control:hover input ~ .form__control__indicator, .form__control input:focus ~ .form__control__indicator {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .form__control input:checked ~ .form__control__indicator {
-  background: #E5442F;
+  background: #4C322E;
 }
 
 .form__control:hover input:not([disabled]):checked ~ .form__control__indicator, .form__control input:checked:focus ~ .form__control__indicator {
@@ -2987,5 +3143,95 @@ textarea.input-effect--2 ~ .focus-bg {
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em;
+  }
+}
+/*------------------------------*\
+
+    #SINGLE
+
+\*------------------------------*/
+.single .section:first-child, .single .footer:first-child {
+  margin-top: 0;
+}
+
+.single-title {
+  margin-top: 3.5rem;
+  text-transform: uppercase;
+}
+
+.infos, .infos--adresse {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  border: 3px solid #fff;
+  padding: 1.5rem;
+  border-radius: 3px 3px 0 0;
+  width: 100%;
+}
+
+.infos--adresse {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
+}
+
+.infos__ville {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+  line-height: 1;
+  padding-bottom: 1.5rem;
+}
+
+.infos__details {
+  padding-top: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .infos, .infos--adresse {
+    flex-direction: row;
+    padding: 1.5rem;
+    width: 120%;
+    position: relative;
+    left: -10%;
+    background-image: url("../img/montagne-eolienne.png");
+    background-repeat: no-repeat;
+    background-position: right 0 bottom -40px;
+    background-size: 120px;
+  }
+
+  .infos--adresse {
+    background: none;
+  }
+
+  .infos__ville {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0;
+    border-right: 3px solid #fff;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    min-width: 30%;
+    max-width: 40%;
+  }
+
+  .infos__details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+  }
+  .infos__details div {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 900px) {
+  .infos, .infos--adresse {
+    background-size: 140px;
+    background-position: right 0 bottom -50px;
   }
 }

@@ -14,22 +14,28 @@
 
 .zigouigoui--1 {
 	@extend %zigouigoui;
-	top: -20%;
+	top: -15%;
 }
 
 .zigouigoui--2 {
 	@extend %zigouigoui;
-	bottom: 7%;
+	bottom: 0%;
 }
 
 .zigouigoui--3 {
 	@extend %zigouigoui;
-	bottom: -114%;
+	bottom: -120%;
 	transform: rotate(234deg) translate(23%, 48%);
 }
 
 .zigouigoui--4 {
 	@extend %zigouigoui;
-	top: -40px;
+	top: -5%;
     transform: rotate(17deg) translate(-4%, -33%);
+}
+
+@media screen and (min-width: $break--l) {
+	.zigouigoui--3 {
+		transform: rotate(234deg) translate(36%, 46%);
+	}
 }

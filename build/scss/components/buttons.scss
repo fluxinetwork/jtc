@@ -27,6 +27,8 @@
 
 .button--outline {
 	@extend .button;
+	display: flex !important;
+	align-items: center;
 	border: 3px solid #fff;
 	color: #fff;
 	background-color: transparent;
@@ -39,6 +41,10 @@
 	&:not(.is-active):hover {
 		background-color: #fff;
 		color: $c-dark;
+
+		span {
+			color: $c-dark;
+		}
 	}
 }
 
@@ -53,17 +59,6 @@
 	@extend %transition;	
 
 	&:hover {
-		color: $c-dark;
 		border-color: $c-dark;
 	}
-}
-
-.form__submit{
-	@extend .button;
-	background-color:#86bd4c;
-}
-
-.form__cancel{
-	@extend .button;
-	background-color:$c-error;
 }

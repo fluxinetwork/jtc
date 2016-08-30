@@ -1,5 +1,93 @@
-*------------------------------*\
+/*------------------------------*\
 
     #SINGLE
 
 \*------------------------------*/
+
+.single .section:first-child {
+	margin-top: 0;
+}
+
+.single-title {
+	@extend .h2;
+	margin-top: $space--m;
+	text-transform: uppercase;
+}
+
+.infos {
+	display: flex;
+	flex-direction: column;
+	margin-top: $space--s;
+	border: 3px solid #fff;
+	padding: $space--s;
+	border-radius: $radius $radius 0 0;
+	width: 100%;
+
+}
+.infos--adresse {
+	@extend .infos;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0;
+	border-top: 0;
+	border-radius: 0 0 $radius $radius ;
+}
+
+.infos__ville {
+	@extend .h2;
+	color: #fff;
+	border-bottom: 3px solid #fff;
+	line-height: 1;
+	padding-bottom: $space--s;
+}
+.infos__details {
+	padding-top: $space--s;
+}
+
+
+.infos__details,
+.infos--adresse  {
+	@extend .p;
+}
+
+@media screen and (min-width: $break--l) {
+	.infos {
+		flex-direction: row;
+		padding: $space--s;
+		width: 120%;
+		position: relative;
+		left: -10%;
+		background-image: url('../img/montagne-eolienne.png');
+		background-repeat: no-repeat;
+		background-position: right 0 bottom -40px;
+		background-size: 120px
+	}
+	.infos--adresse {
+		background: none;
+	}
+	.infos__ville {
+		@include flex(center);
+		border-bottom: 0;
+		border-right: 3px solid #fff;
+		padding: $space--s $space--s $space--s 0;
+		min-width: 30%;
+		max-width: 40%;
+	}
+	.infos__details {
+		@include flex(center null,true);
+		text-align: left;
+		padding: $space--s 0 $space--s $space--s; 
+
+		div {
+			@include flex(null center);
+		}
+	}
+}
+
+@media screen and (min-width: $break--xl) {
+	.infos {
+		background-size: 140px;
+		background-position: right 0 bottom -50px;
+	}
+}

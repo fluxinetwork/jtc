@@ -1,0 +1,83 @@
+/*------------------------------*\
+
+    #ICONS
+
+\*------------------------------*/
+
+[class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	@extend %transition;
+	@extend .p;
+	padding-right: $space--xs;
+	color: #fff;
+}
+
+.icon--round {
+  	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -105%);
+	border-radius: 100%;
+	padding: $space--xs;;
+	background: $c-highlight;
+	color: $c-main;
+}
+
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-clock:before {
+  content: "\e900";
+}
+.icon-reply:before {
+  content: "\e90b";
+}
+.icon-bubble:before {
+  content: "\e901";
+}
+.icon-users:before {
+  content: "\e902";
+}
+.icon-image:before {
+  content: "\e903";
+}
+.icon-cog:before {
+  content: "\e904";
+}
+.icon-calendar:before {
+  content: "\e905";
+}
+.icon-map-marker:before {
+  content: "\e906";
+}
+.icon-store:before {
+  content: "\e907";
+}
+.icon-heart:before {
+  content: "\e908";
+}
+.icon-bookmark:before {
+  content: "\e90c";
+}
+.icon-plus:before {
+  content: "\e909";
+}
+.icon-browser:before {
+  content: "\e90a";
+}
+

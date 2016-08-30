@@ -249,5 +249,19 @@ function verify_post_author($user_id, $post_id){
 	return $is_post_author;
 }
 
+/**
+ * Return ACF field without <p></p>
+ *
+ * @param   acf fiel slug $field
+ *
+ * return	boolean true/false
+ */
+function acf_field_no_p($field) {
+	$content = get_field($field);
+	$p = array("<p>", "</p>");
+	$content_no_p = str_replace($p, "", $content);
+	echo $content_no_p;
+}
+
 
 

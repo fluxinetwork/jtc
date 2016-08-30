@@ -6,38 +6,41 @@
 
 var FOO = {
     common: {
-        init: function() {          
-           // Zigouigoui
-           $('img[class*="zigouigoui"]').waypoint(function(){
-               $(this.element).toggleClass('parallax');
-           }, {offset: '100%'});
-           parazigouigoui();
+        init: function() {   
+            // Parallax the zigouigouis       
+            parazigouigoui();
+
+            // Animation 
+            $('.has-anim').waypoint(function(){
+                $(this.element).toggleClass('anim');
+            }, {offset: '90%'});
         }
     },
     home: {
         init: function() {
             isHome = true;
+
             // Init events map
             initMap();
             initMapMobil();
+
             // Slider
-            $('.flexslider').flexslider({
-                animation: 'slide',
-                slideshow: false, 
-            });
+            $('.flexslider').waypoint(function(){
+                $('.flexslider img').each(function(){
+                    var src = $(this).attr('data-src');
+                    $(this).attr('src', src).removeAttr('data-src');
+                });
+                $('.flexslider').flexslider({
+                    animation: 'slide',
+                    slideshow: false, 
+                });
+            }, {offset: '130%'});
+
+
             // fitVids
             $('.video').fitVids();
             // Tabs
             initTabs();
-            // Accordion
-            $('.js-accordion').click(function(e){
-                e.preventDefault();
-                $(this).next('.accordion-content').slideToggle();
-            });
-            // Animation 
-            $('.solutions__header, .wrap-slider').waypoint(function(){
-                $(this.element).toggleClass('anim');
-            }, {offset: '90%'});
         }
     }
     

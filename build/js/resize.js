@@ -23,6 +23,7 @@ function calc_windowW() {
 // Get height
 function calc_windowH() {
     windowH = $(window).height();
+    docH = $(document).height();
 }
 
 
@@ -32,9 +33,10 @@ function calc_windowH() {
  */
 
 function resize_handler() {
-
+    calc_windowH();
 }
 if ( resizeEvent ) { $( window ).bind( "resize", resize_handler() ); }
+
 
 /**
  * DEBOUNCER

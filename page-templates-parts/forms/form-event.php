@@ -6,15 +6,15 @@
 
 <div class="form wrap-content">
 	<div class="zigouigouis">
-		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui zigouigoui--1">
-		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui zigouigoui--2">
-		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui zigouigoui--3">
-		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui zigouigoui--4">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--1">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--2">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--3">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--4">
 	</div>
 	<form id="form-manage-event" role="form">
 
 		<fieldset>
-    		<legend>Détails de l'événement</legend>
+    		<legend><span class="icon--round icon-store"></span>Détails</legend>
 			<div class="form__row">	      
 		      	<input class="js-input-effect input-effect--2" type="text" name="title" id="title" value="" placeholder="" data-validation="required">
 		      	<label for="title">Intitulé de l’événement<i class="i-required">*</i></label>
@@ -27,14 +27,14 @@
 		      	<span class="focus-bg"></span>
 		    </div>
 
-		    <div class="form__group">
+		    <div class="form__group ajout">
 				<label for="add_date" class="form__control form__control--checkbox">Ajouter une date de fin d'événement
 					<input type="checkbox" name="add_date" id="add_date" value="1">
 					<div class="form__control__indicator"></div> 
 				</label>
 		    </div>
 
-			<div class="form__row is-hide js-add-date">	      
+			<div class="form__row is-hide js-add-date ajout">	      
 		      	<input type="text" data-validation="date" data-validation-format="dd/mm/yyyy" data-validation-depends-on="add_date" class="js-input-effect input-effect--2" value="" name="date_event_end" id="date_event_end">
 		      	<label for="date_event_end">Date de fin d'événement<i class="i-required">*</i></label>
 		      	<span class="focus-bg"></span>
@@ -46,14 +46,14 @@
 		      	<span class="focus-bg"></span>
 		    </div>
 
-		    <div class="form__group">
+		    <div class="form__group ajout">
 				<label for="add_hour" class="form__control form__control--checkbox">Ajouter une heure de fin d'événement
 					<input type="checkbox" name="add_hour" id="add_hour" value="1">
 					<div class="form__control__indicator"></div> 
 				</label>
 		    </div>
 
-			<div class="form__row is-hide js-add-hour">	      
+			<div class="form__row is-hide js-add-hour ajout">	      
 		      	<input type="text" data-validation="required" data-validation-depends-on="add_hour" class="js-input-effect input-effect--2" value="" name="hour_event_end" id="hour_event_end">
 		      	<label for="hour_event_end">Heure de fin d'événement<i class="i-required">*</i></label>
 		      	<span class="focus-bg"></span>
@@ -83,7 +83,7 @@
 		</fieldset>
 
 	    <fieldset>
-    		<legend>Adresse et liens</legend>    		  
+    		<legend><span class="icon--round icon-map-marker"></span>Adresse et liens</legend>    		  
 
 		     <div class="form__row">	      
 		      	<input type="text" class="js-input-effect input-effect--2" placeholder="" value="" name="adresse" id="adresse" data-validation="required">
@@ -118,7 +118,7 @@
 	    </fieldset>
 
 	    <fieldset>
-	    	<legend>Contact</legend>
+	    	<legend><span class="icon--round icon-bubble"></span>Contact</legend>
 			
 			<div class="form__row">
 		      	<input type="text" placeholder="" value="" name="nom_contact" id="nom_contact" data-validation="required" class="js-input-effect input-effect--2">
@@ -147,7 +147,7 @@
 	    </fieldset>
 
 	    <fieldset>
-    		<legend>Principes d’organisation</legend>
+    		<legend><span class="icon--round icon-cog"></span>Principes d’organisation</legend>
 
 			<div class="form__group">
 				<label for="accept_terms" class="form__control form__control--checkbox">

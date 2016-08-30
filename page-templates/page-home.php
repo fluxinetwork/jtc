@@ -16,7 +16,7 @@ Template Name: Page d'accueil
 
 		<h2 class="wrap-content"><span>Les solution existent déjà :</span><br>à moi de faire le premier pas !</h2>
 
-		<div class="video"><?php echo get_field('video'); ?></div>
+		<div class="video has-anim"><?php echo get_field('video'); ?></div>
 		
 		<div class="wrap-content">
 			<p><?php echo get_field('texte_intro'); ?></p>
@@ -29,10 +29,10 @@ Template Name: Page d'accueil
 			<img src="<?php bloginfo('template_url'); ?>/app/img/france.svg" class="france">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--3">
 
-			<header class="solutions__header wrap-content">
+			<header class="solutions__header wrap-content has-anim">
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin.png" class="chemin-pin">
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin-plus.png" class="chemin-pin-plus">
-				<h2>Les solutions sont là !</h2>
+				<h2><span class="icon--round icon-map-marker"></span>Les solutions sont là !</h2>
 				<h3>plus de <?php echo $count_events->publish + 247; ?> événements</h3>
 			</header>
 	
@@ -72,11 +72,11 @@ Template Name: Page d'accueil
 	</section>
 
 	<section class="section photos">
-		<h2>Les photos de la JTC</h2>
+		<h2><span class="icon--round icon-image"></span>Les photos de la JTC</h2>
 		<h3>éditions 2014 et 2015</h3>
 
 		<?php if( $galerie ): ?>
-			<div class="wrap-slider">
+			<div class="wrap-slider has-anim">
 				<div class="wrap-content">
 					<img src="<?php bloginfo('template_url'); ?>/app/img/montagne-eolienne.png" class="montagne-eolienne">
 					<img src="<?php bloginfo('template_url'); ?>/app/img/eolienne.png" class="eolienne">
@@ -85,7 +85,7 @@ Template Name: Page d'accueil
 			        <ul class="slides">
 			            <?php foreach( $galerie as $image ): ?>
 			                <li>
-			                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">			                    
+			                    <img src="" data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">			                    
 			                </li>
 			            <?php endforeach; ?>
 			        </ul>
@@ -98,7 +98,7 @@ Template Name: Page d'accueil
 	<section class="section temoignages">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--4">
 			<div class="wrap-content">
-				<h2>Ils ont fait le premier pas</h2>
+				<h2><span class="icon--round icon-users"></span>Ils ont fait le premier pas</h2>
 				<h3>voici leur histoire</h3>
 				
 				<?php if($testimonies): ?>

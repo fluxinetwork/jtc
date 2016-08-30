@@ -22,7 +22,20 @@
 }
 
 .macaron__label {
+	@extend .p;
 	color: $c-main;
 	text-align: center;	
 	line-height: 1;
+}
+
+@media screen and (min-width: $break--m) {
+	.macaron__shape {
+		transform: scale(1.35);
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.macaron__shape {
+		transform: scale(1.5);
+	}
 }

@@ -36,8 +36,14 @@
 		bottom: -10%;
 		left: 50%;
 		background-color: $c-highlight;
-		transform: rotate(-4deg) translateX(-50%);
+		transform: rotate(-4deg) translateX(-50%) scaleX(0);
 		border-radius: 3px;
+		@extend %transition--dynamic;
+		transition-delay: 0.2s;
+	}
+
+	&.anim::after {
+		transform: rotate(-4deg) translateX(-50%) scaleX(1);
 	}
 }
 
@@ -55,9 +61,10 @@
 	width: 960px;
 	left: 50%;
 	transform: translateX(-50%);
+	display: none;
 }
 .chemin-pin-plus {
-	display: none;
+	display: none !important;
 }
 
 .france {
@@ -239,9 +246,9 @@
 			content: '';
 			position: absolute;
 			z-index: -1;
-			top: -40px;
-			width: 410px;
-			height: 410px;
+			top: -80px;
+			width: 480px;
+			height: 480px;
 			background-color: rgba($c-highlight, 0.3);
 			border-radius: 100%;
 			transform: scale(0);
@@ -286,7 +293,7 @@
 		margin-left: $space--s/2;
 
 		.link {
-			margin-top: $space--xs*0.4;
+			margin-top: $space--xs;
 		}
 	}
 

@@ -107,7 +107,7 @@ function enqueue_scripts() {
     if( is_home() || is_page_template( 'page-templates/page-home.php' ) ):
         wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'imagesLoaded', 'waypoint', 'mousewheel', 'fitvids', 'leaflet', 'flexslider'), null, true );
     else:
-        wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'mousewheel'), null, true );
+        wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'mousewheel', 'waypoint'), null, true );
     endif;
 
     wp_register_script( 'full', THEME_DIR_PATH . '/app/js/full.min.js', array('jQuery'), null, true );

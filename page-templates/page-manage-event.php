@@ -11,7 +11,6 @@ Template Name: Ajouter événement
 	</header>
 
 	<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-event.php' ); ?>
-
 </article>
 
 <?php get_footer(); ?>

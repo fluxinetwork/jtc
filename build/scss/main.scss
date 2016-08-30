@@ -24,6 +24,7 @@
 @import "components/macaron";
 @import "components/zigouigoui";
 @import "components/maps";
+@import "components/icons";
 
 
 // LAYOUT
@@ -39,6 +40,8 @@
 // PAGES 
 
 @import "pages/homepage";
+@import "pages/formulaire";
+@import "pages/single";
 
 // FORMS 
 

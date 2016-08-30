@@ -16,7 +16,7 @@
 	width: 860px;
 	left: 50%;
 	top: -262px;
-	transform: translateX(-47%);
+	transform: translate(-47%, 10%);
 	position: absolute;
 }
 
@@ -29,6 +29,21 @@
 
 	img {
 		width: 100%;
+	}
+}
+
+.wrap-back {
+	position: fixed;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+	background-color: $c-dark;
+	padding: $space--s;
+	width: 100%;
+	@include flex(center null);
+
+	a:nth-child(2) {
+		margin-left: $space--s;
 	}
 }
 

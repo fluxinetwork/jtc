@@ -6,7 +6,7 @@
 			<img src="<?php bloginfo('template_url'); ?>/app/img/macaron.svg" class="macaron__shape">
 			<span class="macaron__label">3ème édition</span>
 		</div>
-
+		
 		<h1>Journée de la<br> Transition Citoyenne</h1>
 	</div>
 </header>

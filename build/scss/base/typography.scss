@@ -43,8 +43,7 @@ h3,
 .h3{	
 	@include font-size($h3-font-sizes);	
 	text-align: center;
-	//font-weight: 700;
-	margin-top: $space--xs;
+	//font-weight: 700; 
 }
 
 h4,
@@ -90,5 +89,27 @@ ul, ol{
 	
 }
 
+.ta--l {
+	text-align: left;
+}
+.ta--c {
+	text-align: center;
+}
+.ta--r {
+	text-align: right;
+}
+
 @include add-webfont('qanelas', 'qanelas/regular', 'qanelassoft-regular-webfont');
 @include add-webfont('qanelas', 'qanelas/black', 'qanelassoft-black-webfont', 700);
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icofont/icomoon.eot?3ypnj');
+  src:  url('../fonts/icofont/icomoon.eot?3ypnj#iefix') format('embedded-opentype'),
+    url('../fonts/icofont/icomoon.woff2?3ypnj') format('woff2'),
+    url('../fonts/icofont/icomoon.ttf?3ypnj') format('truetype'),
+    url('../fonts/icofont/icomoon.woff?3ypnj') format('woff'),
+    url('../fonts/icofont/icomoon.svg?3ypnj#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
