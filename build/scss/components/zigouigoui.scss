@@ -4,6 +4,12 @@
 
 \*------------------------------*/
 
+.zigouigouis {
+	position: absolute;
+	@include flex(null center, true);
+	height: 100%;
+}
+
 %zigouigoui {
 	position: absolute;
 	z-index: -1;

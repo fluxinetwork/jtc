@@ -252,6 +252,7 @@
 			background-color: rgba($c-highlight, 0.3);
 			border-radius: 100%;
 			transform: scale(0);
+			transform-origin: center;
 		}
 
 		&.anim::after {

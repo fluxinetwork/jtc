@@ -4,14 +4,27 @@
 
 \*------------------------------*/
 
-.single .section:first-child {
-	margin-top: 0;
+.single {
+	.section:first-child {
+		margin-top: 0;
+	}
+	img[class*="zigouigoui"] {
+		bottom: auto;
+		position: relative;
+	}
+	.zigouigoui--1 {
+		top: -8%;
+	}
+	.zigouigoui--2 {
+		top: 25%;
+	}
 }
 
 .single-title {
 	@extend .h2;
 	margin-top: $space--m;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .infos {
@@ -33,7 +46,6 @@
 	border-top: 0;
 	border-radius: 0 0 $radius $radius ;
 }
-
 .infos__ville {
 	@extend .h2;
 	color: #fff;
@@ -44,11 +56,58 @@
 .infos__details {
 	padding-top: $space--s;
 }
-
-
 .infos__details,
 .infos--adresse  {
 	@extend .p;
+}
+
+.description {
+	margin-top: $space--m;
+	text-align: left;
+}
+
+.contact {
+	max-width: 300px;
+	padding: $space--s;
+	border: 3px solid #fff;
+	border-radius: 3px;
+	margin: $space--s auto 0 auto;
+
+	span:nth-child(2) {
+		margin-left: $space--s;
+	}
+}
+.contact__name {
+	@extend .h2;
+	color: #fff;
+	border-bottom: 3px solid #fff;
+	line-height: 1;
+	padding-bottom: $space--s;
+}
+.contact__infos p,
+.contact__links a {
+	@include flex(center);
+	margin-top: $space--s;
+
+	&:nth-child(2) {
+		margin-top: $space--xs;
+	}
+}
+.contact__links {
+	margin-top: $space--s;
+	border-top: 3px solid #fff;
+
+	a {
+		display: inline-block;
+	}
+}
+
+
+@media screen and (max-width: $break--l) {
+	.infos [class*='icon'],
+	.contact [class*='icon'] {
+		display: none !important;
+	}
 }
 
 @media screen and (min-width: $break--l) {

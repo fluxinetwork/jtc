@@ -16,7 +16,7 @@
 	width: 860px;
 	left: 50%;
 	top: -262px;
-	transform: translate(-47%, 10%);
+	transform: translate(-47%, 5%);
 	position: absolute;
 }
 
@@ -44,6 +44,12 @@
 
 	a:nth-child(2) {
 		margin-left: $space--s;
+	}
+}
+
+@media screen and (max-width: $break--m) {
+	.wrap-back a:nth-child(2) {
+		display: none !important;
 	}
 }
 

@@ -47,8 +47,14 @@
 .icon-reply:before {
   content: "\e90b";
 }
+.icon-envelope:before {
+  content: "\e90d";
+}
 .icon-bubble:before {
   content: "\e901";
+}
+.icon-bubbles:before {
+  content: "\e90e";
 }
 .icon-users:before {
   content: "\e902";
@@ -80,4 +86,5 @@
 .icon-browser:before {
   content: "\e90a";
 }
+
 

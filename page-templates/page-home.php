@@ -65,6 +65,8 @@ Template Name: Page d'accueil
 		<div class="share">
 			<h2 class="share__title">Parlez en autour de vous</h2>
 			<h3 class="share__subtitle">en partageant sur </h3>
+			<a href=""><span class="icon-facebook"></span></a>
+			<a href=""><span class="icon-twitter"></span></a>
 			<p>#journeetransition</p>
 		</div>
 

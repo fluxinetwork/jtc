@@ -9,9 +9,12 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 82px;
-	height: 82px;
+	width: 80px;
+	height: 80px;
 	transform: translateY(-50%);
+	background-image: url("../img/macaron.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .macaron__shape {
@@ -19,6 +22,7 @@
 	z-index: -1;
 	transform: scale(1.2);
 	transform-origin: center;
+	display: none;
 }
 
 .macaron__label {
@@ -29,13 +33,15 @@
 }
 
 @media screen and (min-width: $break--m) {
-	.macaron__shape {
-		transform: scale(1.35);
+	.macaron {
+		width: 90px;
+		height: 90px;
 	}
 }
 
 @media screen and (min-width: $break--l) {
-	.macaron__shape {
-		transform: scale(1.5);
+	.macaron {
+		width: 100px;
+		height: 100px;
 	}
 }

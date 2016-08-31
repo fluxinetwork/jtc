@@ -5,6 +5,10 @@
 ?>
 
 <div class="section">
+	<div class="zigouigouis">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--1">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--2">
+	</div>
 	<article class="wrap-content">
 
 		<?php
@@ -32,6 +36,12 @@
 			$adresse = get_field('adresse');
 			$code_postal = get_field('code_postal');
 			$adresse_full = $adresse.', '.$code_postal.' '.$ville;
+
+			$contact_name = get_field('prenom_contact').' '.get_field('nom_contact');
+			$tel_contact = get_field('tel_contact');
+			$email_contact = get_field('email_contact');
+			$link_event = get_field('link_event');
+			$page_facebook = get_field('page_facebook');
 		?>
 
 		<header><?php the_title( '<h1 class="single-title">', '</h1>' ); ?></header>
@@ -44,9 +54,34 @@
 			</div>
 		</div>
 		<div class="infos--adresse"><?php echo '<span class="icon-map-marker"></span>'.$adresse_full; ?></div>
-		<p class="ta--l"></strong><?php echo acf_field_no_p('descriptif_event'); ?></p>
+
+		<p class="description"></strong><?php echo acf_field_no_p('descriptif_event'); ?></p>
+
+		<p class="h2 section"><span class="icon--round icon-bubble"></span>Contact</p>
+		<div class="contact">
+			<div class="contact__name"><?php echo $contact_name; ?></div>
+
+			<?php if ($tel_contact || $email_contact) : ?>
+			<div class="contact__infos">
+			<?php 
+				if ($tel_contact) : echo '<p class="tel"><span class="icon-bubbles"></span>'.$tel_contact.'</p>'; endif;
+				if ($email_contact) : echo '<p class="email"><span class="icon-envelope"></span>'.$email_contact.'</p>'; endif;
+			?>
+			</div>
+			<?php endif; ?>
+
+			<?php if ($link_event || $page_facebook) : ?>
+			<div class="contact__links">
+			<?php 
+				if ($link_event) : echo '<a href="'.$link_event.'" class="tel link p">Site de l\'évènement</a>'; endif;
+				if ($page_facebook) : echo '<a href=".$email_contact." class="email link p">Page facebook</a>'; endif;
+			?>
+			</div>
+			<?php endif; ?>
+		</div>
 
 	</article>
+		<img src="<?php bloginfo('template_url'); ?>/app/img/bus.png" class="bus">
 </div>
 
 

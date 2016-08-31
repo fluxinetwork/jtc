@@ -456,7 +456,7 @@ function parazigouigoui() {
 	    $(this.element).toggleClass('parallax');
 	}, {offset: '100%'});
 	
-	$('body').mousewheel(function(event) {
+	$(document).mousewheel(function(event) {
 		var offset = $(this).scrollTop();
 		var deltaY = event.deltaY; 
 		$('.parallax').each(function(){

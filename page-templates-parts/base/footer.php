@@ -8,7 +8,7 @@
 			<a href="<?php bloginfo('url'); ?>" class="button--outline"><span class="icon-reply"></span>Retour accueil</a>
 
 			<?php if (is_single()) : ?>
-			<a href="<?php bloginfo('url'); ?>" class="button--outline"><span class="icon-plus"></span>Ajouter votre évènement</a>
+			<a href="<?php echo home_url(); ?>/ajouter-evenement/" class="button--outline"><span class="icon-plus"></span>Ajouter votre évènement</a>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>

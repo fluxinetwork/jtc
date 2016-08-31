@@ -131,12 +131,6 @@
 		margin-top: $space--xs;
 	}
 	
-
-	.zigouigouis {
-		position: absolute;
-		@include flex(null center, true);
-		height: 100%;
-	}
 	img[class*="zigouigoui"] {
 		bottom: auto;
 		position: relative;
