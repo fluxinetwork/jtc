@@ -82,8 +82,8 @@ function fluxi_manage_event(){
 					//notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_GENERAL . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
 
 					// Notification mail user
-					$mail_new_event = array(get_footer_mail(), $redirect_slug);
-					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
+					/*$mail_new_event = array(get_footer_mail(), $redirect_slug);
+					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);*/
 
 					$message_response = 'Votre événement a été ajouté. Il sera publié sur le site après avoir été validé par nos soins.';
 
@@ -185,7 +185,8 @@ function fluxi_csv_export() {
         //$date = date('m.j.Y-His');        
         $filename = 'jtc-events.csv';       
 
-		header("Content-Type: text/csv; charset=utf-8");
+		header( "Content-type: application/vnd.ms-excel; charset=UTF-16LE" ); 
+
 		header("Content-Disposition: attachment; filename={$filename}");
 
 		$fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/wp-content/uploads/csv/{$filename}","wb");
@@ -197,23 +198,25 @@ function fluxi_csv_export() {
 			$post_id = get_the_ID();			
 			$post_status = get_post_status();
 			if( $post_status != 'publish'):
-				$post_status = 'Refusé';
+				$post_status = mb_convert_encoding('Refusé', 'UTF-16LE', 'UTF-8'); 
 			else:
-				$post_status = 'Publié';
+				$post_status = mb_convert_encoding('Publié', 'UTF-16LE', 'UTF-8'); 
 			endif;
 
-			$titre_event = get_the_title();
+			$titre_event = mb_convert_encoding(get_the_title(), 'UTF-16LE', 'UTF-8'); 
 			$date_event = get_field('date_event', false, false);
 			$date_obj = new DateTime($date_event);
-			$date_event = $date_obj->format('j-m-y');
+			$date_event = mb_convert_encoding($date_obj->format('d-m-y'), 'UTF-16LE', 'UTF-8'); 
 
-			$mail_contact = get_field('email_contact');
+			$mail_contact = mb_convert_encoding(get_field('email_contact'), 'UTF-16LE', 'UTF-8'); 
 			$nom_contact = get_field('nom_contact');
 			$prenom_contact = get_field('prenom_contact');
-			$tel_contact = get_field('tel_contact');
-			$nom_strucure = get_field('structure_organisatrice');
+			$tel_contact = mb_convert_encoding(get_field('tel_contact'), 'UTF-16LE', 'UTF-8'); 
+			$nom_strucure = mb_convert_encoding(get_field('structure_organisatrice'), 'UTF-16LE', 'UTF-8'); 
 
-			$nom_prenom = $nom_contact . ' ' . $prenom_contact;
+			$nom_prenom = mb_convert_encoding($nom_contact . ' ' . $prenom_contact;
+
+			
 
 			fputcsv($fp, array($nom_prenom, $mail_contact, $tel_contact, $nom_strucure, $date_event, $titre_event, $post_status));
 
@@ -251,8 +254,8 @@ function send_mails_on_publish( $new_status, $old_status, $post )
     $email_contact = get_field('email_contact', $the_idp);
 
     // Notification mail current user
-	$mail_published_event = array(get_footer_mail(), get_home_url(), get_permalink($the_idp));
-	notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est visible sur notre site', true, get_template_directory() . '/app/inc/mails/new-event-publish.php', $mail_published_event);
+	/*$mail_published_event = array(get_footer_mail(), get_home_url(), get_permalink($the_idp));
+	notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est visible sur notre site', true, get_template_directory() . '/app/inc/mails/new-event-publish.php', $mail_published_event);*/
 }
 
 add_action( 'transition_post_status', 'send_mails_on_publish', 10, 3 );
