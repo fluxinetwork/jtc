@@ -48,6 +48,7 @@ function fluxi_manage_event(){
 						'email_contact_public' => filter_var( $_POST['email_contact_public'], FILTER_SANITIZE_EMAIL),
 						'tel_contact' => filter_var( $_POST['tel_contact'], FILTER_SANITIZE_NUMBER_INT),
 						'adresse'		=> filter_var( $_POST['adresse'], FILTER_SANITIZE_STRING),
+						'adresse_complement'	=> filter_var( $_POST['adresse_complement'], FILTER_SANITIZE_STRING),
 						'ville'			=> filter_var( $_POST['ville'], FILTER_SANITIZE_STRING),
 						'code_postal'	=> filter_var( $_POST['code_postal'], FILTER_SANITIZE_STRING),
 						'descriptif_event'	=> filter_var( $_POST['descriptif_event'], FILTER_SANITIZE_STRING),
@@ -83,7 +84,7 @@ function fluxi_manage_event(){
 
 					// Notification mail user
 					/*$mail_new_event = array(get_footer_mail(), $redirect_slug);
-					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);*/
+					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <celine.provost@transitioncitoyenne.org>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);*/
 
 					$message_response = 'Votre événement a été ajouté. Il sera publié sur le site après avoir été validé par nos soins.';
 
@@ -212,13 +213,13 @@ function fluxi_csv_export() {
 			$nom_contact = get_field('nom_contact');
 			$prenom_contact = get_field('prenom_contact');
 			$tel_contact = mb_convert_encoding(get_field('tel_contact'), 'UTF-16LE', 'UTF-8'); 
-			$nom_strucure = mb_convert_encoding(get_field('structure_organisatrice'), 'UTF-16LE', 'UTF-8'); 
+			$nom_structure = mb_convert_encoding(get_field('nom_structure'), 'UTF-16LE', 'UTF-8'); 
 
-			$nom_prenom = mb_convert_encoding($nom_contact . ' ' . $prenom_contact;
+			$nom_prenom = mb_convert_encoding($nom_contact . ' ' . $prenom_contact, 'UTF-16LE', 'UTF-8');
 
 			
 
-			fputcsv($fp, array($nom_prenom, $mail_contact, $tel_contact, $nom_strucure, $date_event, $titre_event, $post_status));
+			fputcsv($fp, array($nom_prenom, $mail_contact, $tel_contact, $nom_structure, $date_event, $titre_event, $post_status));
 
 		endwhile;
 

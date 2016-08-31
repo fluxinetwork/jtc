@@ -85,9 +85,15 @@
 	    <fieldset>
     		<legend><span class="icon--round icon-map-marker"></span>Adresse et liens</legend>    		  
 
-		     <div class="form__row">	      
+		    <div class="form__row">	      
 		      	<input type="text" class="js-input-effect input-effect--2" placeholder="" value="" name="adresse" id="adresse" data-validation="required">
 		      	<label for="adresse">Adresse<i class="i-required">*</i></label>
+		      	<span class="focus-bg"></span>
+		    </div>
+
+		    <div class="form__row">	      
+		      	<input type="text" class="js-input-effect input-effect--2" placeholder="" value="" name="adresse_complement" id="adresse_complement">
+		      	<label for="adresse_complement">Complément d'adresse</label>
 		      	<span class="focus-bg"></span>
 		    </div>
 
