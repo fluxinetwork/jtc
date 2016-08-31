@@ -73,9 +73,9 @@ function initManageEventForm(){
 
     $('input[name=add_date]').click(function() {
         if(this.checked){
-            $('.js-add-date').removeClass('is-hide');
+            $('.js-add-date').removeClass('is-none');
         }else{
-            $('.js-add-date').addClass('is-hide');
+            $('.js-add-date').addClass('is-none');
             $('input[name=date_event_end]').val('').removeClass('has-content');
         }
     });
@@ -86,15 +86,28 @@ function initManageEventForm(){
 
     $('input[name=add_hour]').click(function() {
         if(this.checked){
-            $('.js-add-hour').removeClass('is-hide');
+            $('.js-add-hour').removeClass('is-none');
         }else{
-            $('.js-add-hour').addClass('is-hide');
+            $('.js-add-hour').addClass('is-none');
             $('input[name=hour_event_end]').val('').removeClass('has-content');
         }
     });
 
     if($('input[name=add_hour]').is(':checked')){
         $('input[name=add_hour]').triggerHandler('click');
+    }
+
+    $('input[name=add_contact]').click(function() {
+        if(this.checked){
+            $('.js-add-contact').removeClass('is-none');
+        }else{
+            $('.js-add-contact').addClass('is-none');
+            $('input[name=email_contact_public]').val('').removeClass('has-content');
+        }
+    });
+
+    if($('input[name=add_contact]').is(':checked')){
+        $('input[name=add_contact]').triggerHandler('click');
     }
 }
 

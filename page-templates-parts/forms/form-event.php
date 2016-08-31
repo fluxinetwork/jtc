@@ -34,7 +34,7 @@
 				</label>
 		    </div>
 
-			<div class="form__row is-hide js-add-date ajout">	      
+			<div class="form__row is-none js-add-date ajout">	      
 		      	<input type="text" data-validation="date" data-validation-format="dd/mm/yyyy" data-validation-depends-on="add_date" class="js-input-effect input-effect--2" value="" name="date_event_end" id="date_event_end">
 		      	<label for="date_event_end">Date de fin d'événement<i class="i-required">*</i></label>
 		      	<span class="focus-bg"></span>
@@ -53,7 +53,7 @@
 				</label>
 		    </div>
 
-			<div class="form__row is-hide js-add-hour ajout">	      
+			<div class="form__row is-none js-add-hour ajout">	      
 		      	<input type="text" data-validation="required" data-validation-depends-on="add_hour" class="js-input-effect input-effect--2" value="" name="hour_event_end" id="hour_event_end">
 		      	<label for="hour_event_end">Heure de fin d'événement<i class="i-required">*</i></label>
 		      	<span class="focus-bg"></span>
@@ -74,7 +74,7 @@
 
 		    <div class="form__group">
 				<label for="structure_organisatrice" class="form__control form__control--checkbox">
-					J'ai organisé une Journée de la transition en 2014 et 2015
+					J'ai organisé une Journée de la transition en 2014 et/ou 2015
 					<input type="checkbox" name="structure_organisatrice" id="structure_organisatrice" value="1">
 					<div class="form__control__indicator"></div>
 				</label>
@@ -136,7 +136,20 @@
 		      	<input type="text" placeholder="" value="" name="email_contact" id="email_contact" data-validation="email" class="js-input-effect input-effect--2">
 		      	<label for="email_contact">Email<i class="i-required">*</i></label>
 		      	<span class="focus-bg"></span>
-		    </div>		
+		    </div>
+
+		    <div class="form__group ajout">
+				<label for="add_contact" class="form__control form__control--checkbox">Ajouter un contact email public
+					<input type="checkbox" name="add_contact" id="add_contact" value="1">
+					<div class="form__control__indicator"></div> 
+				</label>
+		    </div>
+
+		    <div class="form__row is-none js-add-contact ajout">
+		      	<input type="text" placeholder="" value="" name="email_contact_public" id="email_contact_public" data-validation="email" data-validation-depends-on="add_date" class="js-input-effect input-effect--2">
+		      	<label for="email_contact_public">Email public<i class="i-required">*</i></label>
+		      	<span class="focus-bg"></span>
+		    </div>	
 
 		    <div class="form__row">
 		      	<input type="text" maxlength="10" placeholder="" value="" name="tel_contact" id="tel_contact" data-validation="number" class="js-input-effect input-effect--2">

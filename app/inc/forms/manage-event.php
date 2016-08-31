@@ -45,6 +45,7 @@ function fluxi_manage_event(){
 						'nom_contact'	=> $nom_contact,
 						'prenom_contact'=> $prenom_contact,
 						'email_contact' => $email_contact,
+						'email_contact_public' => filter_var( $_POST['email_contact_public'], FILTER_SANITIZE_EMAIL),
 						'tel_contact' => filter_var( $_POST['tel_contact'], FILTER_SANITIZE_NUMBER_INT),
 						'adresse'		=> filter_var( $_POST['adresse'], FILTER_SANITIZE_STRING),
 						'ville'			=> filter_var( $_POST['ville'], FILTER_SANITIZE_STRING),
