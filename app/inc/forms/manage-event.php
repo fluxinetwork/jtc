@@ -211,7 +211,7 @@ function fluxi_csv_export() {
 			$nom_contact = get_field('nom_contact');
 			$prenom_contact = get_field('prenom_contact');
 			$tel_contact = get_field('tel_contact');
-			$nom_strucure = get_field('nom_strucure');
+			$nom_strucure = get_field('structure_organisatrice');
 
 			$nom_prenom = $nom_contact . ' ' . $prenom_contact;
 
