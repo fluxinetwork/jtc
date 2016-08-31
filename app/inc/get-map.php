@@ -29,6 +29,27 @@ function get_json_map(){
 				$latitude = $location['lat'];
 				$longitude = $location['lng'];
 			}
+
+			$date_start = get_field('date_event');
+			$date_end = get_field('date_event_end');
+			$hour_start = get_field('hour_event');
+			$hour_end = get_field('hour_event_end');
+
+			$multidate = ($date_end) ? true : false;
+			$multihour = ($hour_end) ? true : false;
+
+			if ($multidate) {
+				$date_output = $date_start.' au '.$date_end;
+			} else {
+				$date_output = $date_start;
+			}
+
+			if ($multihour) {
+				$hour_output = $hour_start.' à '.$hour_end;
+			} else {
+				$hour_output = $hour_start;
+			}
+
 			// Json structure
 			$feature = array(
 		        'id' => $county,
@@ -39,15 +60,9 @@ function get_json_map(){
 		        ),
 		        // Other attribute columns
 		        'properties' => array(
-		            'titre' => get_the_title(),
-		            'date' => get_field('date_event'),
-		            'description' => get_field('descriptif_event'),
-		            'adresse' => get_field('adresse'),
-		            'cp' => get_field('code_postal'),
-		            'ville' => get_field('ville'),
-		            'depart' => get_field('departement'),
-		            'lien' => get_field('link_event'),
-		            'permalink' => '<a class="button" href="'.get_the_permalink().'">En savoir plus</a>'
+		            'titre' => '<h2 class="bub__title">' . get_the_title() . '</h2>',
+		            'date' => '<p class="bub__date">' . $date_output . '</p>',		            
+		            'permalink' => '<a class="bub__button" href="'.get_the_permalink().'">En savoir plus</a>'
 		        )
 		    );
 		    // Add feature arrays to feature collection array
