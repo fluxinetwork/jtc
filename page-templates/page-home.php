@@ -65,8 +65,10 @@ Template Name: Page d'accueil
 		<div class="share">
 			<h2 class="share__title">Parlez en autour de vous</h2>
 			<h3 class="share__subtitle">en partageant sur </h3>
-			<a href=""><span class="icon-facebook"></span></a>
-			<a href=""><span class="icon-twitter"></span></a>
+			<div class="share__buttons">
+				<a href="" class="wrap-icon--facebook js-share" data-url="<?php echo get_permalink(); ?>" data-network="facebook"><span class="icon-facebook"></span></a>
+				<a href="" class="wrap-icon--twitter js-share" data-url="<?php echo get_permalink(); ?>" data-network="twitter"><span class="icon-twitter"></span></a>
+			</div>
 			<p>#journeetransition</p>
 		</div>
 
@@ -106,7 +108,7 @@ Template Name: Page d'accueil
 				<?php if($testimonies): ?>
 					<div class="tabs-controls limit">
 						<?php foreach($testimonies as $row){ ?>
-							<a href="#" class="tabs-control__btn js-tab-btn p"><?php echo $row['prenom']; ?></a>
+							<a href="#" class="tabs-controls__btn js-tab-btn p"><?php echo $row['prenom']; ?></a>
 						<?php } ?> 
 						<button class="more-tabs js-more-tabs">+</button>
 					</div>

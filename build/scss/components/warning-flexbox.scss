@@ -1,0 +1,55 @@
+/*------------------------------*\
+
+      #WARNING FLEXBOX
+
+\*------------------------------*/
+
+.warning-flexbox {
+	display: none;
+	position: fixed;
+	background: $c-main;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 200;
+	text-align: center;
+	padding: $space--m;
+
+	&.show-me {
+		display: block;
+	}
+
+	> * {
+		margin: 0 auto;
+	}
+
+	a,
+	h1,
+	h2 {
+		margin: 0 auto;
+		max-width: 600px;
+	}
+
+	h2 {
+		margin-top: $space--s;
+		margin-bottom: $space--m;
+	}
+
+	ul {
+		@extend %list-reset;
+
+		li {
+			margin: 0 $space--xs;
+			display: inline-block;
+
+			a {
+				margin-bottom: $space--s;
+			}
+		}
+	}
+
+	.safari {
+		display: none;
+	}
+}

@@ -16,7 +16,7 @@
 	background-color: #fff;
 	color: $c-dark;
 	margin-top: $space--xs;
-	padding: $space--xs*2 $space--s*1.1 !important;
+	padding: $space--xs*2 $space--s*1.4 !important;
 	text-transform: uppercase;
 
 	&:hover {
@@ -27,8 +27,6 @@
 
 .button--outline {
 	@extend .button;
-	display: flex !important;
-	align-items: center;
 	border: 3px solid #fff;
 	color: #fff;
 	background-color: transparent;
@@ -36,6 +34,11 @@
 	&.is-active {
 		border-color: $c-dark;
 		background-color: $c-dark;
+	}
+
+	&.has-icon {
+		display: flex !important;
+		align-items: center;
 	}
 
 	&:not(.is-active):hover {

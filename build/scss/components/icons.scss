@@ -34,6 +34,31 @@
 	color: $c-main;
 }
 
+%wrap-icon {
+	@include flex(center);
+	border-radius: 100%;
+	width: 60px;
+	height: 60px;
+	@extend %transition;
+
+	span {
+		padding: 0;
+	}
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.wrap-icon--facebook {
+	@extend %wrap-icon;
+	background-color: #3b5998;
+}
+.wrap-icon--twitter {
+	@extend %wrap-icon;
+	background-color: #1da1f2;
+}
+
 
 .icon-facebook:before {
   content: "\ea90";

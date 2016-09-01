@@ -113,18 +113,10 @@
 // SHARE
 
 .share {
-	color: $c-dark;
-}
-.share__title {
-	color: $c-dark;
-}
-.share__subtitle {
-	color: $c-special;
-}
-.share {
 	position: relative;
 	width: 100%;
 	padding: $space--m 0;
+	color: $c-dark;
 
 	&::after {
 		content: '';
@@ -138,6 +130,18 @@
 		transform: scaleX(1.1) rotate(1deg);
 		border-radius: $radius;
 	}
+}
+.share__title {
+	color: $c-dark;
+}
+.share__subtitle {
+	color: $c-special;
+}
+.share__buttons {
+	@include flex(space-between null);
+	max-width: 140px;
+	width: 100%;
+	margin: $space--s auto 0 auto;
 }
 
 .bus {
@@ -197,10 +201,6 @@
 
 
 // TEMOIGNAGES
-
-.tabs {
-	text-align: left;
-}
 
 
 // MEDIA QUERIES

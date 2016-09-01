@@ -14,6 +14,11 @@ var FOO = {
             $('.has-anim').waypoint(function(){
                 $(this.element).toggleClass('anim');
             }, {offset: '90%'});
+
+            // Warning flexbox
+            if ($('html').hasClass('detect_no-flexbox')) {
+                $('.warning-flexbox').addClass('show-me');
+            }
         }
     },
     home: {

@@ -29,7 +29,7 @@ $space--l: 8rem;
 
 // COLORS
 
-$c-main: #E5442F;
+$c-main: lighten(#E5442F, 2%);
 $c-highlight: #FFD52E;
 $c-hover: $c-highlight;
 $c-special: #4E7F4F;
