@@ -1,0 +1,34 @@
+.leaflet-popup-content {
+	background-color: $c-main !important;
+	padding: $space--xs;
+	font-family: 'qanelas';
+}
+.leaflet-popup-content-wrapper {
+	background-color: $c-main !important;
+}
+.leaflet-popup-tip {
+	background-color: $c-highlight !important;
+}
+.bub__title {
+	@extend .h2;
+	font-size: 24px !important;
+	line-height: 1;
+	text-align: left;
+}
+.bub__date {
+	@extend .h3;
+	font-size: 18px;
+	color: #fff;
+	text-align: left;
+	margin-top: $space--xs !important;
+}
+.bub__button {
+	@extend .button--outline;
+	color: #fff !important;
+	font-size: 14px;
+	text-transform: uppercase;
+
+	&:hover {
+		color: $c-main !important;
+	}
+}
