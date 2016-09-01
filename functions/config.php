@@ -29,6 +29,7 @@ define('DISALLOW_FILE_EDIT', true);
 
 // MAILS
 define('CONTACT_GENERAL', 'contact@transitioncitoyenne.org');
+define('CONTACT_CELINE', 'celine.provost@transitioncitoyenne.org');
 
 /**
  * Custom post type & taxonomy

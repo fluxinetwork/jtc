@@ -80,11 +80,11 @@ function fluxi_manage_event(){
 					}
 
 					// Notification mail admin
-					//notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_GENERAL . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
+					notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_CELINE . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
 
 					// Notification mail user
-					/*$mail_new_event = array(get_footer_mail(), $redirect_slug);
-					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <celine.provost@transitioncitoyenne.org>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);*/
+					$mail_new_event = array(get_footer_mail(), $redirect_slug);
+					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <celine.provost@transitioncitoyenne.org>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
 
 					$message_response = 'Votre événement a été ajouté. Il sera publié sur le site après avoir été validé par nos soins.';
 
@@ -255,8 +255,8 @@ function send_mails_on_publish( $new_status, $old_status, $post )
     $email_contact = get_field('email_contact', $the_idp);
 
     // Notification mail current user
-	/*$mail_published_event = array(get_footer_mail(), get_home_url(), get_permalink($the_idp));
-	notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_GENERAL . '>', 'Votre événement est visible sur notre site', true, get_template_directory() . '/app/inc/mails/new-event-publish.php', $mail_published_event);*/
+	$mail_published_event = array(get_footer_mail(), get_home_url(), get_permalink($the_idp));
+	notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_CELINE . '>', 'Votre événement est visible sur notre site', true, get_template_directory() . '/app/inc/mails/new-event-publish.php', $mail_published_event);
 }
 
 add_action( 'transition_post_status', 'send_mails_on_publish', 10, 3 );

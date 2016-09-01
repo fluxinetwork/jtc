@@ -145,7 +145,7 @@
 		    </div>
 
 		    <div class="form__group ajout">
-				<label for="add_contact" class="form__control form__control--checkbox">Ajouter un contact email public
+				<label for="add_contact" class="form__control form__control--checkbox">Ajouter un contact email public (email visible sur la page de l'événement)
 					<input type="checkbox" name="add_contact" id="add_contact" value="1">
 					<div class="form__control__indicator"></div> 
 				</label>
@@ -153,13 +153,13 @@
 
 		    <div class="form__row is-none js-add-contact ajout">
 		      	<input type="text" placeholder="" value="" name="email_contact_public" id="email_contact_public" data-validation="email" data-validation-depends-on="add_date" class="js-input-effect input-effect--2">
-		      	<label for="email_contact_public">Email public<i class="i-required">*</i></label>
+		      	<label for="email_contact_public">Email public <i class="i-required">*</i></label>
 		      	<span class="focus-bg"></span>
 		    </div>	
 
 		    <div class="form__row">
-		      	<input type="text" maxlength="10" placeholder="" value="" name="tel_contact" id="tel_contact" data-validation="number" class="js-input-effect input-effect--2">
-		      	<label for="tel_contact">Téléphone
+		      	<input type="text" maxlength="10" placeholder="" value="" name="tel_contact" id="tel_contact" class="js-input-effect input-effect--2">
+		      	<label for="tel_contact">Téléphone</label>
 		      	<span class="focus-bg"></span>
 		    </div>
 
@@ -170,7 +170,7 @@
 
 			<div class="form__group">
 				<label for="accept_terms" class="form__control form__control--checkbox">
-					Je m’engage à respecter les principes d’organisation d’une Journée de la transition<i class="i-required">*</i>
+					Je m’engage à respecter les principes d’organisation d’une Journée de la transition (<a href="/principes-dorganisation-de-journees-de-la-transition/" target="_blank">lire</a>)<i class="i-required">*</i>
 					<input type="checkbox" name="accept_terms" id="accept_terms" value="1" data-validation="required">
 					<div class="form__control__indicator"></div>
 				</label>

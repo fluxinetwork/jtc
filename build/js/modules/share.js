@@ -33,4 +33,4 @@ $('.js-share').on('click', function(e){
             "&url=" + encodeURIComponent(url);
 		popupCenter(shareUrl, "Partager sur Twitter");
 	}
-});é
+});

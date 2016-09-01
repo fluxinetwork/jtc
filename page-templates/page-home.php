@@ -14,7 +14,7 @@ Template Name: Page d'accueil
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--1">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--2">
 
-		<h2 class="wrap-content"><span>Les solution existent déjà :</span><br>à moi de faire le premier pas !</h2>
+		<h2 class="wrap-content"><span>Les solutions existent déjà :</span><br>à moi de faire le premier pas !</h2>
 
 		<div class="video has-anim"><?php echo get_field('video'); ?></div>
 		
@@ -56,7 +56,7 @@ Template Name: Page d'accueil
 		
 				<div class="organisateur__help">
 					<p class="mode-emploi">Vous souhaitez des conseils<br> pour organiser votre évènement ?</p>
-					<a href="#" class="link p">Voir le mode d’emploi</a>
+					<a href="http://www.transitioncitoyenne.org/organiser-journee-v2/" target="_blank" class="link p">Voir le mode d’emploi</a>
 				</div>
 			</div>	
 	</section>

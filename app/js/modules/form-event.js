@@ -100,6 +100,8 @@ function initManageEventForm(){
     $('input[name=add_contact]').click(function() {
         if(this.checked){
             $('.js-add-contact').removeClass('is-none');
+            $('input[name=email_contact_public]').val( $('input[name=email_contact]').val() );
+             $('input[name=email_contact_public]').focus();
         }else{
             $('.js-add-contact').addClass('is-none');
             $('input[name=email_contact_public]').val('').removeClass('has-content');
