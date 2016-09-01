@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-.button, .button--cta, .button--outline, .bub__button, .tabs-controls__btn, .more-tabs, .link, .map-holder, [class^="icon-"], [class*=" icon-"], .wrap-icon--facebook, .wrap-icon--twitter {
+.button, .button--cta, .button--outline, .bub__button, .tabs-controls__btn, .more-tabs, .link, p a, .map-holder, [class^="icon-"], [class*=" icon-"], .wrap-icon--facebook, .wrap-icon--twitter {
   transition: all 0.2s ease-in-out;
 }
 
@@ -343,7 +343,7 @@ p:first-child {
   color: #4C322E;
 }
 
-.link {
+.link, p a {
   display: inline-block;
   margin-top: 0.5rem;
   color: #fff;
@@ -353,7 +353,7 @@ p:first-child {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.link:hover {
+.link:hover, p a:hover {
   border-color: #4C322E;
 }
 
@@ -2878,7 +2878,7 @@ html[xmlns] .flexslider .slides {
 .organisateur__help {
   margin-top: 1.5rem;
 }
-.organisateur__help .link {
+.organisateur__help .link, .organisateur__help p a, p .organisateur__help a {
   margin-top: 0.5rem;
 }
 
@@ -3061,7 +3061,7 @@ html[xmlns] .flexslider .slides {
     text-align: left;
     margin-left: 0.75rem;
   }
-  .organisateur__help .link {
+  .organisateur__help .link, .organisateur__help p a, p .organisateur__help a {
     margin-top: 0.5rem;
   }
 
