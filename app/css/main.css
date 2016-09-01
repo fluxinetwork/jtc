@@ -2763,11 +2763,6 @@ html[xmlns] .flexslider .slides {
     display: inline-block;
   }
 }
-@media screen and (min-width: 900px) {
-  .tabs-controls.limit .tabs-controls__btn:nth-child(-n+6) {
-    display: inline-block;
-  }
-}
 /*------------------------------*\
 
     #PARTENAIRES
