@@ -27,7 +27,7 @@ Template Name: Page d'accueil
 
 	<section class="section solutions">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/france.svg" class="france">
-			<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--3">
+			<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-3.svg" class="zigouigoui--3">
 
 			<header class="solutions__header wrap-content has-anim">
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin.png" class="chemin-pin">
@@ -100,7 +100,7 @@ Template Name: Page d'accueil
 	</section>
 
 	<section class="section temoignages">
-		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--4">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-4.svg" class="zigouigoui--4">
 			<div class="wrap-content">
 				<h2><span class="icon--round icon-users"></span>Ils ont fait le premier pas</h2>
 				<h3>voici leur histoire</h3>

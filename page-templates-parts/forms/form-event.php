@@ -8,8 +8,8 @@
 	<div class="zigouigouis">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--1">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--2">
-		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--3">
-		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--4">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-3.svg" class="zigouigoui--3">
+		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-4.svg" class="zigouigoui--4">
 	</div>
 	<form id="form-manage-event" role="form">
 

@@ -15,7 +15,8 @@
 	z-index: -1;
 	width: 150%;
 	max-width: 870px;
-	transform-origin: center;
+	left: 50%;
+	transform: translateX(-43%);
 }
 
 .zigouigoui--1 {
@@ -30,18 +31,10 @@
 
 .zigouigoui--3 {
 	@extend %zigouigoui;
-	bottom: -120%;
-	transform: rotate(234deg) translate(23%, 48%);
+	bottom: -55%;
 }
 
 .zigouigoui--4 {
 	@extend %zigouigoui;
-	top: -5%;
-    transform: rotate(17deg) translate(-4%, -33%);
-}
-
-@media screen and (min-width: $break--l) {
-	.zigouigoui--3 {
-		transform: rotate(234deg) translate(36%, 46%);
-	}
+	top: -50%;
 }
