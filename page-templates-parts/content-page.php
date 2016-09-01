@@ -12,22 +12,19 @@
 	<article class="wrap-content">
 
 		<?php
-			$ville = get_field('ville');
+			
 			$date_start = get_field('date_event');
 			$date_end = get_field('date_event_end');
 			$hour_start = get_field('hour_event');
 			$hour_end = get_field('hour_event_end');
 
-			$multidate = ($date_end) ? true : false;
-			$multihour = ($hour_end) ? true : false;
-
-			if ($multidate) {
+			if ($date_end) {
 				$date_output = $date_start.' au '.$date_end;
 			} else {
 				$date_output = $date_start;
 			}
 
-			if ($multihour) {
+			if ($hour_end) {
 				$hour_output = $hour_start.' à '.$hour_end;
 			} else {
 				$hour_output = $hour_start;
@@ -35,7 +32,13 @@
 
 			$adresse = get_field('adresse');
 			$code_postal = get_field('code_postal');
-			$adresse_full = $adresse.', '.$code_postal.' '.$ville;
+			$ville = get_field('ville');
+
+			if($adresse) $adresse = $adresse . ', ';
+			
+			if($code_postal) $code_postal = $code_postal . ' ';			
+
+			$adresse_full = $adresse . $code_postal . $ville;
 
 			$contact_name = get_field('prenom_contact').' '.get_field('nom_contact');
 			$tel_contact = get_field('tel_contact');
