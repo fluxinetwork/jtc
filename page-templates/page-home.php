@@ -89,7 +89,7 @@ Template Name: Page d'accueil
 			        <ul class="slides">
 			            <?php foreach( $galerie as $image ): ?>
 			                <li>
-			                    <img src="" data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">			                    
+			                    <img src="" data-src="<?php echo $image['sizes']['slider']; ?>" alt="<?php echo $image['alt']; ?>">			                    
 			                </li>
 			            <?php endforeach; ?>
 			        </ul>

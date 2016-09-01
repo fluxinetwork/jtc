@@ -5,7 +5,7 @@
  * add_image_size('name', width, height, crop);
  */
 function add_img_sizes() {
-	add_image_size('slider', 768, 512, crop);
+	add_image_size('slider', 768, 512, true);
 }
 add_action('after_setup_theme', 'add_img_sizes');
 
