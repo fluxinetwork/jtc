@@ -443,7 +443,7 @@ function onEachFeature(f,l){
 
 function initMapMobil(){
 
-    $('.touch .js-open-map, .touch .js-close-map').click(function(e){
+    $('.js-open-map, .js-close-map').click(function(e){
         e.preventDefault();
         $('.map-holder').toggleClass('is-open');
     });
