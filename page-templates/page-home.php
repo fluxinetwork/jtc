@@ -33,7 +33,7 @@ Template Name: Page d'accueil
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin.png" class="chemin-pin">
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin-plus.png" class="chemin-pin-plus">
 				<h2><span class="icon--round icon-map-marker"></span>Les solutions sont là !</h2>
-				<h3>plus de <?php echo $count_events->publish + 247; ?> événements</h3>
+				<h3>plus de <?php echo $count_events->publish; ?> événements</h3>
 			</header>
 	
 			<div class="map-holder">
