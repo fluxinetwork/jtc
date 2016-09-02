@@ -47,6 +47,7 @@ function fluxi_manage_event(){
 						'email_contact' => $email_contact,
 						'email_contact_public' => filter_var( $_POST['email_contact_public'], FILTER_SANITIZE_EMAIL),
 						'tel_contact' => filter_var( $_POST['tel_contact'], FILTER_SANITIZE_NUMBER_INT),
+						'tel_is_visible' => filter_var( $_POST['tel_contact'], FILTER_SANITIZE_STRING),
 						'adresse'		=> filter_var( $_POST['adresse'], FILTER_SANITIZE_STRING),
 						'adresse_complement'	=> filter_var( $_POST['adresse_complement'], FILTER_SANITIZE_STRING),
 						'ville'			=> filter_var( $_POST['ville'], FILTER_SANITIZE_STRING),
@@ -80,11 +81,11 @@ function fluxi_manage_event(){
 					}
 
 					// Notification mail admin
-					notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_CELINE . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
+					//notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_CELINE . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
 
 					// Notification mail user
 					$mail_new_event = array(get_footer_mail(), $redirect_slug);
-					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <celine.provost@transitioncitoyenne.org>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
+					//notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_CELINE . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
 
 					$message_response = 'Votre événement a été ajouté. Il sera publié sur le site après avoir été validé par nos soins.';
 

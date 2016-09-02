@@ -111,6 +111,7 @@ function initManageEventForm(){
     if($('input[name=add_contact]').is(':checked')){
         $('input[name=add_contact]').triggerHandler('click');
     }
+    
 }
 
 /*

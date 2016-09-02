@@ -163,6 +163,13 @@
 		      	<span class="focus-bg"></span>
 		    </div>
 
+			<div class="form__group ajout">
+		    	<label for="tel_is_visible" class="form__control form__control--checkbox">
+					Je souhaite faire apparaitre le numéro de téléphone sur la page de l'événement
+					<input type="checkbox" name="tel_is_visible" id="tel_is_visible" value="1">
+					<div class="form__control__indicator"></div>
+				</label>
+			</div>
 	    </fieldset>
 
 	    <fieldset>
