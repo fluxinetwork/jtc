@@ -26,12 +26,12 @@
 
 	<a href="http://www.transitioncitoyenne.org/contact/" target="_blank" class="contact-button">Contact</a>
 
-	<p>Illustrations : <a href="kdihttp://studiobluecherry.tumblr.com/" target="_blank">Studio Blue Cherry</a></p>
-	<p>Design & Code: <a href="http://www.yannrolland.com/" target="_blank">Yann Rolland</a> + <a href="http://www.tcaroli.fr/" target="_blank">Thibaut Caroli</a></p>
+	<p>Illustrations : <a href="http://studiobluecherry.tumblr.com/" target="_blank">Studio Blue Cherry</a></p>
+	<p>Design &amp; Code: <a href="http://www.yannrolland.com/" target="_blank">Yann Rolland</a> + <a href="http://www.tcaroli.fr/" target="_blank">Thibaut Caroli</a></p>
 
 	<?php if (!is_front_page()) : ?>
 		<div class="wrap-back">
-			<a href="<?php bloginfo('url'); ?>" class="button--outline has-icon"><span class="icon-reply"></span>Retour accueil</a>
+			<a href="<?php echo home_url(); ?>" class="button--outline has-icon"><span class="icon-reply"></span>Retour accueil</a>
 
 			<?php if (is_single()) : ?>
 			<a href="<?php echo home_url(); ?>/ajouter-evenement/" class="button--outline has-icon"><span class="icon-plus"></span>Ajouter votre évènement</a>
