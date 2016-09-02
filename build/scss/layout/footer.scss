@@ -8,8 +8,12 @@
 	position: relative;
 	background: $c-dark;
 	@extend .section;
-	padding: $space--s 0 $space--m 0;
+	padding: $space--m 0 $space--m 0;
 	margin-top: $space--l*1.5;
+
+	p + p {
+		margin-top: 0;
+	}
 }
 
 .footer__scene {
@@ -25,7 +29,7 @@
 	background-color: #FFF;
 	border-radius: $radius;
 	padding: $space--s;
-	margin: $space--xs 0 $space--s 0;
+	margin: $space--s 0 $space--s 0;
 
 	img {
 		width: 100%;
@@ -45,6 +49,12 @@
 	a:nth-child(2) {
 		margin-left: $space--s;
 	}
+}
+
+.contact-button {
+	@extend .p;
+	@extend .button--outline;
+	margin-top: $space--s;;
 }
 
 @media screen and (max-width: $break--m) {

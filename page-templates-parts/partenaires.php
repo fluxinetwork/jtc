@@ -15,4 +15,19 @@
 	</div>
 </aside>
 
+<aside class="section">
+	<div class="wrap-content">
+		<h2>Nos partenaires</h2>
+		<ul class="logos">
+			<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-partenaire-generations-futures.jpg"></li>
+			<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-partenaire-fnab.jpg"></li>
+			<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-partenaire-comestible.jpg"></li>
+			<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-partenaire-rac.jpg"></li>
+			<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-partenaire-mager-bio.jpg"></li>
+			<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-partenaire-ape.jpg"></li>
+			<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-partenaire-coherence.jpg"></li>
+		</ul>
+	</div>
+</aside>
+
 

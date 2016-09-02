@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-.button, .button--cta, .button--outline, .bub__button, .tabs-controls__btn, .more-tabs, .link, p a, .map-holder, [class^="icon-"], [class*=" icon-"], .wrap-icon--facebook, .wrap-icon--twitter {
+.button, .button--cta, .button--outline, .bub__button, .contact-button, .tabs-controls__btn, .more-tabs, .link, p a, .map-holder, [class^="icon-"], [class*=" icon-"], .wrap-icon--facebook, .wrap-icon--twitter {
   transition: all 0.2s ease-in-out;
 }
 
@@ -224,26 +224,26 @@ h6,
   font-size: 1.2rem;
 }
 
-p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .contact-button, .infos__details,
 .infos--adresse {
   font-size: 0.9375rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 @media screen and (min-width: 480px) {
-  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .contact-button, .infos__details,
   .infos--adresse {
     font-size: 1.0625rem;
   }
 }
 @media screen and (min-width: 620px) {
-  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .contact-button, .infos__details,
   .infos--adresse {
     font-size: 1.125rem;
   }
 }
 @media screen and (min-width: 768px) {
-  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .infos__details,
+  p, .p, .macaron__label, [class^="icon-"], [class*=" icon-"], .contact-button, .infos__details,
   .infos--adresse {
     font-size: 1.25rem;
     line-height: 1.5;
@@ -290,7 +290,7 @@ p:first-child {
   font-weight: normal;
   font-style: normal;
 }
-.button, .button--cta, .button--outline, .bub__button, .tabs-controls__btn, .more-tabs {
+.button, .button--cta, .button--outline, .bub__button, .contact-button, .tabs-controls__btn, .more-tabs {
   cursor: pointer;
   display: inline-block;
   font-family: qanelas;
@@ -306,7 +306,7 @@ p:first-child {
     #BUTTONS
 
 \*------------------------------*/
-.button, .button--cta, .button--outline, .bub__button, .tabs-controls__btn, .more-tabs {
+.button, .button--cta, .button--outline, .bub__button, .contact-button, .tabs-controls__btn, .more-tabs {
   border-radius: 40px;
 }
 
@@ -322,24 +322,24 @@ p:first-child {
   color: #fff;
 }
 
-.button--outline, .bub__button, .tabs-controls__btn, .more-tabs {
+.button--outline, .bub__button, .contact-button, .tabs-controls__btn, .more-tabs {
   border: 3px solid #fff;
   color: #fff;
   background-color: transparent;
 }
-.button--outline.is-active, .is-active.bub__button, .is-active.tabs-controls__btn, .is-active.more-tabs {
+.button--outline.is-active, .is-active.bub__button, .is-active.contact-button, .is-active.tabs-controls__btn, .is-active.more-tabs {
   border-color: #4C322E;
   background-color: #4C322E;
 }
-.button--outline.has-icon, .has-icon.bub__button, .has-icon.tabs-controls__btn, .has-icon.more-tabs {
+.button--outline.has-icon, .has-icon.bub__button, .has-icon.contact-button, .has-icon.tabs-controls__btn, .has-icon.more-tabs {
   display: flex !important;
   align-items: center;
 }
-.button--outline:not(.is-active):hover, .bub__button:not(.is-active):hover, .tabs-controls__btn:not(.is-active):hover, .more-tabs:not(.is-active):hover {
+.button--outline:not(.is-active):hover, .bub__button:not(.is-active):hover, .contact-button:not(.is-active):hover, .tabs-controls__btn:not(.is-active):hover, .more-tabs:not(.is-active):hover {
   background-color: #fff;
   color: #4C322E;
 }
-.button--outline:not(.is-active):hover span, .bub__button:not(.is-active):hover span, .tabs-controls__btn:not(.is-active):hover span, .more-tabs:not(.is-active):hover span {
+.button--outline:not(.is-active):hover span, .bub__button:not(.is-active):hover span, .contact-button:not(.is-active):hover span, .tabs-controls__btn:not(.is-active):hover span, .more-tabs:not(.is-active):hover span {
   color: #4C322E;
 }
 
@@ -580,6 +580,7 @@ p:first-child {
   .js-open-map.button--cta,
   .js-open-map.button--outline,
   .js-open-map.bub__button,
+  .js-open-map.contact-button,
   .js-open-map.tabs-controls__btn,
   .js-open-map.more-tabs {
     display: none;
@@ -1376,6 +1377,10 @@ p:first-child {
   content: "\e902";
 }
 
+.icon-sun:before {
+  content: "\e90f";
+}
+
 .icon-image:before {
   content: "\e903";
 }
@@ -1465,6 +1470,7 @@ p:first-child {
   .js-open-map.button--cta,
   .js-open-map.button--outline,
   .js-open-map.bub__button,
+  .js-open-map.contact-button,
   .js-open-map.tabs-controls__btn,
   .js-open-map.more-tabs {
     display: none;
@@ -2339,8 +2345,11 @@ body {
 .footer {
   position: relative;
   background: #4C322E;
-  padding: 1.5rem 0 3.5rem 0;
+  padding: 3.5rem 0 3.5rem 0;
   margin-top: 12rem;
+}
+.footer p + p {
+  margin-top: 0;
 }
 
 .footer__scene {
@@ -2356,7 +2365,7 @@ body {
   background-color: #FFF;
   border-radius: 3px;
   padding: 1.5rem;
-  margin: 0.5rem 0 1.5rem 0;
+  margin: 1.5rem 0 1.5rem 0;
 }
 .wrap-logo img {
   width: 100%;
@@ -2375,6 +2384,10 @@ body {
 }
 .wrap-back a:nth-child(2) {
   margin-left: 1.5rem;
+}
+
+.contact-button {
+  margin-top: 1.5rem;
 }
 
 @media screen and (max-width: 620px) {
@@ -2770,18 +2783,25 @@ html[xmlns] .flexslider .slides {
 \*------------------------------*/
 .logos {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 1.5rem;
 }
 
-.logos__logo {
+.logos__logo, .logos__logo--small {
   width: 31%;
+  margin: 0.4rem;
 }
-.logos__logo img {
+.logos__logo img, .logos__logo--small img {
   width: 100%;
   border-radius: 3px;
 }
 
+@media screen and (min-width: 620px) {
+  .logos__logo--small {
+    width: 20%;
+  }
+}
 /*------------------------------*\
 
     #HOMEPAGE
@@ -3119,7 +3139,7 @@ html[xmlns] .flexslider .slides {
     margin-top: 2.25rem;
   }
 }
-.button, .button--cta, .button--outline, .bub__button, .tabs-controls__btn, .more-tabs {
+.button, .button--cta, .button--outline, .bub__button, .contact-button, .tabs-controls__btn, .more-tabs {
   cursor: pointer;
   display: inline-block;
   font-family: qanelas;
@@ -3302,6 +3322,9 @@ html[xmlns] .flexslider .slides {
   margin-top: 1.5rem;
   padding-left: 1.8rem;
   cursor: pointer;
+}
+.form__control .link, .form__control p a, p .form__control a {
+  margin-top: 0;
 }
 
 .form__control input {

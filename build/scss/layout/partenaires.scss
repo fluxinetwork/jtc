@@ -6,14 +6,25 @@
 
 .logos {
 	@extend %list-reset;
-	@include flex(space-between null);
+	@include flex(center null);
+	flex-wrap: wrap;
 	margin-top: $space--s;
 }
 .logos__logo {
 	width: 31%;
+	margin: $space--xs*0.8;
 
 	img {
 		width: 100%;
 		border-radius: $radius;
+	}
+}
+.logos__logo--small {
+	@extend .logos__logo;
+}
+
+@media screen and (min-width: $break--m) {
+	.logos__logo--small {
+		width: 20%;
 	}
 }

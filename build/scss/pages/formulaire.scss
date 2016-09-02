@@ -179,6 +179,10 @@
 	margin-top: $gutter--l/4;
 	padding-left: $space--s*1.2;	
 	cursor: pointer;
+
+	.link {
+		margin-top: 0;
+	}
 }
 
 .form__control input {
