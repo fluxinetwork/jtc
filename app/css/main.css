@@ -2307,11 +2307,6 @@ body {
     max-width: 500px;
   }
 }
-@media screen and (min-width: 900px) {
-  .wrap-content {
-    max-width: 550px;
-  }
-}
 /*------------------------------*\
 
     #HEADER
@@ -2369,6 +2364,11 @@ body {
 }
 .wrap-logo img {
   width: 100%;
+}
+
+.wrap-logo,
+.footer .logos {
+  margin-top: 0.5rem;
 }
 
 .wrap-back {
@@ -2789,7 +2789,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .logos__logo, .logos__logo--small {
-  width: 31%;
+  width: 30%;
   margin: 0.4rem;
 }
 .logos__logo img, .logos__logo--small img {

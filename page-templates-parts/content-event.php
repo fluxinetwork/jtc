@@ -18,7 +18,7 @@
 			$hour_start = get_field('hour_event');
 			$hour_end = get_field('hour_event_end');
 
-			if ($date_end) {
+			if ($date_end && $date_end != $date_start) {
 				$date_output = $date_start.' au '.$date_end;
 			} else {
 				$date_output = $date_start;
@@ -53,7 +53,7 @@
 		<div class="infos">
 			<div class="infos__ville"><?php echo $ville;?></div>
 			<div class="infos__details">
-				<div><?php echo '<span class="icon-bookmark"></span>'.$date_output; ?></div>
+				<div><?php echo '<span class="icon-calendar"></span>'.$date_output; ?></div>
 				<?php if($hour_output): ?>
 					<div><?php echo '<span class="icon-clock"></span>'.$hour_output; ?></div>
 				<?php endif; ?>
@@ -78,8 +78,8 @@
 			<?php if ($link_event || $page_facebook) : ?>
 				<div class="contact__links">
 					<?php 
-						if ($link_event) : echo '<a href="'.$link_event.'" class="tel link p">Site de l\'évènement</a>'; endif;
-						if ($page_facebook) : echo '<a href=".$email_contact." class="email link p">Page facebook</a>'; endif;
+						if ($link_event) : echo '<a href="'.$link_event.'" class="tel link p" target="_blank">Site de l\'évènement</a>'; endif;
+						if ($page_facebook) : echo '<a href=".$email_contact." class="email link p" target="_blank">Page facebook</a>'; endif;
 					?>
 				</div>
 			<?php endif; ?>

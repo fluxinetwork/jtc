@@ -36,6 +36,11 @@
 	}
 }
 
+.wrap-logo,
+.footer .logos {
+	margin-top: $space--xs;
+}
+
 .wrap-back {
 	position: fixed;
 	z-index: 100;

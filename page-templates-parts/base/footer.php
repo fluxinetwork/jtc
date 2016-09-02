@@ -4,24 +4,24 @@
 	<a href="http://www.transitioncitoyenne.org/" class="wrap-logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-ctc.png" alt="logo colectif journee transition"></a>
 	<p>Et ses membres</p>
 	<ul class="logos wrap-content">
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-alternatiba.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ami-terre.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-artisans-monde.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-attac.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-bio-conso.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-cocagne.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-demain.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-enercoop.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ep.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-labo.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-mouvement-amap.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-nef.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-passe-acte.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-plateforme-equitable.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-pouvoir-citoyen.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-roosevelt.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-terre-lien.jpg"></li>
-		<li class="logos__logo"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ville-transition.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-alternatiba.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ami-terre.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-artisans-monde.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-attac.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-bio-conso.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-cocagne.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-demain.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-enercoop.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ep.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-labo.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-mouvement-amap.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-nef.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-passe-acte.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-plateforme-equitable.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-pouvoir-citoyen.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-roosevelt.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-terre-lien.jpg"></li>
+		<li class="logos__logo--small"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ville-transition.jpg"></li>
 	</ul>
 
 	<a href="http://www.transitioncitoyenne.org/contact/" target="_blank" class="contact-button">Contact</a>
