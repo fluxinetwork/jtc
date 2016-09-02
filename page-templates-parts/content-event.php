@@ -63,7 +63,7 @@
 
 		<p class="description"><?php echo acf_field_no_p('descriptif_event'); ?></p>
 
-		<p>Organisé par : <?php echo $nom_structure; ?></p>
+		<p class="ta--l"><strong>Organisé par :</strong> <?php echo $nom_structure; ?></p>
 
 		<p class="h2 section"><span class="icon--round icon-bubble"></span>Contact</p>
 		<div class="contact">

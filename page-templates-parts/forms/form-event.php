@@ -170,7 +170,7 @@
 
 			<div class="form__group">
 				<label for="accept_terms" class="form__control form__control--checkbox">
-					Je m’engage à respecter les principes d’organisation d’une Journée de la transition (<a href="/principes-dorganisation-de-journees-de-la-transition/" target="_blank">lire</a>)<i class="i-required">*</i>
+					Je m’engage à respecter les <a href="/principes-dorganisation-de-journees-de-la-transition/" target="_blank" class="link">principes d’organisation</a> d’une Journée de la transition<i class="i-required">*</i>
 					<input type="checkbox" name="accept_terms" id="accept_terms" value="1" data-validation="required">
 					<div class="form__control__indicator"></div>
 				</label>
