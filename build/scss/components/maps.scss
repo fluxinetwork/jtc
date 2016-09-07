@@ -26,13 +26,14 @@
 
 .close {
 	font: 700 qanelas;
-	display:inline-block;
+	@include flex(center);
 	position:absolute;
-	background:#fff;
-	padding:$gutter--xs;
-	border-radius:$radius;
-	top:$gutter--xs;
-	right:$gutter--xs;
+	background-color: $c-dark;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	top: $space--s;
+	right; $space--s;
 	z-index: 1000;
 }
 

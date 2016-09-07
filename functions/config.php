@@ -7,16 +7,11 @@ define('DEV', true);
 define('ADMIN_STYLE', true);
 define('EDITOR_STYLE', false);
 
+
 // VALUES
 define('POST_EXCERPT_LENGTH', 40);
-define('GOOGLE_ANALYTICS_ID', '');
+define('GOOGLE_ANALYTICS_ID', 'UA-83704840-1');
 define('GOOGLE_MAP_API_KEY', 'AIzaSyDWdjumGHjHMCCjx962HCWjj8lmWZ-qb3w');
-/* ACF Google Maps */
-function wpc_acf_init() {
-	acf_update_setting('google_api_key', GOOGLE_MAP_API_KEY);
-}
-add_action('acf/init', 'wpc_acf_init');
-
 
 
 // ACTIVATE
@@ -62,8 +57,8 @@ if ( CUSTOM_POST_TYPE ) {
 			'rewrite' => array( 'slug' => 'evenements', 'with_front' => true ),
 			'query_var' => true,
 
-			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'supports' => array( 'title', 'author', 'revisions' ),
+			//'taxonomies' => array( 'category', 'post_tag' ),
 		);
 		register_post_type( 'evenements', $args );
 
@@ -121,5 +116,17 @@ if ( ACF_OPTION_PAGE && function_exists('acf_add_options_page') ) {
 		'parent_slug'   => $parent['menu_slug'],
 	));
 }
+
+
+/**
+ * Add Google Map API Key for ACF
+ */
+
+if ( GOOGLE_MAP_API_KEY) {
+	function wpc_acf_init() {
+		acf_update_setting('google_api_key', GOOGLE_MAP_API_KEY);
+	}
+	add_action('acf/init', 'wpc_acf_init');
+};
 
 

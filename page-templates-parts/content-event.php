@@ -33,14 +33,19 @@
 			$adresse = get_field('adresse');
 			$code_postal = get_field('code_postal');
 			$ville = get_field('ville');
+			$cpt_adresse = get_field('adresse_complement');
 
-			if($adresse) $adresse = $adresse . ', ';
 			
+			if($cpt_adresse) $adresse = $cpt_adresse.', '.$adresse;
+			if($adresse) $adresse = $adresse . ', ';
 			if($code_postal) $code_postal = $code_postal . ' ';			
 
 			$adresse_full = $adresse . $code_postal . $ville;
 
 			$contact_name = get_field('prenom_contact').' '.get_field('nom_contact');
+			if ($tel_is_visible === 1) {
+				$tel = get_field('tel_contact');
+			}
 			$email_contact = get_field('email_contact_public');
 			$link_event = get_field('link_event');
 			$page_facebook = get_field('page_facebook');
@@ -69,9 +74,16 @@
 		<div class="contact">
 			<div class="contact__name"><?php echo $contact_name; ?></div>
 
-			<?php if ($email_contact) : ?>
+			<?php if ($tel || $email_contact) : ?>
 				<div class="contact__infos">
-				<?php echo '<p class="email"><span class="icon-envelope"></span>'.$email_contact.'</p>'; ?>
+				<?php 
+					if ($tel) {
+						echo '<p class="tel"><span class="icon-bubbles"></span>'.$email_contact.'</p>';
+					}
+					if ($tel) {
+						echo '<p class="email"><span class="icon-envelope"></span>'.$email_contact.'</p>';
+					}
+				?>
 				</div>
 			<?php endif; ?>
 

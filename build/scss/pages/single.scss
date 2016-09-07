@@ -88,6 +88,7 @@
 .contact__links a {
 	@include flex(center);
 	margin-top: $space--s;
+	word-break: break-word
 
 	&:nth-child(2) {
 		margin-top: $space--xs;
@@ -99,6 +100,12 @@
 
 	a {
 		display: inline-block;
+	}
+}
+
+@media screen and (min-width: $break--s) {
+	.contact {
+		max-width: 420px;
 	}
 }
 
@@ -141,6 +148,10 @@
 		div {
 			@include flex(null center);
 		}
+	}
+
+	.contact {
+		max-width: $20px;
 	}
 }
 
