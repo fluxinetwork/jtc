@@ -21,7 +21,7 @@
 		<li class="logos__logo--small"><a href="http://eg-pouvoir-citoyen.org/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-pouvoir-citoyen.jpg"></a></li>
 		<li class="logos__logo--small"><a href="https://collectif-roosevelt.fr/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-roosevelt.jpg"></a></li>
 		<li class="logos__logo--small"><a href="https://www.terredeliens.org/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-terre-lien.jpg"></a></li>
-		<li class="logos__logo--small"><a href="" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ville-transition.jpg"></a></li>
+		<li class="logos__logo--small"><a href="http://www.transitionfrance.fr/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-membre-ville-transition.jpg"></a></li>
 	</ul>
 
 	<a href="http://www.transitioncitoyenne.org/contact/" target="_blank" class="contact-button">Contact</a>
