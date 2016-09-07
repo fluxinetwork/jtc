@@ -563,6 +563,7 @@ p:first-child {
   top: 1.5rem;
   right: 1.5rem;
   z-index: 1000;
+  color: #fff;
 }
 
 @media screen and (min-width: 620px) {
@@ -1456,6 +1457,7 @@ p:first-child {
   top: 1.5rem;
   right: 1.5rem;
   z-index: 1000;
+  color: #fff;
 }
 
 @media screen and (min-width: 620px) {
