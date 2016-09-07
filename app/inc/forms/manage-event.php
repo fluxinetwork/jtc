@@ -26,7 +26,7 @@ function fluxi_manage_event(){
 
 			if ( !empty($_POST['title']) && !empty($_POST['date_event_submit']) && !empty($_POST['hour_event_submit']) && !empty($_POST['descriptif_event']) && !empty($_POST['nom_structure']) && !empty($_POST['nom_contact']) && !empty($_POST['prenom_contact']) && !empty($_POST['email_contact']) && !empty($_POST['adresse']) && !empty($_POST['ville']) && !empty($_POST['code_postal']) && !empty($_POST['accept_terms']) ):
 
-					$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+					$title = wp_strip_all_tags( $_POST['title'] );
 					$content = '';
 
 					$date_event = filter_var( $_POST['date_event_submit'], FILTER_SANITIZE_NUMBER_INT);
@@ -81,11 +81,11 @@ function fluxi_manage_event(){
 					}
 
 					// Notification mail admin
-					//notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_CELINE . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
+					notify_by_mail (array(CONTACT_GENERAL),'Les JTC 2016 <' . CONTACT_CELINE . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $prenom_contact . ' ' . $nom_contact . ' vient d\'ajouter l\'événement <strong>"' . $title . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
 
 					// Notification mail user
 					$mail_new_event = array(get_footer_mail(), $redirect_slug);
-					//notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_CELINE . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
+					notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_CELINE . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-event.php', $mail_new_event);
 
 					$message_response = 'Votre événement a été ajouté. Il sera publié sur le site après avoir été validé par nos soins.';
 
@@ -147,7 +147,7 @@ add_action('wp_ajax_fluxi_manage_event', 'fluxi_manage_event');
 function add_events_export_dashboard() {
 	wp_add_dashboard_widget('dashboard_widget', 'Exporter Au format CSV', 'events_export_dashboard');
 }
-add_action('wp_dashboard_setup', 'add_events_export_dashboard' );
+//add_action('wp_dashboard_setup', 'add_events_export_dashboard' );
 
 function events_export_dashboard( $post, $callback_args ) {
 	echo '<div class="fluxi-metabox">';
@@ -174,7 +174,7 @@ function fluxi_csv_export() {
 		'post_type' => 'evenements',
 		//'post_status' => array( 'publish' ),
 		'order' => 'DESC',
-		'posts_per_page' => '-1'
+		'posts_per_page' => -1
 	);
 
 	// The Post Query
@@ -187,22 +187,26 @@ function fluxi_csv_export() {
         //$date = date('m.j.Y-His');        
         $filename = 'jtc-events.csv';       
 
-		header( "Content-type: application/vnd.ms-excel; charset=UTF-16LE" ); 
+		/*header( "Content-type: application/vnd.ms-excel; charset=UTF-16LE" ); 
 
 		header("Content-Disposition: attachment; filename={$filename}");
 
 		$fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/wp-content/uploads/csv/{$filename}","wb");
 
-		fputcsv($fp, array('CONTACT', 'MAIL', 'TEL', 'STRUCTURE', 'DATE EVENT', 'TITRE', 'STATUT'));
+		fputcsv($fp, array('CONTACT', 'MAIL', 'TEL', 'STRUCTURE', 'DATE EVENT', 'TITRE', 'STATUT'));*/
 
 		while ( $post_query->have_posts() ) : $post_query->the_post();
 
 			$post_id = get_the_ID();			
 			$post_status = get_post_status();
-			if( $post_status != 'publish'):
-				$post_status = mb_convert_encoding('Refusé', 'UTF-16LE', 'UTF-8'); 
-			else:
+			/*if( $post_status == 'publish'):
 				$post_status = mb_convert_encoding('Publié', 'UTF-16LE', 'UTF-8'); 
+			elseif($post_status == 'draft'):	
+				$post_status = mb_convert_encoding('Brouillon', 'UTF-16LE', 'UTF-8');
+			elseif($post_status == 'pending'):	
+				$post_status = mb_convert_encoding('En attente', 'UTF-16LE', 'UTF-8');
+			else:
+				$post_status = mb_convert_encoding('Refusé', 'UTF-16LE', 'UTF-8'); 
 			endif;
 
 			$titre_event = mb_convert_encoding(get_the_title(), 'UTF-16LE', 'UTF-8'); 
@@ -216,15 +220,40 @@ function fluxi_csv_export() {
 			$tel_contact = mb_convert_encoding(get_field('tel_contact'), 'UTF-16LE', 'UTF-8'); 
 			$nom_structure = mb_convert_encoding(get_field('nom_structure'), 'UTF-16LE', 'UTF-8'); 
 
-			$nom_prenom = mb_convert_encoding($nom_contact . ' ' . $prenom_contact, 'UTF-16LE', 'UTF-8');
+			$nom_prenom = mb_convert_encoding($nom_contact . ' ' . $prenom_contact, 'UTF-16LE', 'UTF-8');			
 
+			fputcsv($fp, array($nom_prenom, $mail_contact, $tel_contact, $nom_structure, $date_event, $titre_event, $post_status));*/
+
+			if( $post_status == 'publish'):
+				$post_status = 'Publié'; 
+			elseif($post_status == 'draft'):	
+				$post_status = 'Brouillon';
+			elseif($post_status == 'pending'):	
+				$post_status = 'En attente';
+			else:
+				$post_status = 'Refusé'; 
+			endif;
+
+			$titre_event = get_the_title(); 
+			$date_event = get_field('date_event', false, false);
+			$date_obj = new DateTime($date_event);
+			$date_event = $date_obj->format('d-m-y'); 
+
+			$mail_contact = get_field('email_contact'); 
+			$nom_contact = get_field('nom_contact');
+			$prenom_contact = get_field('prenom_contact');
+			$tel_contact = get_field('tel_contact'); 
+			$nom_structure = get_field('nom_structure'); 
+
+			$nom_prenom = $nom_contact . ' ' . $prenom_contact;
 			
 
-			fputcsv($fp, array($nom_prenom, $mail_contact, $tel_contact, $nom_structure, $date_event, $titre_event, $post_status));
+
+			echo $nom_prenom.','.$mail_contact.','.$tel_contact.','.$nom_structure.','.$date_event.','.$titre_event.','.$post_status.'<br>';
 
 		endwhile;
 
-		fclose($fp);
+		//fclose($fp);
 		exit;
 
 	else :
@@ -236,7 +265,7 @@ function fluxi_csv_export() {
 }
 
 
-add_action( 'wp_ajax_fluxi_csv_export', 'fluxi_csv_export' );
+//add_action( 'wp_ajax_fluxi_csv_export', 'fluxi_csv_export' );
 
 
 /**

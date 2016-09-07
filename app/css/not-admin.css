@@ -1,0 +1,12 @@
+/*------------------------------*\
+
+    #NOT ADMIN
+
+\*------------------------------*/
+#menu-tools,
+#menu-settings,
+#toplevel_page_edit-post_type-acf-field-group,
+#toplevel_page_formulaires{
+	display: none;
+	visibility: hidden;
+}

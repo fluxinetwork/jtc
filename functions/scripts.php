@@ -35,7 +35,13 @@ add_action('wp_enqueue_scripts', 'enqueue_styles', 100);
  */
 
 function load_admin_style() {
+    $current_user = wp_get_current_user();
+
 	wp_enqueue_style( 'admin_css', THEME_DIR_PATH .'/app/css/admin-style.css', false, '1.0.0' );
+
+    if( $current_user->user_level != 10 ){
+        wp_enqueue_style( 'not_admin_css', THEME_DIR_PATH .'/app/css/not-admin.css', false, '1.0.0' );
+    }
 }
 if ( ADMIN_STYLE ) {
     add_action( 'admin_enqueue_scripts', 'load_admin_style' );
@@ -43,7 +49,7 @@ if ( ADMIN_STYLE ) {
 
 /**
  * Events Admin JS
- */
+ 
 
 function script_admin_events( $hook ) {
     $screen = get_current_screen();
@@ -59,7 +65,7 @@ function script_admin_events( $hook ) {
     wp_localize_script( 'admin-events', 'ajax_object', array('ajax_url' => admin_url( 'admin-ajax.php' ), 'nonce' => $admin_events_nonce ) );
 }
 add_action( 'admin_enqueue_scripts', 'script_admin_events' );
-
+*/
 
 /**
  * Ajoute une feuille de style au MCE pour une mise en page équivalente au Front
