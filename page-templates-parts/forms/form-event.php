@@ -144,15 +144,8 @@
 		      	<span class="focus-bg"></span>
 		    </div>
 
-		    <div class="form__group ajout">
-				<label for="add_contact" class="form__control form__control--checkbox">Ajouter un contact email public (email visible sur la page de l'événement)
-					<input type="checkbox" name="add_contact" id="add_contact" value="1">
-					<div class="form__control__indicator"></div> 
-				</label>
-		    </div>
-
-		    <div class="form__row is-none js-add-contact ajout">
-		      	<input type="text" placeholder="" value="" name="email_contact_public" id="email_contact_public" data-validation="email" data-validation-depends-on="add_date" class="js-input-effect input-effect--2">
+		    <div class="form__row">
+		      	<input type="text" placeholder="" value="" name="email_contact_public" id="email_contact_public" data-validation="email" class="js-input-effect input-effect--2">
 		      	<label for="email_contact_public">Email public <i class="i-required">*</i></label>
 		      	<span class="focus-bg"></span>
 		    </div>	

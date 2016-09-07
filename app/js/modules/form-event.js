@@ -97,7 +97,7 @@ function initManageEventForm(){
         $('input[name=add_hour]').triggerHandler('click');
     }
 
-    $('input[name=add_contact]').click(function() {
+   /* $('input[name=add_contact]').click(function() {
         if(this.checked){
             $('.js-add-contact').removeClass('is-none');
             $('input[name=email_contact_public]').val( $('input[name=email_contact]').val() );
@@ -110,7 +110,12 @@ function initManageEventForm(){
 
     if($('input[name=add_contact]').is(':checked')){
         $('input[name=add_contact]').triggerHandler('click');
-    }
+    }*/
+    
+
+    $('input[name=email_contact]' ).on('input',function(e){     
+      $('input[name=email_contact_public]').addClass('has-content').val( $(this).val() );
+    });
     
 }
 
