@@ -36,13 +36,22 @@
 			$cpt_adresse = get_field('adresse_complement');
 
 			
-			if($cpt_adresse) $adresse = $cpt_adresse.', '.$adresse;
+			if ($cpt_adresse) {
+				if ($adresse) {
+					$adresse = $cpt_adresse.', '.$adresse;
+				} else {
+					$adresse = $cpt_adresse;
+				}
+				
+			}
 			if($adresse) $adresse = $adresse . ', ';
 			if($code_postal) $code_postal = $code_postal . ' ';			
 
 			$adresse_full = $adresse . $code_postal . $ville;
 
 			$contact_name = get_field('prenom_contact').' '.get_field('nom_contact');
+			$tel_is_visible = get_field('tel_is_visible');
+			$tel = false;
 			if ($tel_is_visible === 1) {
 				$tel = get_field('tel_contact');
 			}
