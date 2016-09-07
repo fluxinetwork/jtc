@@ -175,7 +175,7 @@
 	    <fieldset>
     		<legend><span class="icon--round icon-cog"></span>Principes d’organisation</legend>
 
-			<div class="form__group">
+			<div class="form__group ajout">
 				<label for="accept_terms" class="form__control form__control--checkbox">
 					Je m’engage à respecter les <a href="/principes-dorganisation-de-journees-de-la-transition/" target="_blank" class="link">principes d’organisation</a> d’une Journée de la transition<i class="i-required">*</i>
 					<input type="checkbox" name="accept_terms" id="accept_terms" value="1" data-validation="required">
