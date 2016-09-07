@@ -552,13 +552,16 @@ p:first-child {
 
 .close {
   font: 700 qanelas;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 3px;
-  top: 1rem;
-  right: 1rem;
+  background-color: #4C322E;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  top: 1.5rem;
+  right: 1.5rem;
   z-index: 1000;
 }
 
@@ -1442,13 +1445,16 @@ p:first-child {
 
 .close {
   font: 700 qanelas;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 3px;
-  top: 1rem;
-  right: 1rem;
+  background-color: #4C322E;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  top: 1.5rem;
+  right: 1.5rem;
   z-index: 1000;
 }
 
@@ -4153,6 +4159,7 @@ textarea.input-effect--2 ~ .focus-bg {
   justify-content: center;
   align-items: center;
   margin-top: 1.5rem;
+  word-break: break-word;
 }
 .contact__infos p:nth-child(2),
 .contact__links a:nth-child(2) {
@@ -4167,6 +4174,11 @@ textarea.input-effect--2 ~ .focus-bg {
   display: inline-block;
 }
 
+@media screen and (min-width: 480px) {
+  .contact {
+    max-width: 420px;
+  }
+}
 @media screen and (max-width: 768px) {
   .infos [class*='icon'], .infos--adresse [class*='icon'],
   .contact [class*='icon'] {
@@ -4211,6 +4223,10 @@ textarea.input-effect--2 ~ .focus-bg {
   .infos__details div {
     display: flex;
     align-items: center;
+  }
+
+  .contact {
+    max-width: 420px;
   }
 }
 @media screen and (min-width: 900px) {
