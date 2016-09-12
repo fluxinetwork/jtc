@@ -573,8 +573,8 @@ p:first-child {
   }
 
   #map-events {
-    height: 500px;
-    max-width: 800px;
+    height: 600px;
+    max-width: 920px;
     margin: 0 auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
@@ -1467,8 +1467,8 @@ p:first-child {
   }
 
   #map-events {
-    height: 500px;
-    max-width: 800px;
+    height: 600px;
+    max-width: 920px;
     margin: 0 auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
@@ -2925,7 +2925,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .map-holder {
-  min-height: 500px;
+  min-height: 600px;
 }
 
 .map-launcher {

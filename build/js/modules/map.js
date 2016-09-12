@@ -16,7 +16,7 @@ function initMap (){
 
     mapJTC = L.map('map-events', {
         center: [47.07, 2.21],
-        zoom: 5.3,
+        zoom: 5.7,
         scrollWheelZoom: false
     });
 
