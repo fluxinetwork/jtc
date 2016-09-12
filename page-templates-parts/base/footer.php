@@ -3,8 +3,8 @@
 	<p>Un projet à l’initiative du<p>
 	<div class="ctc">
 		<div class="ctc__links">
-			<a href="https://www.facebook.com/CollectifTransitionCitoyenne/" class="wrap-icon--ctc"><span class="icon-facebook"></span></a>
-			<a href="https://twitter.com/transitioncit" class="wrap-icon--ctc"><span class="icon-twitter"></span></a>
+			<a href="https://www.facebook.com/CollectifTransitionCitoyenne/" target="_blank"  class="wrap-icon--ctc"><span class="icon-facebook"></span></a>
+			<a href="https://twitter.com/transitioncit" target="_blank"  class="wrap-icon--ctc"><span class="icon-twitter"></span></a>
 			<a href="http://www.transitioncitoyenne.org/" target="_blank"  class="wrap-icon--ctc"><span class="icon-browser"></span></a>
 		</div>
 		<div class="ctc__logo">

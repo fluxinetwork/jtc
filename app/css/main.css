@@ -2277,6 +2277,7 @@ p:first-child {
 body {
   background-color: #e64c38;
   overflow-x: hidden;
+  margin-top: 3.5rem;
 }
 
 .wrap-base, .section, .footer, .intro {
