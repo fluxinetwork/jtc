@@ -26,7 +26,9 @@ Nous avons validé votre événement qui apparaît d\'ores et déjà sur la <a h
 
 Le Collectif reviendra régulièrement vers vous pour vous transmettre des supports de communication, des fiches pratiques.<br><br>
 
-Merci de rejoindre la dynamique et nous nous tenons à votre disposition pour toute question ou remarque à l\'adresse suivante : contact@transitioncitoyenne.org et celine.provost@transitioncitoyenne.org.
+Merci de rejoindre la dynamique et nous nous tenons à votre disposition pour toute question ou remarque à l\'adresse suivante : contact@transitioncitoyenne.org et celine.provost@transitioncitoyenne.org.<br><br>
+
+Afin de valoriser vos actions et inviter des personnes à votre événement, le Collectif pour une Transition Citoyenne vous transmet un kit de communication. Celui-ci contient des affiches personnalisables pour vos événements, des bandeaux pour vos réseaux sociaux, un flyer, les logos... Vous pouvez le télécharger en <a href="http://www.transitioncitoyenne.org/wp-content/uploads/2016/09/Kit-organisateurs.zip">cliquant ici</a> !
           </p>
         </td>
       </tr>
