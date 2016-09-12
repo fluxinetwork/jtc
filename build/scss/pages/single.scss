@@ -90,7 +90,7 @@
 	margin-top: $space--s;
 	word-break: break-word;
 
-	&:nth-child(3) {
+	&:nth-child(n+2) {
 		margin-top: $space--xs !important;
 	}
 }

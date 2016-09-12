@@ -24,19 +24,47 @@
 	position: absolute;
 }
 
-.wrap-logo {
+.ctc {
+	position: relative;
+	margin: $space--s 0 $space--s 0;
+}
+.ctc__links {
+	@include flex(center);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: $c-main;
+	border-radius: $radius;
+	@extend %transition;
+
+	&:hover {
+		opacity: 1;
+	}
+	
+	span {
+		color: #fff;
+		padding: $space--s $space--s*0.75;
+
+		&:hover {
+			color: $c-dark;
+		}
+	}
+
+}
+.ctc__logo {
 	width: 200px;
 	background-color: #FFF;
 	border-radius: $radius;
 	padding: $space--s;
-	margin: $space--s 0 $space--s 0;
 
 	img {
 		width: 100%;
 	}
 }
 
-.wrap-logo,
 .footer .logos {
 	margin-top: $space--xs;
 }
@@ -59,7 +87,16 @@
 .contact-button {
 	@extend .p;
 	@extend .button--outline;
-	margin-top: $space--s;;
+	margin: $space--m 0;
+}
+
+.credits {
+	border-top: 3px solid #FFF;
+	padding-top: $space--m;
+
+	p {
+		margin: 0;
+	}
 }
 
 @media screen and (max-width: $break--m) {
@@ -69,13 +106,13 @@
 }
 
 @media screen and (min-width: $break--l) {
-		.footer {
-			margin-top: $space--l*2.3;
-			padding: $space--m 0 $space--m*2 0;
-		}
+	.footer {
+		margin-top: $space--l*2.3;
+		padding: $space--m 0 $space--m*2 0;
+	}
 
-		.wrap-logo {
-			width: 300px;
-		}
+	.ctc__logo {
+		width: 300px;
+	}
 }
 

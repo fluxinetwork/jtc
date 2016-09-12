@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-.button, .button--cta, .button--outline, .bub__button, .contact-button, .tabs-controls__btn, .more-tabs, .link, p a, .map-holder, [class^="icon-"], [class*=" icon-"], .wrap-icon--facebook, .wrap-icon--twitter {
+.button, .button--cta, .button--outline, .bub__button, .contact-button, .tabs-controls__btn, .more-tabs, .link, p a, .map-holder, [class^="icon-"], [class*=" icon-"], .wrap-icon--facebook, .wrap-icon--twitter, .ctc__links {
   transition: all 0.2s ease-in-out;
 }
 
@@ -2276,7 +2276,6 @@ p:first-child {
 \*------------------------------*/
 body {
   background-color: #e64c38;
-  margin-top: 3.5rem;
   overflow-x: hidden;
 }
 
@@ -2324,6 +2323,17 @@ body {
   text-align: left;
 }
 
+.page-header__logo {
+  width: 80%;
+  max-width: 400px;
+  padding: 1.5rem;
+  background-color: #FFF;
+  border-radius: 0 0 3px 3px;
+}
+.page-header__logo img {
+  width: 100%;
+}
+
 @media screen and (min-width: 480px) {
   .page-header {
     text-align: center;
@@ -2363,18 +2373,45 @@ body {
   position: absolute;
 }
 
-.wrap-logo {
+.ctc {
+  position: relative;
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.ctc__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #e64c38;
+  border-radius: 3px;
+}
+.ctc__links:hover {
+  opacity: 1;
+}
+.ctc__links span {
+  color: #fff;
+  padding: 1.5rem 1.125rem;
+}
+.ctc__links span:hover {
+  color: #4C322E;
+}
+
+.ctc__logo {
   width: 200px;
   background-color: #FFF;
   border-radius: 3px;
   padding: 1.5rem;
-  margin: 1.5rem 0 1.5rem 0;
 }
-.wrap-logo img {
+.ctc__logo img {
   width: 100%;
 }
 
-.wrap-logo,
 .footer .logos {
   margin-top: 0.5rem;
 }
@@ -2395,7 +2432,15 @@ body {
 }
 
 .contact-button {
-  margin-top: 1.5rem;
+  margin: 3.5rem 0;
+}
+
+.credits {
+  border-top: 3px solid #FFF;
+  padding-top: 3.5rem;
+}
+.credits p {
+  margin: 0;
 }
 
 @media screen and (max-width: 620px) {
@@ -2409,7 +2454,7 @@ body {
     padding: 3.5rem 0 7rem 0;
   }
 
-  .wrap-logo {
+  .ctc__logo {
     width: 300px;
   }
 }
@@ -2850,6 +2895,10 @@ html[xmlns] .flexslider .slides {
 }
 .video.anim::after {
   transform: rotate(-4deg) translateX(-50%) scaleX(1);
+}
+
+.solutions__header {
+  min-height: 70px;
 }
 
 .chemin-pin {
@@ -4163,8 +4212,8 @@ textarea.input-effect--2 ~ .focus-bg {
   margin-top: 1.5rem;
   word-break: break-word;
 }
-.contact__infos p:nth-child(3),
-.contact__links a:nth-child(3) {
+.contact__infos p:nth-child(n+2),
+.contact__links a:nth-child(n+2) {
   margin-top: 0.5rem !important;
 }
 

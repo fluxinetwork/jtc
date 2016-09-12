@@ -50,8 +50,11 @@
 
 // SOLUTIONS
 
-.solutions__header::after {
-	@extend %transition--dynamic;
+.solutions__header {
+	min-height: 70px;
+	&::after {
+		@extend %transition--dynamic;
+	}
 }
 
 .chemin-pin {

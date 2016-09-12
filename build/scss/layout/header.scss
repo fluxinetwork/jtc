@@ -8,6 +8,18 @@
 	text-align: left;
 }
 
+.page-header__logo {
+	width: 80%;
+	max-width: 400px;
+	padding: $space--s;
+	background-color: #FFF;
+	border-radius: 0 0 $radius $radius;
+
+	img {
+		width: 100%;
+	}
+}
+
 // MEDIA QUERIES
 
 @media screen and (min-width: $break--s) {
