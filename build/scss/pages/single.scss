@@ -90,8 +90,8 @@
 	margin-top: $space--s;
 	word-break: break-word;
 
-	&:nth-child(2) {
-		margin-top: $space--xs;
+	&:nth-child(3) {
+		margin-top: $space--xs !important;
 	}
 }
 .contact__links {

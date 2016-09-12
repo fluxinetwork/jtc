@@ -4163,9 +4163,9 @@ textarea.input-effect--2 ~ .focus-bg {
   margin-top: 1.5rem;
   word-break: break-word;
 }
-.contact__infos p:nth-child(2),
-.contact__links a:nth-child(2) {
-  margin-top: 0.5rem;
+.contact__infos p:nth-child(3),
+.contact__links a:nth-child(3) {
+  margin-top: 0.5rem !important;
 }
 
 .contact__links {

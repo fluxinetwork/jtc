@@ -52,7 +52,7 @@
 			$contact_name = get_field('prenom_contact').' '.get_field('nom_contact');
 			$tel_is_visible = get_field('tel_is_visible');
 			$tel = false;
-			if ($tel_is_visible === 1) {
+			if ($tel_is_visible[0] == 1) {
 				$tel = get_field('tel_contact');
 			}
 			$email_contact = get_field('email_contact_public');
@@ -87,10 +87,10 @@
 				<div class="contact__infos">
 				<?php 
 					if ($tel) {
-						echo '<p class="tel"><span class="icon-bubbles"></span>'.$email_contact.'</p>';
+						echo '<p class="tel">'.$tel.'</p>';
 					}
-					if ($tel) {
-						echo '<p class="email"><span class="icon-envelope"></span>'.$email_contact.'</p>';
+					if ($email_contact) {
+						echo '<p class="email">'.$email_contact.'</p>';
 					}
 				?>
 				</div>
@@ -100,6 +100,7 @@
 				<div class="contact__links">
 					<?php 
 						if ($link_event) : echo '<a href="'.$link_event.'" class="tel link p" target="_blank">Site de l\'évènement</a>'; endif;
+						if ($link_event && $page_facebook) : echo '<br>'; endif;
 						if ($page_facebook) : echo '<a href=".$email_contact." class="email link p" target="_blank">Page facebook</a>'; endif;
 					?>
 				</div>
