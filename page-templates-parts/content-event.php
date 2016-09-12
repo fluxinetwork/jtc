@@ -50,10 +50,14 @@
 			$adresse_full = $adresse . $code_postal . $ville;
 
 			$contact_name = get_field('prenom_contact').' '.get_field('nom_contact');
-			$tel_is_visible = get_field('tel_is_visible');
 			$tel = false;
-			if ($tel_is_visible[0] == 1) {
-				$tel = get_field('tel_contact');
+
+			$tel_is_visible = get_field('tel_is_visible');
+			if ($tel_is_visible) {
+				
+				if ($tel_is_visible[0] == 1) {
+					$tel = get_field('tel_contact');
+				}
 			}
 			$email_contact = get_field('email_contact_public');
 			$link_event = get_field('link_event');
