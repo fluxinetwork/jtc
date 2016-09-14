@@ -387,12 +387,12 @@ function initMap (){
         scrollWheelZoom: false
     });
 
-	L.tileLayer('https://api.mapbox.com/styles/v1/jtc2016/cirvv3gli001egynmqdliyk6t/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoianRjMjAxNiIsImEiOiJjaXJ2dW43cmEwMGhwaHVuaGlhaXJtZmJyIn0.waqWvkaPAVkIed9Xi5zxsw', {
-		maxZoom: 14,
-		attribution: 'Carte &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributeurs, ' +
-			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-		id: 'jtc2016'
-	}).addTo(mapJTC);
+    L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        maxZoom: 14,
+        attribution: 'Carte &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributeurs, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        id: 'jtc2016'
+    }).addTo(mapJTC);
 
 	$.ajax({
         type: 'POST',

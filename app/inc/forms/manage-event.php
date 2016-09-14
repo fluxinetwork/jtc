@@ -132,6 +132,28 @@ add_action('wp_ajax_nopriv_fluxi_manage_event', 'fluxi_manage_event');
 add_action('wp_ajax_fluxi_manage_event', 'fluxi_manage_event');
 
 
+/**
+* Send an email when an event is published
+*
+* @param $new_status, $old_status, $post
+* @return n/a
+*/
+
+function send_mails_on_publish( $new_status, $old_status, $post )
+{
+    if ( 'publish' !== $new_status or 'publish' === $old_status or 'evenements' !== get_post_type( $post ) )
+        return;
+
+    $the_idp = $post->ID;
+    $email_contact = get_field('email_contact', $the_idp);
+
+    // Notification mail current user
+	$mail_published_event = array(get_footer_mail(), get_home_url(), get_permalink($the_idp));
+	notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_CELINE . '>', 'Votre événement est visible sur notre site', true, get_template_directory() . '/app/inc/mails/new-event-publish.php', $mail_published_event);
+}
+
+add_action( 'transition_post_status', 'send_mails_on_publish', 10, 3 );
+
 
 
 
@@ -266,30 +288,5 @@ function fluxi_csv_export() {
 
 
 //add_action( 'wp_ajax_fluxi_csv_export', 'fluxi_csv_export' );
-
-
-/**
-* Send an email when an event is published
-*
-* @param $new_status, $old_status, $post
-* @return n/a
-*/
-
-function send_mails_on_publish( $new_status, $old_status, $post )
-{
-    if ( 'publish' !== $new_status or 'publish' === $old_status
-        or 'evenements' !== get_post_type( $post ) )
-        return;
-
-    $the_idp = $post->ID;
-    $email_contact = get_field('email_contact', $the_idp);
-
-    // Notification mail current user
-	$mail_published_event = array(get_footer_mail(), get_home_url(), get_permalink($the_idp));
-	notify_by_mail (array($email_contact),'Collectif pour une Transition Citoyenne <' . CONTACT_CELINE . '>', 'Votre événement est visible sur notre site', true, get_template_directory() . '/app/inc/mails/new-event-publish.php', $mail_published_event);
-}
-
-add_action( 'transition_post_status', 'send_mails_on_publish', 10, 3 );
-
 
 
