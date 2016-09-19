@@ -105,7 +105,7 @@
 					<?php 
 						if ($link_event) : echo '<a href="'.$link_event.'" class="tel link p" target="_blank">Site de l\'évènement</a>'; endif;
 						if ($link_event && $page_facebook) : echo '<br>'; endif;
-						if ($page_facebook) : echo '<a href=".$email_contact." class="email link p" target="_blank">Page facebook</a>'; endif;
+						if ($page_facebook) : echo '<a href="'.$page_facebook.'" class="email link p" target="_blank">Page facebook</a>'; endif;
 					?>
 				</div>
 			<?php endif; ?>
