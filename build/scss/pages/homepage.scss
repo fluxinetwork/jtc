@@ -189,11 +189,11 @@
 	@extend %transition--dynamic;
 }
 .montagne-eolienne {
-	left: -20px;
+	left: -60px;
 	width: 100px;
 }
 .eolienne {
-	right: 20px;
+	right: -20px;
 	width: 70px;
 	transition-delay: 0.2s;
 }
@@ -329,11 +329,11 @@
 	}
 
 	.montagne-eolienne {
-		left: -5%;
+		left: -15%;
 		width: 160px;
 	}
 	.eolienne {
-		right: 5%;
+		right: -5%;
 		width: 115px;
 	}
 

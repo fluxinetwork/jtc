@@ -32,7 +32,7 @@ Template Name: Page d'accueil
 			<header class="solutions__header wrap-content has-anim">
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin.png" class="chemin-pin">
 				<img src="<?php bloginfo('template_url'); ?>/app/img/chemin-pin-plus.png" class="chemin-pin-plus">
-				<h2><span class="icon--round icon-map-marker"></span>Les solutions sont là !</h2>
+				<h2><span class="icon--round icon-map-marker"></span><?php echo get_field('titre_carte'); ?></h2>
 				<h3>plus de <?php echo $count_events->publish; ?> événements</h3>
 			</header>
 	
@@ -50,8 +50,8 @@ Template Name: Page d'accueil
 
 			<div class="organisateur">
 				<div class="organisateur__add">
-					<p>Vous organisez un évènement ?</p>
-					<a href="<?php echo home_url(); ?>/ajouter-evenement/" class="button--cta h3">J’inscris mon évènement</a>
+					<p><?php echo get_field('texte_top_cta'); ?></p>
+					<a href="<?php echo home_url(); ?>/ajouter-evenement/" class="button--cta h3"><?php echo get_field('texte_cta'); ?></a>
 				</div>
 		
 				<div class="organisateur__help">
@@ -63,21 +63,21 @@ Template Name: Page d'accueil
 
 	<section class="section">
 		<div class="share">
-			<h2 class="share__title">Parlez en autour de vous</h2>
-			<h3 class="share__subtitle">en partageant sur </h3>
+			<h2 class="share__title"><?php echo get_field('titre_partage_reseaux_sociaux'); ?></h2>
+			<h3 class="share__subtitle"><?php echo get_field('sous_titre_partage_reseaux_sociaux'); ?></h3>
 			<div class="share__buttons">
 				<a href="" class="wrap-icon--facebook js-share" data-url="<?php echo get_permalink(); ?>" data-network="facebook"><span class="icon-facebook"></span></a>
 				<a href="" class="wrap-icon--twitter js-share" data-url="<?php echo get_permalink(); ?>" data-network="twitter"><span class="icon-twitter"></span></a>
 			</div>
-			<p>#journeetransition</p>
+			<p><?php echo get_field('hashtag'); ?></p>
 		</div>
 
 		<img src="<?php bloginfo('template_url'); ?>/app/img/bus.png" class="bus">
 	</section>
 
 	<section class="section photos">
-		<h2><span class="icon--round icon-image"></span>Les photos de la JTC</h2>
-		<h3>éditions 2014 et 2015</h3>
+		<h2><span class="icon--round icon-image"></span><?php echo get_field('titre_galerie'); ?></h2>
+		<h3><?php echo get_field('sous_titre_galerie'); ?></h3>
 
 		<?php if( $galerie ): ?>
 			<div class="wrap-slider has-anim">
@@ -102,8 +102,8 @@ Template Name: Page d'accueil
 	<section class="section temoignages">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-4.svg" class="zigouigoui--4">
 			<div class="wrap-content">
-				<h2><span class="icon--round icon-users"></span>Ils ont fait le premier pas</h2>
-				<h3>voici leur histoire</h3>
+				<h2><span class="icon--round icon-users"></span><?php echo get_field('titre_temoignages'); ?></h2>
+				<h3><?php echo get_field('sous_titre_temoignages'); ?></h3>
 				
 				<?php if($testimonies): ?>
 					<div class="tabs-controls limit">
