@@ -79,7 +79,7 @@
 		</div>
 		<div class="infos--adresse"><?php echo '<span class="icon-map-marker"></span>'.$adresse_full; ?></div>
 
-		<p class="description"><?php echo acf_field_no_p('descriptif_event'); ?></p>
+		<div class="description"><?php echo get_field('descriptif_event'); ?></div>
 
 		<p class="ta--l"><strong>Organisé par :</strong> <?php echo $nom_structure; ?></p>
 

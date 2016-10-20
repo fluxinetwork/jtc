@@ -13,17 +13,8 @@
 				<li class="logos__logo"><a href="http://www.fondationdefrance.org/fondation/fondation-un-monde-par-tous" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/fondation-monde-par-tous.jpg" alt="Fondation un monde par tous"></a></li>
 				<li class="logos__logo"><a href="http://www.up-group-foundation.com/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/fondation-up.jpg" alt="Fondation Up"></a></li>
 			</ul>
-		</div>
-	</div>
-	
-	<div class="section">
-		<div class="wrap-content">
-			<h2>Envie d'agir ?</h2>
-			<h3>Soutenez-nous sur la plateforme HelloAsso</h3><br>
-			<a href="https://www.helloasso.com/associations/collectif-pour-une-transition-citoyenne/collectes/collectif-pour-une-transition-citoyenne" class="button--cta h3">Par ici !</a>
-			<ul class="logos">
-				<li class="logos__logo"><a href="https://www.helloasso.com/associations/collectif-pour-une-transition-citoyenne/collectes/collectif-pour-une-transition-citoyenne" target="_blank"><img src="<?php bloginfo('template_url'); ?>/app/img/logos/logo-helloasso.jpg" alt="Hello Asso"></a></li>
-			</ul>
+			<br>
+			<a href="https://www.helloasso.com/associations/collectif-pour-une-transition-citoyenne/collectes/collectif-pour-une-transition-citoyenne" class="button--cta h3">Nous soutenir</a>
 		</div>
 	</div>
 
