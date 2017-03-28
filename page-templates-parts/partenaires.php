@@ -4,7 +4,7 @@
  */
 ?>
 
-<aside>
+<!--<aside>
 	<div class="section">
 		<div class="wrap-content">
 			<h2>Nos soutiens financiers</h2>
@@ -30,6 +30,6 @@
 			</ul>
 		</div>
 	</div>
-</aside>
+</aside>-->
 
 

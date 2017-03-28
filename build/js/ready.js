@@ -26,8 +26,8 @@ var FOO = {
             isHome = true;
 
             // Init events map
-            initMap();
-            initMapMobil();
+            //initMap();
+            //initMapMobil();
 
             // Slider
             $('.flexslider').waypoint(function(){

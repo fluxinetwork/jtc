@@ -14,7 +14,7 @@ Template Name: Page d'accueil
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--1">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--2">
 
-		<h2 class="wrap-content"><span>Les solutions existent déjà :</span><br>à moi de faire le premier pas !</h2>
+		<h2 class="wrap-content"><span>2000 événements</span><br>pour accélérer la transition !</h2>
 
 		<div class="video has-anim"><?php echo get_field('video'); ?></div>
 		
@@ -25,7 +25,7 @@ Template Name: Page d'accueil
 		</div>
 	</section>
 
-	<section class="section solutions">
+	<!--<section class="section solutions">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/france.svg" class="france">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-3.svg" class="zigouigoui--3">
 
@@ -35,7 +35,7 @@ Template Name: Page d'accueil
 				<h2><span class="icon--round icon-map-marker"></span><?php echo get_field('titre_carte'); ?></h2>
 				<h3>plus de <?php echo $count_events->publish; ?> événements</h3>
 			</header>
-	
+			
 			<div class="map-holder">
 				<a href="#" class="close js-close-map">X</a>
 			 	<div id="map-events"></div>
@@ -59,7 +59,7 @@ Template Name: Page d'accueil
 					<a href="http://www.transitioncitoyenne.org/organiser-journee-v2/" target="_blank" class="link p">Voir le mode d’emploi</a>
 				</div>
 			</div>	
-	</section>
+	</section>-->
 
 	<section class="section">
 		<div class="share">
@@ -118,10 +118,8 @@ Template Name: Page d'accueil
 				<?php if($testimonies): ?>
 					<ul class="tabs">
 						<?php foreach($testimonies as $row){ ?>
-							<li class="tab">
-								
+							<li class="tab">								
 								<p><span class="tab__title"><?php echo $row['localisation']; ?> : </span><?php echo $row['temoignage']; ?></p>
-								
 							</li>
 						<?php } ?> 
 					</ul>
