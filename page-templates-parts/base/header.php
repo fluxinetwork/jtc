@@ -1,6 +1,6 @@
 <header class="page-header wrap-base">
 	<div class="wrap-content">
-		<p>23 septembre 2017</p>
+		<p>du 18 au 30 septembre 2017</p>
 
 		<div class="macaron">
 			<span class="macaron__label">4ème<br> édition</span>

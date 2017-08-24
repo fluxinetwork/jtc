@@ -14,7 +14,7 @@ Template Name: Page d'accueil
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-1.svg" class="zigouigoui--1">
 		<img src="<?php bloginfo('template_url'); ?>/app/img/zigouigoui-2.svg" class="zigouigoui--2">
 
-		<h2 class="wrap-content"><span>2000 événements</span><br>pour accélérer la transition !</h2>
+		<h2 class="wrap-content"><span>Organise un des 2000 événements</span><br> en France et en Belgique !</h2>
 
 		<div class="video has-anim"><?php echo get_field('video'); ?></div>
 		
